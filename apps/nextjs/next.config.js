@@ -5,6 +5,9 @@ import "@acme/auth/env";
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  experimental: {
+    typedRoutes: true,
+  },
 
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
@@ -21,3 +24,4 @@ const config = {
 };
 
 export default config;
+// "dev": "concurrently \"contentlayer dev\" \"pnpm with-env\" \"next dev\"",

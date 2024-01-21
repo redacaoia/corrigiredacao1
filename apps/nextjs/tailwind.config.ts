@@ -4,8 +4,8 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import baseConfig from "@acme/tailwind-config";
 
 export default {
-  // We need to append the path to the UI package to the content array so that
-  // those classes are included correctly.
+  // Precisamos anexar o caminho do pacote UI ao array de conteúdo para que
+  // essas classes estão incluídas corretamente.
   content: [...baseConfig.content, "../../packages/ui/**/*.{ts,tsx}"],
   presets: [baseConfig],
   theme: {
