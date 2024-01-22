@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       ? "https://turbo.t3.gg"
       : "http://localhost:3000",
   ), */
+  metadataBase: new URL("https://corrigiredacao.vercel.app"),
   title: "Redação IA - Corrigir Redação",
   description: "Redação IA - Corrigir Redação",
   openGraph: {
