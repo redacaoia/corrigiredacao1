@@ -17,11 +17,11 @@ export const metadata: Metadata = {
       ? "https://turbo.t3.gg"
       : "http://localhost:3000",
   ), */
-  title: "Create T3 Turbo",
-  description: "Simple monorepo with shared backend for web & mobile apps",
+  title: "Redação IA - Corrigir Redação",
+  description: "Redação IA - Corrigir Redação",
   openGraph: {
-    title: "Create T3 Turbo",
-    description: "Simple monorepo with shared backend for web & mobile apps",
+    title: "Redação IA - Corrigir Redação",
+    description: "Redação IA - Corrigir Redação",
     url: "https://corrigiredacao.vercel.app",
     siteName: "Redação IA - Corrigir Redação",
   },
