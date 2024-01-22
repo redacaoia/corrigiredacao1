@@ -1,13 +1,14 @@
-import chrome from "chrome-aws-lambda";
-import edgeChromium from "chrome-aws-lambda";
+/* //import chrome from "chrome-aws-lambda";
+import chromium from "@sparticuz/chromium";
+//import edgeChromium from "chrome-aws-lambda";
 import puppeteer from "puppeteer-core";
 
 export default async function screenshot(url: string) {
   const options = process.env.AWS_REGION
     ? {
-        args: edgeChromium.args,
-        executablePath: await edgeChromium.executablePath,
-        headless: edgeChromium.headless,
+        args: chromium.args,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
       }
     : {
         args: [],
@@ -24,3 +25,4 @@ export default async function screenshot(url: string) {
   await page.goto(url, { waitUntil: "networkidle0" });
   return await page.screenshot({ type: "png" });
 }
+ */

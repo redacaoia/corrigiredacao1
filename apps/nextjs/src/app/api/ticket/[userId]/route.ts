@@ -5,8 +5,6 @@ import screenshot from "@/lib/screenshot";
 
 export const runtime = "edge";
 
-
-
 export async function GET(
   request: NextRequest,
   { params }: { params: { userId: string } },

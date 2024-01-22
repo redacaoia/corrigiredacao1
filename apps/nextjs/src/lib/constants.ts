@@ -1,7 +1,7 @@
 export const SAMPLE_TICKET_NUMBER = 1234;
 
-export const SITE_URL = 'https://corrigiredacao.vercel.app';
-export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || new URL(SITE_URL).origin;
+export const SITE_URL = 'https://vigilant-space-winner-5ggjp7jxwg9g3vj76-3000.app.github.dev';
+export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN ?? new URL(SITE_URL).origin;
 export const TWITTER_USER_NAME = 'vercel';
 export const BRAND_NAME = 'ACME';
 export const SITE_NAME_MULTILINE = ['ACME', 'Conf'];
