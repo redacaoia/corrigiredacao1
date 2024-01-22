@@ -1,6 +1,6 @@
 export const SAMPLE_TICKET_NUMBER = 1234;
 
-export const SITE_URL = 'https://3000-upcoderagen-corrigireda-7uy9xz7t3w7.ws-us107.gitpod.io';
+export const SITE_URL = 'https://corrigiredacao.vercel.app';
 export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_ORIGIN || new URL(SITE_URL).origin;
 export const TWITTER_USER_NAME = 'vercel';
 export const BRAND_NAME = 'ACME';

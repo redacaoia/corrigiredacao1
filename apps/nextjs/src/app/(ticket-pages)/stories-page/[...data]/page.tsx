@@ -15,8 +15,8 @@ export default function TicketOnlyPage({ params }: Props) {
     <div className="flex h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-screen-sm rounded-lg bg-white p-8 shadow-md">
         <h1 className="mb-4 text-2xl font-bold">Hello, Instagram!</h1>
-        <h1>{userId}</h1>
-        <h2>{ticketNumberScore}</h2>
+        <h1>Useid: {userId}</h1>
+        <h2>Ticket Number Score{ticketNumberScore}</h2>
         <p className="text-gray-600">This is my awesome story content.</p>
       </div>
     </div>

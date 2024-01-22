@@ -5,6 +5,8 @@ import screenshot from "@/lib/screenshot";
 
 export const runtime = "edge";
 
+
+
 export async function GET(
   request: NextRequest,
   { params }: { params: { userId: string } },
@@ -12,9 +14,13 @@ export async function GET(
   let url: string;
   let name: string | null | undefined;
   //let ticketNumber: number | null | undefined = SAMPLE_TICKET_NUMBER;
-
+// https://vigilant-space-winner-5ggjp7jxwg9g3vj76-3000.app.github.dev/api/1?ticketNumber=990
   const searchParams = request.nextUrl.searchParams;
-  const ticketNumber  = searchParams.get("ticketNumber");
+  const ticketNumber = searchParams.get("ticketNumber");
+
+
+ 
+    
 
   // query is "hello" for /api/search?query=hello
 
@@ -23,7 +29,7 @@ export async function GET(
   if (userId) {
     const userIdString = userId.toString();
 
-   /*  const user = await getUserByUsername(userIdString);
+    /*  const user = await getUserByUsername(userIdString);
 
     name = user.name;
  */
@@ -33,13 +39,7 @@ export async function GET(
 
     const file = await screenshot(url);
 
-    return new Response(file, {
-      headers: {
-        "Content-Type": "image/png",
-        "Cache-Control": "public, no-transform,",
-      },
-      status: 200,
-    });
+    return new Response(file);
   } else {
     return new Response("Not Found", {
       status: 404,
