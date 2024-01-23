@@ -1,21 +1,23 @@
-import { ImageResponse } from 'next/og'
+/* import { ImageResponse } from 'next/og';
+
  
-export const runtime = 'edge'
+export const runtime = 'edge';
  
 export async function GET() {
+  
   return new ImageResponse(
     (
       <div>
-        'Hello world!'
+        👋 Hello
       </div>
     ),
     {
       width: 1200,
-      height: 600,
-    }
-  )
+      height: 630,
+    },
+  );
 }
-
+ */
 /* import { NextRequest } from "next/server";
 import { SAMPLE_TICKET_NUMBER, SITE_URL } from "@/lib/constants";
 import { getUserByUsername } from "@/lib/getUserByUsername";
