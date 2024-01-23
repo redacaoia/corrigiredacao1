@@ -6,7 +6,7 @@ export async function GET() {
   return new ImageResponse(
     (
       <div>
-        Hello world!
+        'Hello world!'
       </div>
     ),
     {
