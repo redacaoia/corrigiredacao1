@@ -15,6 +15,7 @@ export async function GET() {
     }
   )
 }
+
 /* import { NextRequest } from "next/server";
 import { SAMPLE_TICKET_NUMBER, SITE_URL } from "@/lib/constants";
 import { getUserByUsername } from "@/lib/getUserByUsername";
