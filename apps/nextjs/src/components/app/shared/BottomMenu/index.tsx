@@ -3,7 +3,8 @@
 import { BiSolidUser, BiUser } from "react-icons/bi";
 import { GiProgression } from "react-icons/gi";
 import { GoHome, GoHomeFill } from "react-icons/go";
-import { RiMedalLine } from "react-icons/ri";
+
+import { FaCompass,FaRegCompass } from "react-icons/fa6";
 
 import { BottomMenuFragments } from "./fragments";
 
@@ -22,15 +23,15 @@ export function BottomMenu() {
       />
 
       <BottomMenuFragments.Icon
-        href="/desafios"
-        icon={RiMedalLine}
-        iconActive={GoHomeFill}
+        href="/explorar"
+        icon={FaRegCompass}
+        iconActive={FaCompass}
       />
-      <BottomMenuFragments.Icon
+      {/* <BottomMenuFragments.Icon
         href="/perfil"
         icon={BiUser}
         iconActive={BiSolidUser}
-      />
+      /> */}
     </BottomMenuFragments.Root>
   );
 }
