@@ -19,7 +19,7 @@ import {
 } from "~/components/ui/popover";
 import { Switch } from "~/components/ui/switch";
 import { cn } from "~/lib/utils";
-import { createAvatarProfile } from "~/utils/createAvatarProfile";
+import { CreateAvatarProfile } from "~/utils/createAvatarProfile";
 
 const notifications = [
   {
@@ -42,15 +42,15 @@ export function Profile({ className, ...props }: CardProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <span className="origin-top hover:animate-bellRing  duration-75 ">
+       
         <Avatar>
       <AvatarImage
-        src={createAvatarProfile}
+        src={CreateAvatarProfile}
         alt=""
       />
       <AvatarFallback>IA</AvatarFallback>
     </Avatar>
-        </span>
+       
       </PopoverTrigger>
       <PopoverContent className="mr-4 w-[380px]">
         <Card className={cn("", className)} {...props}>

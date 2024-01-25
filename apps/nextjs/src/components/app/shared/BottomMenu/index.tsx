@@ -8,6 +8,8 @@ import { FaCompass,FaRegCompass } from "react-icons/fa6";
 
 import { BottomMenuFragments } from "./fragments";
 
+import { IoIosAddCircle } from "react-icons/io";
+
 export function BottomMenu() {
   return (
     <BottomMenuFragments.Root>
@@ -21,7 +23,11 @@ export function BottomMenu() {
         icon={GiProgression}
         iconActive={GoHomeFill}
       />
-
+<BottomMenuFragments.Icon
+        href="/temas"
+        icon={IoIosAddCircle}
+        iconActive={IoIosAddCircle}
+      />
       <BottomMenuFragments.Icon
         href="/explorar"
         icon={FaRegCompass}
