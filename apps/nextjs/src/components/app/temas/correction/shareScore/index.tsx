@@ -2,11 +2,8 @@ import * as React from "react";
 import { PiShareFatFill } from "react-icons/pi";
 
 import { Button } from "~/components/ui/button";
-import {
-  Drawer,
-  DrawerTrigger,
-} from "~/components/ui/drawer";
-import { TicketFragments } from "../ticket/fragments";
+import { Drawer, DrawerTrigger } from "~/components/ui/drawer";
+import { TicketFragments } from "../../../ticket/fragments";
 import { DrawerContent } from "./drawerContent";
 
 interface Props {

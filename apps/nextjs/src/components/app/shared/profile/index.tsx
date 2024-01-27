@@ -39,13 +39,16 @@ const notifications = [
 type CardProps = React.ComponentProps<typeof Card>;
 
 export function Profile({ className, ...props }: CardProps) {
+
+  const imageProfile = CreateAvatarProfile()
+
   return (
     <Popover>
       <PopoverTrigger asChild>
        
         <Avatar>
       <AvatarImage
-        src={CreateAvatarProfile}
+        src={imageProfile}
         alt=""
       />
       <AvatarFallback>IA</AvatarFallback>

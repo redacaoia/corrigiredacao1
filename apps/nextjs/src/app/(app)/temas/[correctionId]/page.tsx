@@ -1,8 +1,9 @@
+import { ShareScore } from "~/components/app/temas/correction/shareScore";
 
-
-
-export default async function Correction() {
-    return (
-<h1>Helo world</h1>
-    )
+export default  function Correction() {
+  return (
+    <div>
+      <h1>bbb</h1>
+    </div>
+  )
 }

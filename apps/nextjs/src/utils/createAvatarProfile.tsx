@@ -1,20 +1,16 @@
-'use client'
+"use client";
 
-import { useMemo } from 'react';
-import { createAvatar } from '@dicebear/core';
-import {micah  } from '@dicebear/collection';
-
-
+import { useMemo } from "react";
+import { micah } from "@dicebear/collection";
+import { createAvatar } from "@dicebear/core";
 
 export function CreateAvatarProfile() {
-
   const avatarProfile = useMemo(() => {
     return createAvatar(micah, {
       size: 128,
       // ... other options
     }).toDataUriSync();
   }, []);
-  
-  return avatarProfile
-}
 
+  return avatarProfile;
+}
