@@ -10,7 +10,7 @@ interface Props {
 export default async function TemasLayout({ children }: Props) {
   return (
     <>
-      <main className="relative">
+      <div className="relative z-50 w-full h-full bg-black">
         <div
           className="fixed top-0  flex w-full items-start justify-between  rounded-b-lg bg-lime-500
       transition-all "
@@ -21,7 +21,7 @@ export default async function TemasLayout({ children }: Props) {
           </div>
         </div>
         {children}
-      </main>
+      </div>
     </>
   );
 }
