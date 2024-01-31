@@ -29,7 +29,7 @@ export function DrawerContent({ children }: Props) {
 
           <div className="flex items-center flex-col gap-12">
             {children}
-            <TicketDownloadButton />
+         {/*   <TicketDownloadButton name={""} imageUrl={""} ticketScore={0} /> */}
             <SocialMediaShareButtons />
           </div>
 

@@ -1,7 +1,11 @@
+'use client'
+
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FiDownload } from "react-icons/fi";
 
+import LoadingDots from "~/components/shared/icons/loadingDots";
 import { Button } from "~/components/ui/button";
 
 interface Props {
@@ -14,7 +18,8 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
   const [imgReady, setImgReady] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const downloadUrl = `/api/ticket-images/${name}`;
+ // const downloadUrl = `/api/ticket-images/${name}`;
+  const downloadUrl = `api/dynamic-image?username=WalysonMoura`;
   const downloadLink = useRef<HTMLAnchorElement>();
 
   useEffect(() => {
@@ -38,6 +43,7 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
       <h4 className="text-center text-lg ">
         Baixe e compartilhe nos seus stories do instagram!
       </h4>
+    {/*   
       <Link
         href={loading ? undefined : downloadUrl}
         onClick={(e) => {
@@ -52,7 +58,7 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
         className="flex cursor-pointer items-center gap-3 rounded-3xl bg-black bg-opacity-80 px-14 py-6 font-semibold text-[#f1f1f1] shadow-md transition hover:bg-opacity-70"
       >
         <FiDownload size={30} /> <span className="pt-2 text-base">Baixar</span>
-      </Link>
+      </Link> */}
 
       <a
         href={loading ? undefined : downloadUrl}
@@ -66,7 +72,14 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
         }}
         download="ticket.png"
       >
-        {loading ? <LoadingDots size={4} /> : <>Download</>}
+        {loading ? (
+          <LoadingDots />
+        ) : (
+          <>
+            <FiDownload size={30} />
+            <span className="pt-2 text-base">Baixar</span>
+          </>
+        )}
       </a>
     </div>
   );

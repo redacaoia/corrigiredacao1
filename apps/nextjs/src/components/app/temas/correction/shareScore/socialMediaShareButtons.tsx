@@ -9,26 +9,26 @@ export function SocialMediaShareButtons() {
     <div className="flex items-center  justify-between gap-4">
       <Button
         variant="outline"
-        className="hover:text-whatsapp hover:border-whatsapp rounded-full bg-gray-200 p-2 text-neutral-600"
+        className="rounded-full bg-gray-200 p-2 text-neutral-600 hover:border-whatsapp hover:text-whatsapp"
       >
         <TbBrandWhatsapp size={25} />
       </Button>
       <Button
         variant="outline"
-        className="hover:text-facebook hover:border-facebook rounded-full bg-gray-200 p-2 text-neutral-600"
+        className="rounded-full bg-gray-200 p-2 text-neutral-600 hover:border-facebook hover:text-facebook"
       >
         <FaFacebookF size={25} />
       </Button>
 
       <Button
         variant="outline"
-        className="hover:text-linkedin hover:border-linkedin rounded-full bg-gray-200 p-2 text-neutral-600"
+        className="rounded-full bg-gray-200 p-2 text-neutral-600 hover:border-linkedin hover:text-linkedin"
       >
         <FaLinkedinIn size={25} />
       </Button>
       <Button
         variant="outline"
-        className="rounded-full bg-gray-200 p-2 text-neutral-600 hover:text-slate-900 hover:border-slate-900"
+        className="rounded-full bg-gray-200 p-2 text-neutral-600 hover:border-slate-900 hover:text-slate-900"
       >
         <FaXTwitter size={25} />
       </Button>
