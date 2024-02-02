@@ -1,4 +1,4 @@
-import { UserButton } from "@clerk/nextjs";
+/* import { UserButton } from "@clerk/nextjs"; */
 import { BellRing, Check } from "lucide-react";
 import { MdNotificationsNone } from "react-icons/md";
 
@@ -45,8 +45,8 @@ export function Profile({ className, ...props }: CardProps) {
     <Popover>
       <PopoverTrigger asChild>
         <Avatar>
-          <UserButton afterSignOutUrl="/" />
-          {/*  <AvatarImage src={imageProfile} alt="" /> */}
+         {/*  <UserButton afterSignOutUrl="/" /> */}
+          <AvatarImage src={imageProfile} alt="" /> 
           <AvatarFallback>IA</AvatarFallback>
         </Avatar>
       </PopoverTrigger>
