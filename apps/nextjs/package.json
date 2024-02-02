@@ -38,6 +38,8 @@
     "@trpc/client": "next",
     "@trpc/react-query": "next",
     "@trpc/server": "next",
+    "@typebot.io/js": "^0.2.39",
+    "@typebot.io/nextjs": "^0.2.39",
     "@vercel/og": "^0.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
