@@ -7,7 +7,7 @@ export const runtime = "edge";
 
 /**
  * Configure basic CORS headers
- * You should extend this to match your needs
+ * Você deve estender isso para atender às suas necessidades
  */
 function setCorsHeaders(res: Response) {
   res.headers.set("Access-Control-Allow-Origin", "*");

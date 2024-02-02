@@ -1,8 +1,8 @@
+import { UserButton } from "@clerk/nextjs";
 import { BellRing, Check } from "lucide-react";
 import { MdNotificationsNone } from "react-icons/md";
+
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-
-
 import { Button } from "~/components/ui/button";
 import {
   Card,
@@ -39,21 +39,16 @@ const notifications = [
 type CardProps = React.ComponentProps<typeof Card>;
 
 export function Profile({ className, ...props }: CardProps) {
-
-  const imageProfile = CreateAvatarProfile()
+  const imageProfile = CreateAvatarProfile();
 
   return (
     <Popover>
       <PopoverTrigger asChild>
-       
         <Avatar>
-      <AvatarImage
-        src={imageProfile}
-        alt=""
-      />
-      <AvatarFallback>IA</AvatarFallback>
-    </Avatar>
-       
+          <UserButton afterSignOutUrl="/" />
+          {/*  <AvatarImage src={imageProfile} alt="" /> */}
+          <AvatarFallback>IA</AvatarFallback>
+        </Avatar>
       </PopoverTrigger>
       <PopoverContent className="mr-4 w-[380px]">
         <Card className={cn("", className)} {...props}>
