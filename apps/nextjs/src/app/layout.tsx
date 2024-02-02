@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <ClerkProvider
+      /* <ClerkProvider
         appearance={{
           variables: { colorPrimary: "#000000" },
           elements: {
@@ -65,7 +65,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             card: "bg-[#fafafa]",
           },
         }}
-      >
+      > */
         <body
           className={cn(
             "min-h-screen bg-background font-sans text-foreground antialiased",
@@ -81,7 +81,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <Toaster />
           {/*   </ThemeProvider> */}
         </body>
-      </ClerkProvider>
+     /*  </ClerkProvider> */
     </html>
   );
 }
