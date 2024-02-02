@@ -1,12 +1,13 @@
 import "~/app/globals.css";
 
 import type { Metadata, Viewport } from "next";
-import {
+/* import {
   ClerkProvider,
   OrganizationSwitcher,
   SignedIn,
   UserButton,
 } from "@clerk/nextjs";
+ */
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
