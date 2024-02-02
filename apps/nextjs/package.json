@@ -19,6 +19,7 @@
     "@acme/db": "workspace:^0.1.0",
     "@acme/ui": "workspace:^0.1.0",
     "@acme/validators": "workspace:^0.1.0",
+    "@clerk/nextjs": "^4.29.5",
     "@dicebear/collection": "^7.0.4",
     "@dicebear/core": "^7.0.4",
     "@radix-ui/react-avatar": "^1.0.4",
