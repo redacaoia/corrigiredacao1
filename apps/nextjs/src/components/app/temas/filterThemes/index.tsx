@@ -12,7 +12,7 @@ import { Toggle } from "~/components/ui/toggle";
 
 interface Props {
   selected: boolean;
-  allThemes: any;
+  allThemes: string;
   setActiveTheme: () => void;
   activeTheme: string;
   setFiltered: () => void;

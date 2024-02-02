@@ -9,9 +9,9 @@ const config = {
     typedRoutes: true,
   }, */
 
-  images: {
+ /*  images: {
     domains: ["img.clerk.com"],
-  },
+  }, */
   
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [

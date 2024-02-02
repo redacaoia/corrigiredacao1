@@ -15,18 +15,18 @@ export default function Explorar() {
       <section className="flex flex-col gap-4">
         <h1 className="text-3xl font-extrabold">Explorar</h1>
 
-        <Tabs defaultValue="account" className="w-[400px]">
+        <Tabs defaultValue="account" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="account">Aprenda</TabsTrigger>
+            <TabsTrigger className="" value="account">Aprenda</TabsTrigger>
             <TabsTrigger value="password">Desafios</TabsTrigger>
           </TabsList>
+          
           <TabsContent value="account">
             <Card>
               <CardHeader>
                 <CardTitle>Account</CardTitle>
                 <CardDescription>
-                  Make changes to your account here. Click save when 
-                  done.
+                  Make changes to your account here. Click save when done.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
