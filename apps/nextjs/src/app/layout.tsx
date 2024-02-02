@@ -49,7 +49,7 @@ export const viewport: Viewport = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      /* <ClerkProvider
+      {/*   <ClerkProvider
         appearance={{
           variables: { colorPrimary: "#000000" },
           elements: {
@@ -65,23 +65,24 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             card: "bg-[#fafafa]",
           },
         }}
-      > */
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans text-foreground antialiased",
-            GeistSans.variable,
-            GeistMono.variable,
-          )}
-        >
-          {/*  <ThemeProvider attribute="class" defaultTheme="system" enableSystem> */}
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          {/*  <div className="fixed bottom-4 right-12">
+      > */}
+
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans text-foreground antialiased",
+          GeistSans.variable,
+          GeistMono.variable,
+        )}
+      >
+        {/*  <ThemeProvider attribute="class" defaultTheme="system" enableSystem> */}
+        <TRPCReactProvider>{props.children}</TRPCReactProvider>
+        {/*  <div className="fixed bottom-4 right-12">
             <ThemeToggle />
           </div> */}
-          <Toaster />
-          {/*   </ThemeProvider> */}
-        </body>
-     /*  </ClerkProvider> */
+        <Toaster />
+        {/*   </ThemeProvider> */}
+      </body>
+      {/*   </ClerkProvider>  */}
     </html>
   );
 }
