@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Bubble } from "@typebot.io/nextjs";
 
