@@ -1,18 +1,21 @@
 // Importing env files here to validate on build
 /* import "./src/env.js";
+
+
 import "@acme/auth/env";
  */
 /** @type {import("next").NextConfig} */
+
 const config = {
   reactStrictMode: true,
   /*  experimental: {
     typedRoutes: true,
   }, */
 
- /*  images: {
-    domains: ["img.clerk.com"],
-  }, */
-  
+  images: {
+    domains: ["lh3.googleusercontent.com", "vercel.com"],
+  },
+
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
     "@acme/api",
