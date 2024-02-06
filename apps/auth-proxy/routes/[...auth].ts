@@ -16,7 +16,11 @@ export default eventHandler(async (event) =>
         clientSecret: process.env.AUTH_DISCORD_SECRET,
       }),
       Google({ clientId: process.env.AUTH_GOOGLE_CLIENT_ID, clientSecret: process.env.AUTH_GOOGLE_CLIENT_SECRET }),
-      Instagram({ clientId: process.env.AUTH_INSTAGRAM_CLIENT_ID, clientSecret: process.env.AUTH_INSTAGRAM_CLIENT_SECRET }),
+      Instagram({
+        clientId: process.env.AUTH_INSTAGRAM_CLIENT_ID, clientSecret: process.env.AUTH_INSTAGRAM_CLIENT_SECRET, client: {
+          token_endpoint_auth_method: 'client_secret_post',
+        },
+      }),
       Facebook({ clientId: process.env.AUTH_FACEBOOK_CLIENT_ID, clientSecret: process.env.AUTH_FACEBOOK_CLIENT_SECRET })
     ],
   }),
