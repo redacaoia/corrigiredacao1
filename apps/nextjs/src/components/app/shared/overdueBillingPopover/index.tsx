@@ -31,7 +31,7 @@ export function OverdueBilling() {
             Sem a renovação da sua assinatura,você poderá não apenas o acesso
             mas tambem tudo qu contruiu aqui!
             <div className="">
-              <Image src="/sad-face.png" alt="sad-face" />
+              <Image src="/sad-face.png" alt="sad-face" width={24}  height={24}/>
               <div>
                 <h2>sua assinatura venceu ontem</h2>
                 <span>01/06/23</span>
