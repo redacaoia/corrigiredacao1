@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,20 +16,45 @@ export function OverdueBilling() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline">Show Dialog</Button>
+        <Button className="" variant="outline">
+          Show Dialog
+        </Button>
       </AlertDialogTrigger>
-      
+
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>
+            Você está prestes a <strong>perder</strong> os benefícios!
+          </AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            <strong>Não deixe sua jornada para o sucesso estagnar.</strong>
+            Sem a renovação da sua assinatura,você poderá não apenas o acesso
+            mas tambem tudo qu contruiu aqui!
+            <div className="">
+              <Image src="/sad-face.png" alt="sad-face" />
+              <div>
+                <h2>sua assinatura venceu ontem</h2>
+                <span>01/06/23</span>
+              </div>
+              <div>
+                <span>6</span>
+                <div>
+                  <h2>dias restantes para encerrar</h2>
+                  <span>06/06/2023</span>
+                </div>
+              </div>
+            </div>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <div className="m-auto flex flex-col items-center justify-center gap-4">
+            <AlertDialogAction className="h-11 rounded-full px-8">
+              Renovar assinatura
+            </AlertDialogAction>
+            <AlertDialogCancel className="border-transparent">
+              Decidir depois
+            </AlertDialogCancel>
+          </div>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -28,3 +28,9 @@
 
 
 }
+
+
+
+typebot-bubble::part(button) {
+  bottom: 90px;
+}

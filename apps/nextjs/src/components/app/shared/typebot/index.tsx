@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Bubble } from "@typebot.io/nextjs";
 
@@ -10,7 +10,7 @@ export function Typebot() {
         autoShowDelay: 10000,
         avatarUrl: "https://github.com/WalysonMoura.png",
       }}
-      theme={{ button: { backgroundColor: "#0042DA" } }}
+      theme={{ button: { backgroundColor: "#0042DA", size: "medium" } }}
       typebot={undefined}
     />
   );
