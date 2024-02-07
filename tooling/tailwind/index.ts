@@ -4,6 +4,9 @@ import animate from "tailwindcss-animate";
 export default {
   darkMode: ["class"],
   content: ["src/**/*.{ts,tsx}"],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     container: {
       center: true,
@@ -12,6 +15,7 @@ export default {
         "2xl": "1400px",
       },
     },
+    
     extend: {
       colors: {
         blue1: "#0157C8",
@@ -31,7 +35,7 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background2: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -79,13 +83,13 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        
+
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
         bellRing: {
-         
+
           " 15%": {
             transform: "rotateZ(10deg)",
           },
@@ -104,6 +108,41 @@ export default {
           "75%": {
             transform: "rotateZ(2deg)",
           },
+        },
+        "fade-up": {
+          "0%": {
+            opacity: '0',
+            transform: "translateY(10px)",
+          },
+          "80%": {
+            opacity: '0.6',
+          },
+          "100%": {
+            opacity: '1',
+            transform: "translateY(0px)",
+          },
+        },
+        "fade-down": {
+          "0%": {
+            opacity: '0',
+            transform: "translateY(-10px)",
+          },
+          "80%": {
+            opacity:' 0.6',
+          },
+          "100%": {
+            opacity: '1',
+            transform: "translateY(0px)",
+          },
+        },
+         // Tooltip
+         "slide-up-fade": {
+          "0%": { opacity: 0, transform: "translateY(6px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        "slide-down-fade": {
+          "0%": { opacity: 0, transform: "translateY(-6px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
       animation: {
