@@ -30,14 +30,14 @@ export function OverdueBilling() {
             <strong>Não deixe sua jornada para o sucesso estagnar.</strong>
             Sem a renovação da sua assinatura,você poderá não apenas o acesso
             mas tambem tudo qu contruiu aqui!
-            <div className="">
+            <div className="flex items-center gap-2 bg-sky-600/100">
               <Image src="/sad-face.png" alt="sad-face" width={24}  height={24}/>
               <div>
                 <h2>sua assinatura venceu ontem</h2>
                 <span>01/06/23</span>
               </div>
               <div>
-                <span>6</span>
+                <span className="font-extrabold text">6</span>
                 <div>
                   <h2>dias restantes para encerrar</h2>
                   <span>06/06/2023</span>
