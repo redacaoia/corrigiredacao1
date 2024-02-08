@@ -1,7 +1,7 @@
 import { BottomMenu } from "@/components/app/shared/BottomMenu";
 
 import { AppHeader } from "~/components/app/shared/appHeader";
-import { Typebot } from "~/components/app/shared/typebot";
+//import { Typebot } from "~/components/app/shared/typebot";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export default async function AppLayout({ children }: AuthLayoutProps) {
           {children}
         </div>
       </main>
-      <Typebot />
+     {/*  <Typebot /> */}
       <BottomMenu />
     </>
   );
