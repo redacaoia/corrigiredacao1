@@ -24,7 +24,7 @@ export function OverdueBilling() {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Você está prestes a{" "}
+            Você está prestes a
             <strong className="underline-offset-2">perder</strong> os
             benefícios!
           </AlertDialogTitle>
@@ -32,18 +32,18 @@ export function OverdueBilling() {
             <strong>Não deixe sua jornada para o sucesso estagnar.</strong>
             Sem a renovação da sua assinatura,você poderá não apenas o acesso
             mas tambem tudo qu contruiu aqui!
-            <div className="flex items-center gap-2 bg-gradient-to-br  from-indigo-50 via-white to-cyan-100 py-32">
+            <div className="flex items-center gap-2 bg-gradient-to-br  from-indigo-50 via-white to-cyan-100 p-5">
               <Image
                 src="/emojis/sad-face.png"
                 alt="sad-face"
-                width={24}
-                height={24}
+                width={35}
+                height={35}
               />
               <div>
                 <h2 className="font-bold">sua assinatura venceu ontem</h2>
                 <span>01/06/23</span>
               </div>
-              <div className="text-red-600/100">
+              <div className="flex items-center gap-2 text-red-600/100">
                 <span className="text-5xl font-extrabold">6</span>
                 <div>
                   <h2 className="font-bold">dias restantes para encerrar</h2>
