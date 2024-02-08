@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import {
   AlertDialog,
@@ -31,15 +33,15 @@ export function OverdueBilling() {
             Sem a renovação da sua assinatura,você poderá não apenas o acesso
             mas tambem tudo qu contruiu aqui!
             <div className="flex items-center gap-2 bg-gradient-to-br  from-indigo-50 via-white to-cyan-100 py-32">
-              <Image src="/sad-face.png" alt="sad-face" width={24}  height={24}/>
+              <Image src="/emojis/sad-face.png" alt="sad-face" width={24}  height={24}/>
               <div>
-                <h2>sua assinatura venceu ontem</h2>
+                <h2 className="font-bold">sua assinatura venceu ontem</h2>
                 <span>01/06/23</span>
               </div>
-              <div className="">
-                <span className="font-extrabold text">6</span>
+              <div className="text-red-600/100">
+                <span className="font-extrabold text-5xl">6</span>
                 <div>
-                  <h2>dias restantes para encerrar</h2>
+                  <h2 className="font-bold">dias restantes para encerrar</h2>
                   <span>06/06/2023</span>
                 </div>
               </div>
