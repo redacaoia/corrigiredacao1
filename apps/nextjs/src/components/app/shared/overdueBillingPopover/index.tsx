@@ -1,4 +1,3 @@
-'use client'
 
 import Image from "next/image";
 import {
@@ -26,7 +25,7 @@ export function OverdueBilling() {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Você está prestes a <strong>perder</strong> os benefícios!
+            Você está prestes a <strong className="underline-offset-2">perder</strong> os benefícios!
           </AlertDialogTitle>
           <AlertDialogDescription>
             <strong>Não deixe sua jornada para o sucesso estagnar.</strong>
