@@ -24,7 +24,7 @@ export function OverdueBilling() {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Você está prestes a
+            Você está prestes a 
             <strong className="underline-offset-2">perder</strong> os
             benefícios!
           </AlertDialogTitle>
