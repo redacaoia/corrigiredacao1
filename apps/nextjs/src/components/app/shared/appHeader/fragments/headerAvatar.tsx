@@ -1,6 +1,6 @@
 //import { Session } from "next-auth";
 
-import { Profile } from "@/components/app/shared/profile/";
+import { UserDropdown } from "~/components/app/shared/userDropdown";
 
 export function HeaderAvatar(/* { session }: { session: Session | null } */) {
   /* const { email, image } = session?.user || {};
@@ -8,5 +8,5 @@ export function HeaderAvatar(/* { session }: { session: Session | null } */) {
   if (!email) return null;
  */
 
-  return <Profile />;
+  return <UserDropdown />;
 }

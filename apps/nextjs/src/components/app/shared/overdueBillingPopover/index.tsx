@@ -1,4 +1,3 @@
-'use client'
 
 import Image from "next/image";
 import {
@@ -34,7 +33,7 @@ export function OverdueBilling() {
             <strong>Não deixe sua jornada para o sucesso estagnar.</strong>
             Sem a renovação da sua assinatura,você poderá não apenas o acesso
             mas tambem tudo qu contruiu aqui!
-            <div className="flex items-center gap-6  bg-gradient-to-br  from-white via-indigo-50 to-white  p-5 sm:rounded-lg rounded-lg">
+            <div className="flex items-center gap-6  rounded-lg  bg-gradient-to-br from-white via-indigo-50  to-white p-5 ">
               {/* bg-gradient-to-br  from-indigo-50 via-cyan-100 to-indigo-50 */}
               <Image
                 src="/emojis/sad-face.png"
