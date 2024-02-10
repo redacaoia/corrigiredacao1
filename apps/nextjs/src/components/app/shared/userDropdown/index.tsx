@@ -47,7 +47,7 @@ export function UserDropdown({ className, ...props }: CardProps) {
       <PopoverTrigger asChild>
         <Avatar>
           {/*  <UserButton afterSignOutUrl="/" /> */}
-         {/*  <AvatarImage src={imageProfile} alt="" /> */}
+          <AvatarImage src={imageProfile} alt="" />
           <AvatarFallback>
             <FiUser size={24} />
           </AvatarFallback>
