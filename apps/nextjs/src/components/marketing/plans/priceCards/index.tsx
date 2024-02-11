@@ -37,7 +37,7 @@ export function PriceCards() {
               <span className="font-medium">De</span>
               <span className="flex ">
                 <span className="text-start">R$</span>
-                <span className="text-3xl font-bold line-through ">15,99</span>
+                <span className="text-5xl font-bold line-through ">15,99</span>
                 <span className="mt-2">/mês</span>
               </span>
             </div>
