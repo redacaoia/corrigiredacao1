@@ -55,7 +55,17 @@ export type DashboardConfig = {
 export type SubscriptionPlan = {
     name: string
     description: string
+
     stripePriceId: string
+}
+
+export type AssessmentsDataPros = {
+    videoUrl: string
+    name: string
+    rating: number,
+    comment: string
+    description: string
+
 }
 
 export type UserSubscriptionPlan = SubscriptionPlan &

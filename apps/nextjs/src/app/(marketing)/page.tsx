@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { Assessments } from "~/components/marketing/home/assessments";
+
 /* 
 import { api } from "~/trpc/server";
  */
@@ -57,8 +59,9 @@ export default async function HomePage() {
           {/*  <LeadCaptureForm /> */}
         </div>
         <p className="caption text-slate-11">No credit card required</p>
-       
       </div>
+
+      <Assessments />
     </>
   );
 }

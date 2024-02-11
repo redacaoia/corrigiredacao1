@@ -47,6 +47,7 @@
     "clsx": "^2.1.0",
     "concurrently": "^8.2.2",
     "date-fns": "^3.3.0",
+    "embla-carousel-autoplay": "8.0.0-rc22",
     "embla-carousel-react": "8.0.0-rc19",
     "focus-trap-react": "^10.2.3",
     "framer-motion": "^10.18.0",
