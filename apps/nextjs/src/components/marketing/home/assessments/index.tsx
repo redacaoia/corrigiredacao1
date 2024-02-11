@@ -18,17 +18,17 @@ export function Assessments() {
   return (
     <section>
       <CarouselContainer>
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ml-1 ">
           {AssessmentsData.map((assessment, index) => (
             <CarouselItem
               key={index}
               className=" pl-1 md:basis-1/2 lg:basis-1/3"
             >
-              <CardContent
+              <div
                 key={index}
-                className="relative  flex ite gap-2"
+                className="relative   flex items-center justify-center gap-2"
               >
-                <div className="  items-center justify-center rounded-sm">
+                <div className="rounded-sm">
                   <Image
                     src="/video.png"
                     alt=""
@@ -38,21 +38,23 @@ export function Assessments() {
                     className="rounded-sm "
                   />
                 </div>
-                <div className="">
-                  <Image
-                    src="/emojis/aspas.png"
-                    alt=""
-                    width={55}
-                    height={55}
-                  />
+                <div className="flex ">
+                  <div className="">
+                    <Image
+                      src="/emojis/aspas.png"
+                      alt=""
+                      width={250}
+                      height={250}
+                    />
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <h3>{assessment.name}</h3>
+                    <RatingStars rating={assessment.rating} />
+                    <h2>{assessment.comment}</h2>
+                    <p>{assessment.description}</p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-start">
-                  <h3>{assessment.name}</h3>
-                  <RatingStars rating={assessment.rating} />
-                  <h2>{assessment.comment}</h2>
-                  <p>{assessment.description}</p>
-                </div>
-              </CardContent>
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
