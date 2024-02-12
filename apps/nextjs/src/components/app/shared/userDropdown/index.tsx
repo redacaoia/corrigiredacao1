@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 /* import { UserButton } from "@clerk/nextjs"; */
 import {
   DropdownMenu,
@@ -32,6 +33,7 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
+import { FaCrown, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { MdNotificationsNone } from "react-icons/md";
 
@@ -70,7 +72,6 @@ const notifications = [
 ];
 
 type CardProps = React.ComponentProps<typeof Card>;
-
 
 /* 
 export function UserhDropdownt({ className, ...props }: CardProps) {
@@ -139,7 +140,6 @@ export function UserhDropdownt({ className, ...props }: CardProps) {
 }
 
  */
-
 
 export function UserDropdown({ className, ...props }: CardProps) {
   const imageProfile = CreateAvatarProfile();
@@ -211,11 +211,11 @@ export function UserDropdown({ className, ...props }: CardProps) {
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
-          <DropdownMenuItem>
+          {/* <DropdownMenuItem>
             <Plus className="mr-2 h-4 w-4" />
             <span>New Team</span>
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
@@ -225,23 +225,24 @@ export function UserDropdown({ className, ...props }: CardProps) {
           <span>GitHub</span>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <LifeBuoy className="mr-2 h-4 w-4" />
-          <span>Support</span>
+          <FaWhatsapp className="mr-2 h-4 w-4" />
+          <LifeBuoy />
+          <span>Precisa de ajuda?</span>
         </DropdownMenuItem>
 
-        <DropdownMenuItem disabled>
-        <LogOut className="mr-2 h-4 w-4" />
+        <DropdownMenuItem>
+          <LogOut className="mr-2 h-4 w-4" />
           <span>Sair</span>
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-
-         
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuItem>
-        <Cloud className="mr-2 h-4 w-4" />
-          <span>API</span>
+          <FaCrown className="mr-2 h-4 w-4" />
+          <span>
+            Atualizar para <strong> Pro</strong>
+          </span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
