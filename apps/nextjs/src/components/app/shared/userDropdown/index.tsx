@@ -71,7 +71,7 @@ const notifications = [
 
 type CardProps = React.ComponentProps<typeof Card>;
 
-export function UserDropdownt({ className, ...props }: CardProps) {
+export function UserhDropdownt({ className, ...props }: CardProps) {
   const imageProfile = CreateAvatarProfile();
 
   return (
@@ -173,7 +173,9 @@ export function UserDropdown({ className, ...props }: CardProps) {
             <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
+
         <DropdownMenuSeparator />
+
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <Users className="mr-2 h-4 w-4" />
@@ -208,7 +210,9 @@ export function UserDropdown({ className, ...props }: CardProps) {
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
+
         <DropdownMenuSeparator />
+
         <DropdownMenuItem>
           <Github className="mr-2 h-4 w-4" />
           <span>GitHub</span>
