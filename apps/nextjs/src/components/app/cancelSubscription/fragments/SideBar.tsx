@@ -1,3 +1,4 @@
+'use client'
 import { RoughNotation } from "react-rough-notation";
 
 type NavProps = {
