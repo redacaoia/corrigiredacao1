@@ -17,6 +17,7 @@ import { UserVideo } from "./uservideo";
 
 export function Assessments() {
   return (
+    //grid grid-cols-1 gap-16  px-5  md:grid-cols-3 md:gap-4 md:px-10
     <section className="">
       <CarouselContainer>
       <CarouselContent className="-ml-1">
@@ -55,7 +56,10 @@ export function Assessments() {
         ))}
       </CarouselContent>
 
+      <CarouselPrevious />
+      <CarouselNext />
       </CarouselContainer>
+      
       {/*  <CarouselContainer>
         <CarouselContent className="-ml-1 ">
           {AssessmentsData.map((assessment, index) => (

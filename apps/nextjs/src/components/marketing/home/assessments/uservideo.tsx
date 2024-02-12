@@ -42,7 +42,7 @@ export function UserVideo() {
           <div className="grid grid-cols-4 items-center gap-4"></div>
           <div className="grid grid-cols-4 items-center gap-4"></div>
         </div> */}
-        <DialogFooter>
+        <DialogFooter className="flex">
           <Button type="submit">Save changes</Button>
         </DialogFooter>
       </DialogContent>
