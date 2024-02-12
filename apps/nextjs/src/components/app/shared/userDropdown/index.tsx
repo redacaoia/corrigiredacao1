@@ -170,16 +170,6 @@ export function UserDropdown({ className, ...props }: CardProps) {
             <span>Baixe o App</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem>
-            <FaWhatsapp className="mr-2 h-4 w-4" />
-            <span>Precisa de ajuda?</span>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <LogOut className="mr-2 h-4 w-4" />
-            <span>Sair</span>
-          </DropdownMenuItem>
-
           {/* <DropdownMenuItem>
             <Settings className="mr-2 h-4 w-4" />
             <span>Configurações</span>
@@ -230,6 +220,14 @@ export function UserDropdown({ className, ...props }: CardProps) {
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <LogOut className="mr-2 h-4 w-4" />
+          <span>Sair</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <FaWhatsapp className="mr-2 h-4 w-4" />
+          <span>Precisa de ajuda?</span>
+        </DropdownMenuItem>
 
         <DropdownMenuItem>
           <CreditCard className="mr-2 h-4 w-4" />
