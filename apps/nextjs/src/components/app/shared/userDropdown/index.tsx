@@ -1,3 +1,4 @@
+'use client'
 /* import { UserButton } from "@clerk/nextjs"; */
 import {
   DropdownMenu,
@@ -181,7 +182,7 @@ export function UserDropdown({ className, ...props }: CardProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <UserPlus className="mr-2 h-4 w-4" />
-              <span>Invite users</span>
+              <span>Convide um amigo</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
