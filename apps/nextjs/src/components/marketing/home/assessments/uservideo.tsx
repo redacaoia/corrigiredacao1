@@ -10,11 +10,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import ReactPlayer from "react-player";
-
 export function UserVideo() {
-  let videosrc = "/videos/next.mp4";
-
+  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -28,17 +25,13 @@ export function UserVideo() {
         />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-        <ReactPlayer
-          width="500px"
-          height="400px"
-          url={videosrc}
-          controls={true}
-          // light is usefull incase of dark mode
-          light={false}
-          // picture in picture
-          pip={true}
-        />
-        <source src={videosrc} type="video/mp4" />
+       
+       {/*  <video width="320" height="240" controls preload="none">
+      <source src="/videos/video.mp4" type="video/mp4" />
+      
+      Your browser does not support the video tag.
+    </video> */}
+        
         {/*  <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>

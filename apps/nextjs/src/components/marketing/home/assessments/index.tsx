@@ -24,7 +24,7 @@ export function Assessments() {
           className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl md:gap-20"
         >
           <div className="col-span-2  rounded-sm">
-           {/*  <UserVideo/> */}
+            <UserVideo/>
           </div>
 
           <div className="col-span-3 flex gap-4 ">
