@@ -16,32 +16,39 @@ import RatingStars from "./ratingStars";
 
 export function Assessments() {
   return (
-    <section className="grid grid-cols-1 gap-4  px-5  md:grid-cols-2 md:gap-4 md:px-10">
+    <section className="grid grid-cols-1 gap-16  px-5  md:grid-cols-2 md:gap-4 md:px-10">
       {AssessmentsData.map((assessment, index) => (
         <Card
           key={index}
-          className="relative  grid grid-cols-5 gap-4 p-5"
+          className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl"
         >
-          <div className="rounded-sm col-span-2">
+          <div className="col-span-2   rounded-sm">
             <Image
               src="/video.png"
               alt=""
               quality={100}
-              width={455}
+              width={55}
               height={55}
-              className="rounded-sm "
+              className="absolute -top-4 h-full w-40 rounded-sm"
             />
           </div>
 
-          <div className="flex gap-4 col-span-3">
-            <div className="pt-6">
-              <Image src="/emojis/aspas.png" alt="" width={250} height={250} />
+          <div className="col-span-3 flex gap-4 ">
+            <div className="h-8 w-24 mt-14">
+              <Image
+                src="/emojis/aspas.png"
+                alt=""
+                width={55}
+                height={55}
+                className="h-full w-full"
+              />
             </div>
-            <div className="flex flex-col items-start">
-              <h3>{assessment.name}</h3>
+
+            <div className="flex flex-col items-start gap-2 ">
+              <h3 className="uppercase">{assessment.name}</h3>
               <RatingStars rating={assessment.rating} />
-              <h2>{assessment.comment}</h2>
-              <p>{assessment.description}</p>
+              <h2 className=" font-semibold">{assessment.comment}</h2>
+              <p className="text-xs">{assessment.description}</p>
             </div>
           </div>
         </Card>
