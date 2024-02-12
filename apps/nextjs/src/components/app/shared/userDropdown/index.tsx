@@ -73,8 +73,10 @@ const notifications = [
   },
 ];
 
-type CardProps = React.ComponentProps<typeof Card>;
-
+//type CardProps = React.ComponentProps<typeof Card>;
+interface Props {
+  username: string;
+}
 /* 
 export function UserhDropdownt({ className, ...props }: CardProps) {
   const imageProfile = CreateAvatarProfile();
@@ -143,7 +145,7 @@ export function UserhDropdownt({ className, ...props }: CardProps) {
 
  */
 
-export function UserDropdown({ className, ...props }: CardProps) {
+export function UserDropdown({ username }: Props) {
   const imageProfile = CreateAvatarProfile();
 
   return (
@@ -157,8 +159,8 @@ export function UserDropdown({ className, ...props }: CardProps) {
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 ml-4">
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuContent className="ml-4 w-56">
+        <DropdownMenuLabel>{username}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
@@ -192,7 +194,7 @@ export function UserDropdown({ className, ...props }: CardProps) {
                   <FaWhatsapp className="mr-2 h-4 w-4" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
-              {/*   <DropdownMenuItem>
+                {/*   <DropdownMenuItem>
                   <FaInstagram className="mr-2 h-4 w-4" />
                   <span>Message</span>
                 </DropdownMenuItem> */}
