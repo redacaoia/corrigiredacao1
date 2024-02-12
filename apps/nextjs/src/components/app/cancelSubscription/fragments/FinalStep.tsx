@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Separator } from "@/components/ui/separator";
 
 import FormWrapper from "./FormWrapper";
+import { FormItems } from "~/app/(app)/cancelar-assinatura/page";
 
 type StepProps = FormItems & {
   goTo: (index: number) => void;

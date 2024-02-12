@@ -36,13 +36,13 @@ const AddonsForm = ({ addOns, yearly, updateForm }: stepProps) => {
             } outline-none hover:border-[#77f6aa] focus:border-[#77f6aa] md:gap-5 md:p-5`}
             key={addOn.id}
           >
-            <Checkbox
+            {/* <Checkbox
               id="online-service"
               checked={addOn.checked}
               onCheckedChange={(checked) =>
                 handleCheckboxChange(addOn.id, checked as boolean)
               }
-            />
+            /> */}
             <div className="flex w-full items-center justify-between">
               <div className="flex flex-col">
                 <label

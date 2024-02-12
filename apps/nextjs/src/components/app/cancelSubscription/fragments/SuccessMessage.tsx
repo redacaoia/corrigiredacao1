@@ -2,7 +2,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { RefreshCcw } from "lucide-react";
 
-import successIcon from "../public/assets/success.png";
+import successIcon from "/emojis/sad-face.png";
+import { Button } from "@/components/ui/button";
 
 const successVariants = {
   hidden: {
@@ -29,7 +30,7 @@ const SuccessMessage = () => {
       animate="visible"
     >
       <Image
-        src={successIcon}
+        src="/emojis/sad-face.png"
         width="150"
         height="150"
         alt="Success Icon"

@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import FormWrapper from "./FormWrapper";
 
-import arcadeImg from "../public/assets/arcade.png";
-import advancedImg from "../public/assets/game-console.png";
-import proImg from "../public/assets/online-gaming.png";
+import arcadeImg from "/emojis/sad-face.png";
+import advancedImg from "/emojis/sad-face.png";
+import proImg from "/emojis/sad-face.png";
 import { FormItems } from "~/app/(app)/cancelar-assinatura/page";
 
 type stepProps = FormItems & {
@@ -50,7 +50,7 @@ const PlanForm = ({ updateForm, plan, yearly }: stepProps) => {
           value="arcade"
           className="border border-neutral-600 flex items-start gap-3 p-3 h-24 rounded-md aspect-square data-[state=on]:border-[#77f6aa] data-[state=on]:bg-neutral-900 focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
-          <Image src={arcadeImg} alt="arcade" width="40" height="40" />
+          <Image src="/emojis/sad-face.png" alt="arcade" width="40" height="40" />
           <div className="relative -top-1 flex flex-col items-start md:top-0">
             <p className="text-white font-semibold">Arcade</p>
             <p className="text-sm">{yearly ? "$90/yr" : "$9/mo"}</p>
@@ -63,7 +63,7 @@ const PlanForm = ({ updateForm, plan, yearly }: stepProps) => {
           value="advanced"
           className="border border-neutral-600 flex items-start gap-3 p-3 h-24 rounded-md aspect-square data-[state=on]:border-[#77f6aa] data-[state=on]:bg-neutral-900 focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
         >
-          <Image src={advancedImg} alt="advanced" width="40" height="40" />
+          <Image src="/emojis/sad-face.png" alt="advanced" width="40" height="40" />
           <div className="relative -top-1 flex flex-col items-start md:top-0">
             <p className="text-white font-semibold">Advanced</p>
             <p className="text-sm">{yearly ? "$120/yr" : "$12/mo"}</p>
@@ -77,7 +77,7 @@ const PlanForm = ({ updateForm, plan, yearly }: stepProps) => {
           className="border border-neutral-600 flex items-start gap-3 p-3 h-24 rounded-md aspect-square data-[state=on]:border-[#77f6aa] data-[state=on]:bg-neutral-900 focus:border-[#77f6aa] outline-none hover:border-[#77f6aa] md:h-44 md:w-[30%] md:flex-col md:justify-between md:gap-0"
           value="pro"
         >
-          <Image src={proImg} alt="pro" width="40" height="40" />
+          <Image src="/emojis/sad-face.png" alt="pro" width="40" height="40" />
           <div className="relative -top-1 flex flex-col items-start md:top-0">
             <p className="text-white font-semibold">Pro</p>
             <p className="text-sm">{yearly ? "$150/yr" : "$15/mo"}</p>

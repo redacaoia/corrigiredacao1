@@ -1,15 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import AddonsForm from "@/components/AddonsForm";
-import FinalStep from "@/components/FinalStep";
-import PlanForm from "@/components/PlanForm";
-import SideBar from "@/components/SideBar";
-import SuccessMessage from "@/components/SuccessMessage";
 import { Button } from "@/components/ui/button";
-import UserInfoForm from "@/components/UserInfoForm";
 import { AnimatePresence } from "framer-motion";
-import { useMultiplestepForm } from "hooks/useMultiplestepForm";
+
+import AddonsForm from "~/components/app/cancelSubscription/fragments/AddonsForm";
+import FinalStep from "~/components/app/cancelSubscription/fragments/FinalStep";
+import PlanForm from "~/components/app/cancelSubscription/fragments/PlanForm";
+import SideBar from "~/components/app/cancelSubscription/fragments/SideBar";
+import SuccessMessage from "~/components/app/cancelSubscription/fragments/SuccessMessage";
+import UserInfoForm from "~/components/app/cancelSubscription/fragments/UserInfoForm";
+import { useMultiplestepForm } from "~/hooks/useMultiplestepForm";
 
 interface AddOn {
   id: number;
@@ -59,7 +60,7 @@ const initialValues: FormItems = {
   ],
 };
 
-export default function Home() {
+export default function CancelSubscription() {
   const [formData, setFormData] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const {
