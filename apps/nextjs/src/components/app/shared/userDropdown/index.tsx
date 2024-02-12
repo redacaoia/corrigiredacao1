@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import { FaCrown, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
+import { GiPresent } from "react-icons/gi";
 import { MdNotificationsNone, MdOutlineAppShortcut } from "react-icons/md";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
@@ -182,6 +183,7 @@ export function UserDropdown({ className, ...props }: CardProps) {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <UserPlus className="mr-2 h-4 w-4" />
+              <GiPresent  className="mr-2 h-4 w-4" />
               <span>Convide um amigo</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
