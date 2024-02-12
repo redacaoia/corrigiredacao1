@@ -33,10 +33,11 @@ import {
   UserPlus,
   Users,
 } from "lucide-react";
-import { FaCrown, FaWhatsapp } from "react-icons/fa";
+import { FaCrown, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { GiPresent } from "react-icons/gi";
 import { MdNotificationsNone, MdOutlineAppShortcut } from "react-icons/md";
+import { SlPresent } from "react-icons/sl";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
@@ -182,8 +183,8 @@ export function UserDropdown({ className, ...props }: CardProps) {
         <DropdownMenuGroup>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
+              <SlPresent className="mr-2 h-4 w-4" />
               <UserPlus className="mr-2 h-4 w-4" />
-              <GiPresent  className="mr-2 h-4 w-4" />
               <span>Convide um amigo</span>
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
@@ -192,7 +193,10 @@ export function UserDropdown({ className, ...props }: CardProps) {
                   <FaWhatsapp className="mr-2 h-4 w-4" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
-
+                <DropdownMenuItem>
+                  <FaInstagram className="mr-2 h-4 w-4" />
+                  <span>Message</span>
+                </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Mail className="mr-2 h-4 w-4" />
                   <span>Email</span>

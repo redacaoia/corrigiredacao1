@@ -43,7 +43,7 @@ export function BottomMenu() {
       /> */}
       <BottomMenuFragments.Icon
         href="/plus"
-        icon={LiaCrownSolid}
+        icon={FaCrown}
         iconActive={FaCrown}
       />
     </BottomMenuFragments.Root>
