@@ -35,7 +35,7 @@ import {
 } from "lucide-react";
 import { FaCrown, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
-import { MdNotificationsNone } from "react-icons/md";
+import { MdNotificationsNone, MdOutlineAppShortcut } from "react-icons/md";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
@@ -171,23 +171,14 @@ export function UserDropdown({ className, ...props }: CardProps) {
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Settings className="mr-2 h-4 w-4" />
-            <span>Settings</span>
+            <span>Configurações</span>
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Keyboard className="mr-2 h-4 w-4" />
-            <span>Keyboard shortcuts</span>
-            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Users className="mr-2 h-4 w-4" />
-            <span>Team</span>
-          </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <UserPlus className="mr-2 h-4 w-4" />
@@ -195,6 +186,11 @@ export function UserDropdown({ className, ...props }: CardProps) {
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
+                <DropdownMenuItem>
+                  <FaWhatsapp className="mr-2 h-4 w-4" />
+                  <span>Whatsapp</span>
+                </DropdownMenuItem>
+
                 <DropdownMenuItem>
                   <Mail className="mr-2 h-4 w-4" />
                   <span>Email</span>
@@ -206,7 +202,7 @@ export function UserDropdown({ className, ...props }: CardProps) {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <PlusCircle className="mr-2 h-4 w-4" />
-                  <span>More...</span>
+                  <span>Mais...</span>
                 </DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
@@ -221,19 +217,18 @@ export function UserDropdown({ className, ...props }: CardProps) {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem>
-          <Github className="mr-2 h-4 w-4" />
-          <span>GitHub</span>
+          <MdOutlineAppShortcut className="mr-2 h-4 w-4" />
+          <span>Baixe o App</span>
         </DropdownMenuItem>
+
         <DropdownMenuItem>
           <FaWhatsapp className="mr-2 h-4 w-4" />
-          <LifeBuoy />
           <span>Precisa de ajuda?</span>
         </DropdownMenuItem>
 
         <DropdownMenuItem>
           <LogOut className="mr-2 h-4 w-4" />
           <span>Sair</span>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
 
         <DropdownMenuSeparator />
