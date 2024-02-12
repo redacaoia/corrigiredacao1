@@ -71,6 +71,8 @@ const notifications = [
 
 type CardProps = React.ComponentProps<typeof Card>;
 
+
+/* 
 export function UserhDropdownt({ className, ...props }: CardProps) {
   const imageProfile = CreateAvatarProfile();
 
@@ -78,7 +80,9 @@ export function UserhDropdownt({ className, ...props }: CardProps) {
     <Popover>
       <PopoverTrigger asChild>
         <Avatar>
-          {/*  <UserButton afterSignOutUrl="/" /> */}
+          {
+          //  <UserButton afterSignOutUrl="/" /> 
+        }
           <AvatarImage src={imageProfile} alt="" />
           <AvatarFallback>
             <FiUser size={24} />
@@ -133,6 +137,9 @@ export function UserhDropdownt({ className, ...props }: CardProps) {
     </Popover>
   );
 }
+
+ */
+
 
 export function UserDropdown({ className, ...props }: CardProps) {
   const imageProfile = CreateAvatarProfile();
