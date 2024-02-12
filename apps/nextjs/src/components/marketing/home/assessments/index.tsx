@@ -13,6 +13,7 @@ import { Card, CardContent } from "~/components/ui/card";
 import { AssessmentsData } from "~/config/assessments";
 import { CarouselContainer } from "./carouselContainer";
 import RatingStars from "./ratingStars";
+import { UserVideo } from "./uservideo";
 
 export function Assessments() {
   return (
@@ -23,14 +24,7 @@ export function Assessments() {
           className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl md:gap-20"
         >
           <div className="col-span-2  rounded-sm">
-            <Image
-              src="/video.png"
-              alt=""
-              quality={100}
-              width={55}
-              height={55}
-              className="absolute -top-4 h-full w-40 rounded-sm"
-            />
+           {/*  <UserVideo/> */}
           </div>
 
           <div className="col-span-3 flex gap-4 ">
