@@ -16,13 +16,13 @@ import RatingStars from "./ratingStars";
 
 export function Assessments() {
   return (
-    <section className="grid grid-cols-1 gap-16  px-5  md:grid-cols-2 md:gap-4 md:px-10">
+    <section className="grid grid-cols-1 gap-16  px-5  md:grid-cols-3 md:gap-4 md:px-10">
       {AssessmentsData.map((assessment, index) => (
         <Card
           key={index}
-          className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl"
+          className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl md:gap-20"
         >
-          <div className="col-span-2   rounded-sm">
+          <div className="col-span-2  rounded-sm">
             <Image
               src="/video.png"
               alt=""
@@ -34,7 +34,7 @@ export function Assessments() {
           </div>
 
           <div className="col-span-3 flex gap-4 ">
-            <div className="h-8 w-24 mt-14">
+            <div className="mt-14 h-6 w-28  md:hidden">
               <Image
                 src="/emojis/aspas.png"
                 alt=""
