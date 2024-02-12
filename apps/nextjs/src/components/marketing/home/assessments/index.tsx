@@ -16,8 +16,38 @@ import RatingStars from "./ratingStars";
 
 export function Assessments() {
   return (
-    <section>
-      <CarouselContainer>
+    <section className="grid grid-cols-1 gap-4  px-5  md:grid-cols-2 md:gap-4 md:px-10">
+      {AssessmentsData.map((assessment, index) => (
+        <Card
+          key={index}
+          className="relative  grid grid-cols-5 gap-4 p-5"
+        >
+          <div className="rounded-sm col-span-2">
+            <Image
+              src="/video.png"
+              alt=""
+              quality={100}
+              width={455}
+              height={55}
+              className="rounded-sm "
+            />
+          </div>
+
+          <div className="flex gap-4 col-span-3">
+            <div className="pt-6">
+              <Image src="/emojis/aspas.png" alt="" width={250} height={250} />
+            </div>
+            <div className="flex flex-col items-start">
+              <h3>{assessment.name}</h3>
+              <RatingStars rating={assessment.rating} />
+              <h2>{assessment.comment}</h2>
+              <p>{assessment.description}</p>
+            </div>
+          </div>
+        </Card>
+      ))}
+
+      {/*  <CarouselContainer>
         <CarouselContent className="-ml-1 ">
           {AssessmentsData.map((assessment, index) => (
             <CarouselItem
@@ -58,7 +88,7 @@ export function Assessments() {
             </CarouselItem>
           ))}
         </CarouselContent>
-      </CarouselContainer>
+      </CarouselContainer> */}
     </section>
   );
 }
