@@ -194,18 +194,18 @@ export function UserDropdown({ username }: Props) {
                   <FaWhatsapp className="mr-2 h-4 w-4" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
-                {/*   <DropdownMenuItem>
+                  <DropdownMenuItem>
                   <FaInstagram className="mr-2 h-4 w-4" />
                   <span>Message</span>
-                </DropdownMenuItem> */}
+                </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Mail className="mr-2 h-4 w-4" />
                   <span>Email</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                {/* <DropdownMenuItem>
                   <MessageSquare className="mr-2 h-4 w-4" />
                   <span>Message</span>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <PlusCircle className="mr-2 h-4 w-4" />
