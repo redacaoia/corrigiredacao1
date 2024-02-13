@@ -151,10 +151,11 @@ export function UserDropdown({ username }: Props) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger asChild className="flex ite">
+        <IoIosArrowDown />
         <Avatar className="flex">
           {/*  <UserButton afterSignOutUrl="/" /> */}
-          <IoIosArrowDown />
+
           <AvatarImage src={imageProfile} alt="" />
           <AvatarFallback>
             <FiUser size={24} />
@@ -196,7 +197,7 @@ export function UserDropdown({ username }: Props) {
                   <FaWhatsapp className="mr-2 h-4 w-4" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
-                  <DropdownMenuItem>
+                <DropdownMenuItem>
                   <FaInstagram className="mr-2 h-4 w-4" />
                   <span>Instagram</span>
                 </DropdownMenuItem>

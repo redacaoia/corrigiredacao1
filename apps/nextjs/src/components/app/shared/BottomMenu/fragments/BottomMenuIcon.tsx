@@ -30,7 +30,9 @@ export function BottomMenuIcon({
       href={href}
       className="cursor-pointer rounded-full p-2 transition-all duration-300 hover:bg-slate-100 hover:transition-all hover:duration-300"
     >
-      {pathname === href && !imageUrl && !imageUrlActive ? (
+      {pathname === href ?? !imageUrl ?? !imageUrlActive ? (
+
+
         <IconActive size="35" color="#0157C8" />
       ) : (
         <Icon size="35" color="#222222" />
