@@ -7,10 +7,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 type BottomMenuIconProps = LinkProps & {
-  icon: ElementType;
-  iconActive: ElementType;
+  icon?: ElementType;
+  iconActive?: ElementType;
   color?: string;
   imageUrl?: string;
+  imageUrlActive?: string;
   href: string;
 };
 
@@ -19,6 +20,7 @@ export function BottomMenuIcon({
   color,
   href,
   imageUrl,
+  imageUrlActive,
   iconActive: IconActive,
 }: BottomMenuIconProps) {
   const pathname = usePathname();
@@ -34,11 +36,6 @@ export function BottomMenuIcon({
         <Icon size="35" color="#222222" />
       )}
 
-      {pathname === href && imageUrl ? (
-        <Image src="/icons/desempenho1.svg" className="text-blue1" alt="" />
-      ) : (
-        <Image src="/icons/desempenho.svg" className="text-primary" alt="" />
-      )}
     </Link>
   );
 }
