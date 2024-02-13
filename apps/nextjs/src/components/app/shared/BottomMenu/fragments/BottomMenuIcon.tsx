@@ -9,6 +9,7 @@ type BottomMenuIconProps = LinkProps & {
   icon: ElementType;
   iconActive: ElementType;
   color?: string;
+  imageUrl?: string
   href: string;
 };
 
@@ -16,6 +17,7 @@ export function BottomMenuIcon({
   icon: Icon,
   color,
   href,
+  imageUrl,
   iconActive: IconActive,
 }: BottomMenuIconProps) {
   const pathname = usePathname();
@@ -30,7 +32,9 @@ export function BottomMenuIcon({
       ) : (
         <Icon size="35" color="#222222" />
       )}
-      {/*  */}
+      {
+        
+      }
     </Link>
   );
 }

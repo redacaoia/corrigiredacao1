@@ -36,6 +36,7 @@ import {
 import { FaCrown, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { GiPresent } from "react-icons/gi";
+import { IoIosArrowDown } from "react-icons/io";
 import { MdNotificationsNone, MdOutlineAppShortcut } from "react-icons/md";
 import { SlPresent } from "react-icons/sl";
 
@@ -151,8 +152,9 @@ export function UserDropdown({ username }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Avatar>
+        <Avatar className="flex">
           {/*  <UserButton afterSignOutUrl="/" /> */}
+          <IoIosArrowDown />
           <AvatarImage src={imageProfile} alt="" />
           <AvatarFallback>
             <FiUser size={24} />
@@ -196,7 +198,7 @@ export function UserDropdown({ username }: Props) {
                 </DropdownMenuItem>
                   <DropdownMenuItem>
                   <FaInstagram className="mr-2 h-4 w-4" />
-                  <span>Message</span>
+                  <span>Instagram</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Mail className="mr-2 h-4 w-4" />
