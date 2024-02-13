@@ -3,7 +3,7 @@ import { MultiStepForm } from "@/components/app/cancelSubscription/multiStepFfor
 export default function CancelSubscription() {
   
   return (
-    <div>
+    <div className="sm:pt-20">
       <MultiStepForm/>
     </div>
   );

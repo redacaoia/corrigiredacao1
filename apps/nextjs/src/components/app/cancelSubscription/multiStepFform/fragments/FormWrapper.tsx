@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
@@ -37,10 +37,10 @@ const FormWrapper = ({ title, description, children }: FormWrapperProps) => {
       exit="exit"
     >
       <div className="flex flex-col gap-1">
-        <h2 className="text-xl font-semibold text-white md:text-2xl">
+        <h2 className="text-xl font-semibold text-primary md:text-2xl">
           {title}
         </h2>
-        <p className="text-sm text-neutral-300 md:text-base">{description}</p>
+        <p className="text-sm text-gray-700 md:text-base">{description}</p>
       </div>
       {children}
     </motion.div>

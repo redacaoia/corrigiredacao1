@@ -9,6 +9,7 @@ import { IoIosAddCircle } from "react-icons/io";
 import { LiaCrownSolid } from "react-icons/lia";
 
 import { BottomMenuFragments } from "./fragments";
+import { AddWriting } from "../addWriting";
 
 export function BottomMenu() {
   return (
@@ -29,7 +30,7 @@ export function BottomMenu() {
         icon={IoIosAddCircle}
         iconActive={IoIosAddCircle}
       />
-
+<AddWriting/>
      
        <BottomMenuFragments.Icon
         href="/explorar"

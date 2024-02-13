@@ -10,7 +10,7 @@ import FormWrapper from "./FormWrapper";
 import arcadeImg from "/emojis/sad-face.png";
 import advancedImg from "/emojis/sad-face.png";
 import proImg from "/emojis/sad-face.png";
-import { FormItems } from "~/app/(app)/cancelar-assinatura/page";
+import { FormItems } from "..";
 
 type stepProps = FormItems & {
   updateForm: (fieldToUpdate: Partial<FormItems>) => void;

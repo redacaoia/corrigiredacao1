@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import AddonsForm from "@/components/app/cancelSubscription/multiStepFform/fragments/AddonsForm";
 import FinalStep from "@/components/app/cancelSubscription/multiStepFform/fragments/FinalStep";
 import PlanForm from "@/components/app/cancelSubscription/multiStepFform/fragments/PlanForm";
 import SideBar from "@/components/app/cancelSubscription/multiStepFform/fragments/SideBar";
 import SuccessMessage from "@/components/app/cancelSubscription/multiStepFform/fragments/SuccessMessage";
 import UserInfoForm from "@/components/app/cancelSubscription/multiStepFform/fragments/UserInfoForm";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { AnimatePresence } from "framer-motion";
 
 import { useMultiplestepForm } from "~/hooks/useMultiplestepForm";
+import { Reason } from "./fragments/reason";
 
 interface AddOn {
   id: number;
@@ -39,21 +40,35 @@ const initialValues: FormItems = {
     {
       id: 1,
       checked: true,
-      title: "Online Service",
+      title: "Não preciso mais",
       subtitle: "Access to multiple games",
       price: 1,
     },
     {
       id: 2,
       checked: false,
-      title: "Large storage",
+      title: "Acho caro",
       subtitle: "Extra 1TB of cloud save",
       price: 2,
     },
     {
       id: 3,
       checked: false,
-      title: "Customizable Profile",
+      title: "Problemas técnicos",
+      subtitle: "Custom theme on your profile",
+      price: 2,
+    },
+    {
+      id: 4,
+      checked: false,
+      title: "Contratei um outro serviço",
+      subtitle: "Custom theme on your profile",
+      price: 2,
+    },
+    {
+      id: 5,
+      checked: false,
+      title: "Outro motivo",
       subtitle: "Custom theme on your profile",
       price: 2,
     },
@@ -131,10 +146,10 @@ export function MultiStepForm() {
 
   return (
     <>
-      <div
+      <Card
         className={`flex justify-between ${
           currentStepIndex === 1 ? "h-[600px] md:h-[500px]" : "h-[500px]"
-        } relative m-1 w-11/12 max-w-4xl rounded-lg border border-neutral-700 bg-[#262626] p-4`}
+        } relative m-1 w-11/12 max-w-4xl rounded-lg border bg-slate-50 p-4 `}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
@@ -168,11 +183,7 @@ export function MultiStepForm() {
                   <PlanForm key="step2" {...formData} updateForm={updateForm} />
                 )}
                 {currentStepIndex === 2 && (
-                  <AddonsForm
-                    key="step3"
-                    {...formData}
-                    updateForm={updateForm}
-                  />
+                  <Reason key="step3" {...formData} updateForm={updateForm} />
                 )}
                 {currentStepIndex === 3 && (
                   <FinalStep key="step4" {...formData} goTo={goTo} />
@@ -207,7 +218,7 @@ export function MultiStepForm() {
             </form>
           )}
         </main>
-      </div>
+      </Card>
     </>
   );
 }
