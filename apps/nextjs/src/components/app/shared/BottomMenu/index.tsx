@@ -1,7 +1,8 @@
 "use client";
 
 import { BiSolidUser, BiUser } from "react-icons/bi";
-import { FaCompass, FaCrown, FaRegCompass } from "react-icons/fa";
+import { FaCrown } from "react-icons/fa";
+import { FaCompass, FaRegCompass } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 import { GoHome, GoHomeFill } from "react-icons/go";
 import { IoIosAddCircle } from "react-icons/io";
@@ -17,25 +18,25 @@ export function BottomMenu() {
         icon={GoHome}
         iconActive={GoHomeFill}
       />
-      <BottomMenuFragments.Icon
+       <BottomMenuFragments.Icon
         href="/desempenho"
         icon={GiProgression}
         iconActive={GoHomeFill}
-        imageUrl="/icons/desempenho1.svg"
-        imageUrlActive="/icons/desempenho.svg"
       />
-
+     
       <BottomMenuFragments.Icon
         href="/temas"
         icon={IoIosAddCircle}
         iconActive={IoIosAddCircle}
       />
 
-      <BottomMenuFragments.Icon
+     
+       <BottomMenuFragments.Icon
         href="/explorar"
         icon={FaRegCompass}
         iconActive={FaCompass}
       />
+
 
       {/* <BottomMenuFragments.Icon
         href="/perfil"
