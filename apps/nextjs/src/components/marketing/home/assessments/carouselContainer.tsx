@@ -17,7 +17,7 @@ export function CarouselContainer({ children }: Props) {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full h-auto"
+      className="w-full h-auto py-20"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
