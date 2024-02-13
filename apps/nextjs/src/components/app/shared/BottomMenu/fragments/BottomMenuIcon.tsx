@@ -32,9 +32,7 @@ export function BottomMenuIcon({
       ) : (
         <Icon size="35" color="#222222" />
       )}
-      {
-        
-      }
+    
     </Link>
   );
 }
