@@ -151,7 +151,7 @@ export function UserDropdown({ username }: Props) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild className="flex ite">
+      <DropdownMenuTrigger asChild className="flex ">
         <IoIosArrowDown />
         <Avatar className="flex">
           {/*  <UserButton afterSignOutUrl="/" /> */}
