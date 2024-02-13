@@ -163,7 +163,7 @@ export function UserDropdown({ username }: Props) {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-4 w-56">
-        <DropdownMenuLabel>{username}</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-center">Redação IA</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
