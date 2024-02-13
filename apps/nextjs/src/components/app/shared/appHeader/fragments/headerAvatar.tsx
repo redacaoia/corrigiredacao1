@@ -1,6 +1,6 @@
 //import { Session } from "next-auth";
 
-import { UserDropdown } from "~/components/app/shared/userDropdown";
+import { UserDropdown } from "@/components/app/shared/appHeader/userDropdown";
 
 interface Props {
   username: string;

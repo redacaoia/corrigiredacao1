@@ -20,48 +20,46 @@ export function Assessments() {
     //grid grid-cols-1 gap-16  px-5  md:grid-cols-3 md:gap-4 md:px-10
     <section className="">
       <CarouselContainer>
-        <CarouselContent className="-ml-1 py-88">
-          {AssessmentsData.map((assessment, index) => (
-            <CarouselItem
-              key={index}
-              className="pl-1  md:basis-1/2 lg:basis-1/3"
-            >
-              <div className="p-1">
-                <Card
-                  key={index}
-                  className="relative grid max-h-72 grid-cols-5 gap-4 p-5 shadow-2xl md:gap-20"
-                >
-                  <div className="col-span-2  rounded-sm">
-                    <UserVideo />
+      <CarouselContent className="-ml-1 my-20">
+        {AssessmentsData.map((assessment, index) => (
+          <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card
+                key={index}
+                className="relative grid  h-72 grid-cols-5 gap-4 p-5 shadow-2xl md:gap-20"
+              >
+                <div className="col-span-2  rounded-sm">
+                  <UserVideo />
+                </div>
+
+                <div className="col-span-3 flex gap-4 ">
+                  <div className="mt-14 h-6 w-28  md:hidden">
+                    <Image
+                      src="/emojis/aspas.png"
+                      alt=""
+                      width={55}
+                      height={55}
+                      className="h-full w-full"
+                    />
                   </div>
 
-                  <div className="col-span-3 flex gap-4 ">
-                    <div className="mt-14 h-6 w-28  md:hidden">
-                      <Image
-                        src="/emojis/aspas.png"
-                        alt=""
-                        width={55}
-                        height={55}
-                        className="h-full w-full"
-                      />
-                    </div>
-
-                    <div className="flex flex-col items-start gap-2 ">
-                      <h3 className="uppercase">{assessment.name}</h3>
-                      <RatingStars rating={assessment.rating} />
-                      <h2 className=" font-semibold">{assessment.comment}</h2>
-                      <p className="text-xs">{assessment.description}</p>
-                    </div>
+                  <div className="flex flex-col items-start gap-2 ">
+                    <h3 className="uppercase">{assessment.name}</h3>
+                    <RatingStars rating={assessment.rating} />
+                    <h2 className=" font-semibold">{assessment.comment}</h2>
+                    <p className="text-xs">{assessment.description}</p>
                   </div>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-   
-        <CarouselNext />
+                </div>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+
+     {/*  <CarouselPrevious />
+      <CarouselNext /> */}
       </CarouselContainer>
-
+      
       {/*  <CarouselContainer>
         <CarouselContent className="-ml-1 ">
           {AssessmentsData.map((assessment, index) => (

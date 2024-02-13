@@ -16,9 +16,7 @@ export function AddWriting() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline" className="-top-4 ">
-          <IoIosAddCircle size="35" color="#0157C8" />
-        </Button>
+        <IoIosAddCircle size="55" color="#0157C8" className="-top-4 " />
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

@@ -9,7 +9,7 @@ import { IoIosAddCircle } from "react-icons/io";
 import { LiaCrownSolid } from "react-icons/lia";
 
 import { BottomMenuFragments } from "./fragments";
-import { AddWriting } from "../addWriting";
+import { AddWriting } from "./addWriting";
 
 export function BottomMenu() {
   return (

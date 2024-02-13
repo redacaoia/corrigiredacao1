@@ -10,15 +10,12 @@ interface Props {
 }
 
 export function CarouselContainer({ children }: Props) {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
-  );
+  const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full h-auto py-20"
-      onMouseEnter={plugin.current.stop}
+      className="h-auto w-full "
       onMouseLeave={plugin.current.reset}
     >
       {children}
