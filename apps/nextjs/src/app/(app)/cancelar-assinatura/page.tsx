@@ -130,76 +130,84 @@ export default function CancelSubscription() {
   };
 
   return (
-    <div
-      className={`flex justify-between ${
-        currentStepIndex === 1 ? "h-[600px] md:h-[500px]" : "h-[500px]"
-      } relative m-1 w-11/12 max-w-4xl rounded-lg border border-neutral-700 bg-[#262626] p-4`}
-    >
-      {!showSuccessMsg ? (
-        <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
-      ) : (
-        ""
-      )}
-      <main
-        className={`${showSuccessMsg ? "w-full" : "w-full md:mt-5 md:w-[65%]"}`}
+    <>
+      <div
+        className={`flex justify-between ${
+          currentStepIndex === 1 ? "h-[600px] md:h-[500px]" : "h-[500px]"
+        } relative m-1 w-11/12 max-w-4xl rounded-lg border border-neutral-700 bg-[#262626] p-4`}
       >
-        {showSuccessMsg ? (
-          <AnimatePresence mode="wait">
-            <SuccessMessage />
-          </AnimatePresence>
+        {!showSuccessMsg ? (
+          <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
         ) : (
-          <form
-            onSubmit={handleOnSubmit}
-            className="flex h-full w-full flex-col justify-between"
-          >
+          ""
+        )}
+        <main
+          className={`${
+            showSuccessMsg ? "w-full" : "w-full md:mt-5 md:w-[65%]"
+          }`}
+        >
+          {showSuccessMsg ? (
             <AnimatePresence mode="wait">
-              {currentStepIndex === 0 && (
-                <UserInfoForm
-                  key="step1"
-                  {...formData}
-                  updateForm={updateForm}
-                  errors={errors}
-                />
-              )}
-              {currentStepIndex === 1 && (
-                <PlanForm key="step2" {...formData} updateForm={updateForm} />
-              )}
-              {currentStepIndex === 2 && (
-                <AddonsForm key="step3" {...formData} updateForm={updateForm} />
-              )}
-              {currentStepIndex === 3 && (
-                <FinalStep key="step4" {...formData} goTo={goTo} />
-              )}
+              <SuccessMessage />
             </AnimatePresence>
-            <div className="flex w-full items-center justify-between">
-              <div className="">
-                <Button
-                  onClick={previousStep}
-                  type="button"
-                  variant="ghost"
-                  className={`${
-                    isFirstStep
-                      ? "invisible"
-                      : "visible p-0 text-neutral-200 hover:text-white"
-                  }`}
-                >
-                  Go Back
-                </Button>
-              </div>
-              <div className="flex items-center">
-                <div className="after:shadow-highlight relative after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-white/10 after:transition focus-within:after:shadow-[#77f6aa]">
+          ) : (
+            <form
+              onSubmit={handleOnSubmit}
+              className="flex h-full w-full flex-col justify-between"
+            >
+              <AnimatePresence mode="wait">
+                {currentStepIndex === 0 && (
+                  <UserInfoForm
+                    key="step1"
+                    {...formData}
+                    updateForm={updateForm}
+                    errors={errors}
+                  />
+                )}
+                {currentStepIndex === 1 && (
+                  <PlanForm key="step2" {...formData} updateForm={updateForm} />
+                )}
+                {currentStepIndex === 2 && (
+                  <AddonsForm
+                    key="step3"
+                    {...formData}
+                    updateForm={updateForm}
+                  />
+                )}
+                {currentStepIndex === 3 && (
+                  <FinalStep key="step4" {...formData} goTo={goTo} />
+                )}
+              </AnimatePresence>
+              <div className="flex w-full items-center justify-between">
+                <div className="">
                   <Button
-                    type="submit"
-                    className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-black/10 shadow-input hover:text-white"
+                    onClick={previousStep}
+                    type="button"
+                    variant="ghost"
+                    className={`${
+                      isFirstStep
+                        ? "invisible"
+                        : "visible p-0 text-neutral-200 hover:text-white"
+                    }`}
                   >
-                    {isLastStep ? "Confirm" : "Next Step"}
+                    Go Back
                   </Button>
                 </div>
+                <div className="flex items-center">
+                  <div className="after:shadow-highlight relative after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-white/10 after:transition focus-within:after:shadow-[#77f6aa]">
+                    <Button
+                      type="submit"
+                      className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-black/10 shadow-input hover:text-white"
+                    >
+                      {isLastStep ? "Confirm" : "Next Step"}
+                    </Button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </form>
-        )}
-      </main>
-    </div>
+            </form>
+          )}
+        </main>
+      </div>
+    </>
   );
 }
