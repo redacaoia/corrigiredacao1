@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import AddonsForm from "@/components/app/cancelSubscription/multiStepFform/fragments/AddonsForm";
+import FinalStep from "@/components/app/cancelSubscription/multiStepFform/fragments/FinalStep";
+import PlanForm from "@/components/app/cancelSubscription/multiStepFform/fragments/PlanForm";
+import SideBar from "@/components/app/cancelSubscription/multiStepFform/fragments/SideBar";
+import SuccessMessage from "@/components/app/cancelSubscription/multiStepFform/fragments/SuccessMessage";
+import UserInfoForm from "@/components/app/cancelSubscription/multiStepFform/fragments/UserInfoForm";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence } from "framer-motion";
 
-import AddonsForm from "~/components/app/cancelSubscription/fragments/AddonsForm";
-import FinalStep from "~/components/app/cancelSubscription/fragments/FinalStep";
-import PlanForm from "~/components/app/cancelSubscription/fragments/PlanForm";
-import SideBar from "~/components/app/cancelSubscription/fragments/SideBar";
-import SuccessMessage from "~/components/app/cancelSubscription/fragments/SuccessMessage";
-import UserInfoForm from "~/components/app/cancelSubscription/fragments/UserInfoForm";
 import { useMultiplestepForm } from "~/hooks/useMultiplestepForm";
 
 interface AddOn {
@@ -60,7 +60,7 @@ const initialValues: FormItems = {
   ],
 };
 
-export  function CancelSubscriptionForm() {
+export function MultiStepForm() {
   const [formData, setFormData] = useState(initialValues);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const {
@@ -197,7 +197,7 @@ export  function CancelSubscriptionForm() {
                   <div className="after:shadow-highlight relative after:pointer-events-none after:absolute after:inset-px after:rounded-[11px] after:shadow-white/10 after:transition focus-within:after:shadow-[#77f6aa]">
                     <Button
                       type="submit"
-                      className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-black/10 shadow-input hover:text-white"
+                      className="relative rounded-xl border border-black/20 bg-neutral-900 text-neutral-200 shadow-input hover:text-white"
                     >
                       {isLastStep ? "Confirm" : "Next Step"}
                     </Button>
