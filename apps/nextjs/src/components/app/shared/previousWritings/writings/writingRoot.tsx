@@ -6,7 +6,7 @@ interface WritingRootProps {
 
 export function WritingRoot({ children }: WritingRootProps) {
   return (
-    <div className="animate-fade-up flex  items-center gap-6  bg-white p-2">
+    <div className="animate-fade-up flex  items-center gap-6 rounded-sm bg-white p-2">
       {children}
     </div>
   );

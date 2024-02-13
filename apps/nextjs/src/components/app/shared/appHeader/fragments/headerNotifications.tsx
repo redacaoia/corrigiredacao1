@@ -1,4 +1,4 @@
-import { Notifications } from "../../Notifications";
+import { Notifications } from "../Notifications";
 
 export function HeaderNotifications() {
   return <Notifications />;

@@ -1,3 +1,4 @@
+import { MultiStepForm } from "@/components/app/cancelSubscription/multiStepFform";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,9 +17,10 @@ export function AddWriting() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <IoIosAddCircle size="55" color="#0157C8" className="-top-4 " />
+        <IoIosAddCircle size="65" color="#0157C8" className="absolute -top-16" />
       </AlertDialogTrigger>
       <AlertDialogContent>
+      <MultiStepForm/>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>

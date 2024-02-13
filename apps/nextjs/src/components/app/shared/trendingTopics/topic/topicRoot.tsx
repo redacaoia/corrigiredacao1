@@ -6,7 +6,7 @@ interface PreviousWritingRootProps {
 
 export function TopicRoot({ children }: PreviousWritingRootProps) {
   return (
-    <div className="flex w-full items-center justify-between gap-8 bg-white p-2">
+    <div className="flex w-full items-center  rounded-sm justify-between gap-8 bg-white p-2">
       {children}
     </div>
   );

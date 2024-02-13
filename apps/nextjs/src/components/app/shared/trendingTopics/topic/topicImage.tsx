@@ -8,7 +8,7 @@ export function TopicImage({ imageUrl }:TopicImageProps) {
   return (
     <Image
       src={imageUrl}
-      className="rounded-md"
+      className="rounded-sm"
       alt="Precedent logo"
       width={200}
       height={200}
