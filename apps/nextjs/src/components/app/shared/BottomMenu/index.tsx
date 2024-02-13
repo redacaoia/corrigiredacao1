@@ -19,8 +19,8 @@ export function BottomMenu() {
       />
       <BottomMenuFragments.Icon
         href="/desempenho"
-        // icon={GiProgression}
-        //iconActive={GoHomeFill}
+        icon={GiProgression}
+        iconActive={GoHomeFill}
         imageUrl="/icons/desempenho1.svg"
         imageUrlActive="/icons/desempenho.svg"
       />
