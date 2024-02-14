@@ -148,8 +148,8 @@ export function MultiStepForm() {
     <>
       <Card
         className={`flex justify-between ${
-          currentStepIndex === 1 ? "h-[600px] md:h-[500px]" : "h-[500px]"
-        }  m-1 w-11/12 max-w-4xl rounded-lg border bg-slate-50 p-4 `}
+          currentStepIndex === 1 ? "w-full h-[600px] md:h-[500px]" : "w-full h-[500px]"
+        } relative m-1  rounded-lg border bg-slate-50 p-4 `}
       >
         {!showSuccessMsg ? (
           <SideBar currentStepIndex={currentStepIndex} goTo={goTo} />
