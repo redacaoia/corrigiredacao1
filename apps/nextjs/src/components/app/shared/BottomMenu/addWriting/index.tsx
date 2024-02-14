@@ -24,7 +24,7 @@ export function AddWriting() {
       <AlertDialogFooter>
           <AlertDialogCancel className="p-1 left-0"><IoIosClose size="40"/>Cancelar</AlertDialogCancel>
         </AlertDialogFooter>
-       {/*  <MultiStepForm/> */}
+        <MultiStepForm/>
       <div className="w-full h-full">
       <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
