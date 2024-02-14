@@ -20,7 +20,7 @@ export function AddWriting() {
         <IoIosAddCircle size="65" color="#0157C8" className="absolute -top-16" />
       </AlertDialogTrigger>
 
-      <AlertDialogContent className="w-full h-full max-w-full  max-h-full">
+      <AlertDialogContent className="w-full h-full md:max-w-[90%]  md:max-h-[90%] max-w-full  max-h-full">
       <AlertDialogFooter>
           <AlertDialogCancel className="p-1 left-0"><IoIosClose size="40"/>Cancelar</AlertDialogCancel>
         </AlertDialogFooter>
