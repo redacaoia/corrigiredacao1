@@ -12,26 +12,32 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { IoIosAddCircle } from "react-icons/io";
-
+import { IoIosClose } from "react-icons/io";
 export function AddWriting() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <IoIosAddCircle size="65" color="#0157C8" className="absolute -top-16" />
       </AlertDialogTrigger>
-      <AlertDialogContent>
-      <MultiStepForm/>
+
+      <AlertDialogContent className="w-full relative">
+      <AlertDialogFooter>
+          <AlertDialogCancel className="p-1 left-0"><IoIosClose size="40"/>Cancelar</AlertDialogCancel>
+        </AlertDialogFooter>
+        <MultiStepForm/>
+      
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
+          
             This action cannot be undone. This will permanently delete your
             account and remove your data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+
+       {/*  <AlertDialogFooter className="">
           <AlertDialogAction>Continue</AlertDialogAction>
-        </AlertDialogFooter>
+        </AlertDialogFooter> */}
       </AlertDialogContent>
     </AlertDialog>
   );
