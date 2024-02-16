@@ -1,15 +1,13 @@
 import type { Dispatch, SetStateAction } from "react";
 import { useCallback, useMemo, useState } from "react";
 import Image from "next/image";
+import LoadingDots from "@/components/marketing/shared/icons/loadingDots";
+//import { signIn } from "next-auth/react";
+
+import Modal from "@/components/marketing/shared/modal";
 import { FaFacebook, FaSpotify } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-
-
-import LoadingDots from "~/components/shared/icons/loadingDots";
-//import { signIn } from "next-auth/react";
-
-import Modal from "~/components/shared/modal";
 
 const SignInModal = ({
   showSignInModal,
@@ -79,7 +77,7 @@ const SignInModal = ({
               <LoadingDots color="#808080" />
             ) : (
               <>
-                <FaSpotify color="#1DB954"  className="h-7 w-7" />
+                <FaSpotify color="#1DB954" className="h-7 w-7" />
                 <p className="text-base">Entrar com Spotify</p>
               </>
             )}
@@ -101,7 +99,7 @@ const SignInModal = ({
               <LoadingDots color="#808080" />
             ) : (
               <>
-                <FaFacebook color="#006AFF"  className="h-7 w-7" />
+                <FaFacebook color="#006AFF" className="h-7 w-7" />
                 <p>Entrar com Facebook</p>
               </>
             )}
@@ -123,7 +121,7 @@ const SignInModal = ({
               <LoadingDots color="#808080" />
             ) : (
               <>
-                <FaXTwitter color="#14171A"  className="h-7 w-7" />
+                <FaXTwitter color="#14171A" className="h-7 w-7" />
                 <p className="">Entrar com Twitter {"(X)"}</p>
               </>
             )}

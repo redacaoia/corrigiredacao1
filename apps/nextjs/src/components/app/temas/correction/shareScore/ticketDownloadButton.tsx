@@ -1,11 +1,10 @@
-'use client'
-
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import LoadingDots from "@/components/marketing/shared/icons/loadingDots";
 import { FiDownload } from "react-icons/fi";
 
-import LoadingDots from "~/components/shared/icons/loadingDots";
 import { Button } from "~/components/ui/button";
 
 interface Props {
@@ -18,7 +17,7 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
   const [imgReady, setImgReady] = useState(false);
   const [loading, setLoading] = useState(false);
 
- // const downloadUrl = `/api/ticket-images/${name}`;
+  // const downloadUrl = `/api/ticket-images/${name}`;
   const downloadUrl = `api/dynamic-image?username=WalysonMoura`;
   const downloadLink = useRef<HTMLAnchorElement>();
 
@@ -43,7 +42,7 @@ export function TicketDownloadButton({ imageUrl, name, ticketScore }: Props) {
       <h4 className="text-center text-lg ">
         Baixe e compartilhe nos seus stories do instagram!
       </h4>
-    {/*   
+      {/*   
       <Link
         href={loading ? undefined : downloadUrl}
         onClick={(e) => {

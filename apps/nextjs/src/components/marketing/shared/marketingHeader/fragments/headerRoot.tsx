@@ -1,20 +1,14 @@
-"use client";
+import type { ReactNode } from "react";
+import useScroll from "@/hooks/useScroll";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useUser } from "@supabase/auth-helpers-react";
 
-import useScroll from "~/hooks/useScroll";
-import { useSignInModal } from "../marketingHeader/fragments/signInModal";
-import { DesktopMenubar } from "./desktopMenubar";
-import { MenuBarButton } from "./menuBarButton";
+interface PreviousWritingRootProps {
+  children: ReactNode;
+}
 
-export function Header(/* { session }: { session: Session | null } */) {
-  // const user = useUser();
-
-  const { SignInModal, setShowSignInModal } = useSignInModal();
+export function HeaderRoot({ children }: PreviousWritingRootProps) {
   const scrolled = useScroll(50);
-  const session = false;
+  const { SignInModal } = useSignInModal();
 
   return (
     <>
@@ -26,10 +20,10 @@ export function Header(/* { session }: { session: Session | null } */) {
             : "bg-white/0"
         } z-30 transition-all`}
       >
-        <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
-          <div className="flex items-center md:hidden">
+        {/*    <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
+          
             <MenuBarButton />
-          </div>
+         
 
           <Link href="/" className="font-display flex items-center text-2xl">
             <Image
@@ -42,9 +36,8 @@ export function Header(/* { session }: { session: Session | null } */) {
             <p>Redação IA</p>
           </Link>
 
-          <div className="hidden md:flex md:items-center">
-            <DesktopMenubar />
-          </div>
+          <DesktopMenubar />
+      
 
           <div>
             {session ? (
@@ -58,7 +51,7 @@ export function Header(/* { session }: { session: Session | null } */) {
               </button>
             )}
           </div>
-        </div>
+        </div> */}
       </header>
     </>
   );
