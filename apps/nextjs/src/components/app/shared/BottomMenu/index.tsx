@@ -9,6 +9,7 @@ import { LiaCrownSolid } from "react-icons/lia";
 
 import { AddWriting } from "./addWriting";
 import { BottomMenuFragments } from "./fragments";
+import { BsBarChart, BsBarChartFill } from "react-icons/bs";
 
 export function BottomMenu() {
   return (
@@ -20,8 +21,8 @@ export function BottomMenu() {
       />
       <BottomMenuFragments.Icon
         href="/desempenho"
-        icon={GiProgression}
-        iconActive={GoHomeFill}
+        icon={BsBarChart}
+        iconActive={BsBarChartFill}
       />
 
       {/* <BottomMenuFragments.Icon

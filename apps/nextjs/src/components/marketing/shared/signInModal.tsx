@@ -1,19 +1,15 @@
-import type {
-  Dispatch,
-  SetStateAction} from "react";
-import {
-  useCallback,
-  useMemo,
-  useState,
-} from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Image from "next/image";
+import { FaFacebook, FaSpotify } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
+
+import LoadingDots from "~/components/shared/icons/loadingDots";
 //import { signIn } from "next-auth/react";
 
-
 import Modal from "~/components/shared/modal";
-import LoadingDots from "~/components/shared/icons/loadingDots";
-import Google from "~/components/shared/icons/google";
 
 const SignInModal = ({
   showSignInModal,
@@ -40,7 +36,7 @@ const SignInModal = ({
           <h3 className="font-display text-2xl font-bold">Sign In</h3>
           <p className="text-sm text-gray-500">
             Isto é estritamente para fins de demonstração - apenas seu e-mail e
-            foto de perfil serão armazenados.{" "}
+            foto de perfil serão armazenados.
           </p>
         </div>
 
@@ -54,16 +50,81 @@ const SignInModal = ({
             } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
             onClick={() => {
               setSignInClicked(true);
-             // signIn("google");
+              // signIn("google");
             }}
           >
             {signInClicked ? (
               <LoadingDots color="#808080" />
             ) : (
               <>
-                <Google
-                 className="h-5 w-5" />
-                <p>Sign In with Google</p>
+                <FcGoogle className="h-7 w-7" />
+                <p className="tex">Entrar com Google</p>
+              </>
+            )}
+          </button>
+
+          <button
+            disabled={signInClicked}
+            className={`${
+              signInClicked
+                ? "cursor-not-allowed border-gray-200 bg-gray-100"
+                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
+            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+            onClick={() => {
+              setSignInClicked(true);
+              // signIn("google");
+            }}
+          >
+            {signInClicked ? (
+              <LoadingDots color="#808080" />
+            ) : (
+              <>
+                <FaSpotify color="#1DB954"  className="h-7 w-7" />
+                <p className="text-base">Entrar com Spotify</p>
+              </>
+            )}
+          </button>
+
+          <button
+            disabled={signInClicked}
+            className={`${
+              signInClicked
+                ? "cursor-not-allowed border-gray-200 bg-gray-100"
+                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
+            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+            onClick={() => {
+              setSignInClicked(true);
+              // signIn("google");
+            }}
+          >
+            {signInClicked ? (
+              <LoadingDots color="#808080" />
+            ) : (
+              <>
+                <FaFacebook color="#006AFF"  className="h-7 w-7" />
+                <p>Entrar com Facebook</p>
+              </>
+            )}
+          </button>
+
+          <button
+            disabled={signInClicked}
+            className={`${
+              signInClicked
+                ? "cursor-not-allowed border-gray-200 bg-gray-100"
+                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
+            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+            onClick={() => {
+              setSignInClicked(true);
+              // signIn("google");
+            }}
+          >
+            {signInClicked ? (
+              <LoadingDots color="#808080" />
+            ) : (
+              <>
+                <FaXTwitter color="#14171A"  className="h-7 w-7" />
+                <p className="">Entrar com Twitter {"(X)"}</p>
               </>
             )}
           </button>
