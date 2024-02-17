@@ -9,6 +9,8 @@ import { FaFacebook, FaSpotify } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
+import { SignInButton } from "./signInButton";
+
 const SignInModal = ({
   showSignInModal,
   setShowSignInModal,
@@ -60,72 +62,10 @@ const SignInModal = ({
               </>
             )}
           </button>
-
-          <button
-            disabled={signInClicked}
-            className={`${
-              signInClicked
-                ? "cursor-not-allowed border-gray-200 bg-gray-100"
-                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
-            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
-            onClick={() => {
-              setSignInClicked(true);
-              // signIn("google");
-            }}
-          >
-            {signInClicked ? (
-              <LoadingDots color="#808080" />
-            ) : (
-              <>
-                <FaSpotify color="#1DB954" className="h-7 w-7" />
-                <p className="text-base">Entrar com Spotify</p>
-              </>
-            )}
-          </button>
-
-          <button
-            disabled={signInClicked}
-            className={`${
-              signInClicked
-                ? "cursor-not-allowed border-gray-200 bg-gray-100"
-                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
-            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
-            onClick={() => {
-              setSignInClicked(true);
-              // signIn("google");
-            }}
-          >
-            {signInClicked ? (
-              <LoadingDots color="#808080" />
-            ) : (
-              <>
-                <FaFacebook color="#006AFF" className="h-7 w-7" />
-                <p>Entrar com Facebook</p>
-              </>
-            )}
-          </button>
-
-          <button
-            disabled={signInClicked}
-            className={`${
-              signInClicked
-                ? "cursor-not-allowed border-gray-200 bg-gray-100"
-                : "border border-gray-200 bg-white text-black hover:bg-gray-50"
-            } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
-            onClick={() => {
-              setSignInClicked(true);
-              // signIn("google");
-            }}
-          >
-            {signInClicked ? (
-              <LoadingDots color="#808080" />
-            ) : (
-              <>
-                <FaXTwitter color="#14171A" className="h-7 w-7" />
-                <p className="">Entrar com Twitter {"(X)"}</p>
-              </>
-            )}
-          </button>
+          <SignInButton provider="google" icon={FcGoogle} />
+          <SignInButton provider="spotify" icon={FaSpotify} color="#1DB954" />
+          <SignInButton provider="facebook" icon={FaFacebook} color="#006AFF" />
+          <SignInButton provider="twitter" icon={FaXTwitter} color="#14171A" />
         </div>
       </div>
     </Modal>

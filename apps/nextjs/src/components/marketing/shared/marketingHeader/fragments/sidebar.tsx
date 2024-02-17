@@ -4,8 +4,7 @@ import { usePathname } from "next/navigation";
 import { ImageIcon, LayoutDashboard, MessageSquare } from "lucide-react";
 
 import { cn } from "~/lib/utils";
-import { SignInButton } from "../../signInButton";
-import { SignUpButton } from "../../signUpButton";
+
 
 const routes = [
   {
@@ -58,8 +57,8 @@ export function Sidebar() {
               </div>
             </Link>
           ))}
-          <SignInButton className="w-full" />
-          <SignUpButton className="w-full" />
+         
+         
         </div>
       </div>
     </div>

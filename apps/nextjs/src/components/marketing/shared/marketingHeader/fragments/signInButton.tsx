@@ -1,31 +1,47 @@
 "use client";
 
+import type { Provider } from "@supabase/supabase-js";
 import type { ElementType } from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useSessionContext } from "@supabase/auth-helpers-react";
-import { FcGoogle } from "react-icons/fc";
+import { IconBaseProps, IconType } from "react-icons/lib";
 
-import LoadingDots from "../icons/loadingDots";
+import LoadingDots from "../../icons/loadingDots";
 
 type Props = {
   type?: "signin" | "signup";
-  provider: any;
-  icon: ElementType;
+  provider: Provider;
+  icon: IconType | ElementType;
+  color?: string;
 };
 
-export const ButtonSignIn: React.FC<Props> = ({
+export const SignInButton: React.FC<Props> = ({
   type,
   provider,
   icon: Icon,
+  color,
 }) => {
   const [signInClicked, setSignInClicked] = useState(false);
 
   const { supabaseClient } = useSessionContext();
 
   const handleSignIn = async () => {
+    let options = {};
+
+    // Verifica se o provedor é 'google' e adiciona as opções específicas
+    if (provider === "google") {
+      options = {
+        queryParams: {
+          access_type: "offline",
+          prompt: "consent",
+        },
+      };
+    }
+
     const { data, error } = await supabaseClient.auth.signInWithOAuth({
       provider: provider,
+      options: options,
     });
   };
 
@@ -48,7 +64,7 @@ export const ButtonSignIn: React.FC<Props> = ({
       ) : (
         <>
           <div className="flex gap-2">
-            <Icon className="w-4" />
+            <Icon color={color} className="w-4" />
             <p>
               {type === "signup"
                 ? `Criar com ${provider}`
