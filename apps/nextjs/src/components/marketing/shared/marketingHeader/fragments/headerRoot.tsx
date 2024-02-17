@@ -1,14 +1,19 @@
+import type { Session } from "@supabase/auth-helpers-nextjs";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import useScroll from "@/hooks/useScroll";
 
+import { useSignInModal } from "./signInModal";
 
 interface PreviousWritingRootProps {
   children: ReactNode;
+  session: Session | null;
 }
 
-export function HeaderRoot({ children }: PreviousWritingRootProps) {
+export function HeaderRoot({ children, session }: PreviousWritingRootProps) {
+  const { SignInModal, setShowSignInModal } = useSignInModal();
+
   const scrolled = useScroll(50);
-  const { SignInModal } = useSignInModal();
 
   return (
     <>
@@ -20,28 +25,16 @@ export function HeaderRoot({ children }: PreviousWritingRootProps) {
             : "bg-white/0"
         } z-30 transition-all`}
       >
-        {/*    <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
-          
-            <MenuBarButton />
-         
-
-          <Link href="/" className="font-display flex items-center text-2xl">
-            <Image
-              src="/book.png"
-              alt="Precedent logo"
-              width="30"
-              height="30"
-              className="mr-2 rounded-sm"
-            ></Image>
-            <p>Redação IA</p>
-          </Link>
-
-          <DesktopMenubar />
-      
-
+        <div className="mx-5 flex h-16 w-full max-w-screen-xl items-center justify-between">
+          {children}
           <div>
             {session ? (
-              <Link href="/home">Corrija sua redação</Link>
+              <Link
+                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+                href="/home"
+              >
+                Corrija sua redação
+              </Link>
             ) : (
               <button
                 className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
@@ -51,7 +44,7 @@ export function HeaderRoot({ children }: PreviousWritingRootProps) {
               </button>
             )}
           </div>
-        </div> */}
+        </div>
       </header>
     </>
   );

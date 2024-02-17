@@ -1,6 +1,12 @@
 
+import { DesktopMenubar } from "./desktopMenubar";
+import { HeaderContent } from "./headerContent";
+import { HeaderRoot } from "./headerRoot";
+import { MenuBarButton } from "./menuBarButton";
 
-export const marketingHeaderFragments = {
+export const HeaderFragments = {
   Root: HeaderRoot,
-  Icon: BottomMenuIcon,
+  Content: HeaderContent,
+  MenuBarButton: MenuBarButton,
+  DesktopMenuBar: DesktopMenubar,
 };
