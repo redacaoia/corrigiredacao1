@@ -62,10 +62,10 @@ const SignInModal = ({
               </>
             )}
           </button>
-          <SignInButton provider="google" icon={FcGoogle} />
+        {/*   <SignInButton provider="google" icon={FcGoogle} />
           <SignInButton provider="spotify" icon={FaSpotify} color="#1DB954" />
           <SignInButton provider="facebook" icon={FaFacebook} color="#006AFF" />
-          <SignInButton provider="twitter" icon={FaXTwitter} color="#14171A" />
+          <SignInButton provider="twitter" icon={FaXTwitter} color="#14171A" /> */}
         </div>
       </div>
     </Modal>
