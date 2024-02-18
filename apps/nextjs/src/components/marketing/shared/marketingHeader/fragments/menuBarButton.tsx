@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { RiMenu4Fill } from "react-icons/ri";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
 
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
 import { Sidebar } from "./sidebar";
@@ -19,8 +19,8 @@ export function MenuBarButton() {
   return (
     <div className="flex items-center md:hidden">
       <Sheet>
-        <SheetTrigger>
-          <RiMenu4Fill size={45} color="#000" />
+        <SheetTrigger className="focus:none">
+          <HiOutlineMenuAlt2 size={40} className="text-primary"/>
         </SheetTrigger>
         <SheetContent side="left" className="p-0">
           <Sidebar />

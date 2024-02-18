@@ -4,7 +4,7 @@ import Image from "next/image";
 import LoadingDots from "@/components/marketing/shared/icons/loadingDots";
 //import { signIn } from "next-auth/react";
 
-import Modal from "@/components/marketing/shared/modal";
+import Modal from "@/components/ui/modal";
 import { FaFacebook, FaSpotify } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
@@ -62,7 +62,7 @@ const SignInModal = ({
               </>
             )}
           </button>
-        {/*   <SignInButton provider="google" icon={FcGoogle} />
+          {/*   <SignInButton provider="google" icon={FcGoogle} />
           <SignInButton provider="spotify" icon={FaSpotify} color="#1DB954" />
           <SignInButton provider="facebook" icon={FaFacebook} color="#006AFF" />
           <SignInButton provider="twitter" icon={FaXTwitter} color="#14171A" /> */}

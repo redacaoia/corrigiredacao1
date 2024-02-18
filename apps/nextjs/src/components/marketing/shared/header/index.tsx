@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useUser } from "@supabase/auth-helpers-react";
 
 import useScroll from "~/hooks/useScroll";
+import { MenuBarButton } from "../marketingHeader/fragments/menuBarButton";
 import { useSignInModal } from "../marketingHeader/fragments/signInModal";
 import { DesktopMenubar } from "./desktopMenubar";
-import { MenuBarButton } from "./menuBarButton";
 
 export function Header(/* { session }: { session: Session | null } */) {
   // const user = useUser();
@@ -31,7 +31,10 @@ export function Header(/* { session }: { session: Session | null } */) {
             <MenuBarButton />
           </div>
 
-          <Link href="/" className="font-display flex items-center text-2xl">
+          <Link
+            href="/"
+            className="font-display hidden items-center text-2xl md:flex"
+          >
             <Image
               src="/book.png"
               alt="Precedent logo"

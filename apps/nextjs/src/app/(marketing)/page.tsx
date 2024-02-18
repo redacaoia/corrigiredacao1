@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PriceCards } from "@/components/marketing/plans/priceCards";
 
 import { Assessments } from "~/components/marketing/home/assessments";
 
@@ -29,7 +30,7 @@ export default async function HomePage() {
       {/* Hero Copy */}
       <div className="mt-2 flex flex-wrap items-center gap-4 md:flex-nowrap md:justify-between">
         <h1 className="md:display h2  px-4 text-center md:w-[802px] md:px-0">
-          Generate the best{" "}
+          {/* Generate the best{" "} */}
           <span className="text-crimson-9">marketing copy</span>
           {/*  <Button asChild>
               <Link href="/signin" className="z-50">
@@ -62,6 +63,7 @@ export default async function HomePage() {
       </div>
 
       <Assessments />
+      <PriceCards />
     </>
   );
 }
