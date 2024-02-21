@@ -1,6 +1,7 @@
 "use client";
 
 /* import { UserButton } from "@clerk/nextjs"; */
+import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -151,9 +152,9 @@ export function UserDropdown({ username }: Props) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild >
-       {/*  <IoIosArrowDown /> */}
-        <Avatar className="flex">
+      <DropdownMenuTrigger asChild>
+        {/*  <IoIosArrowDown /> */}
+        <Avatar className="flex border-2  border-slate-300">
           {/*  <UserButton afterSignOutUrl="/" /> */}
 
           <AvatarImage src={imageProfile} alt="" />
@@ -163,7 +164,9 @@ export function UserDropdown({ username }: Props) {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-4 w-56">
-        <DropdownMenuLabel className="text-center">Redação IA</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-center">
+          Redação IA
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
@@ -172,7 +175,7 @@ export function UserDropdown({ username }: Props) {
           </DropdownMenuItem>
           <DropdownMenuItem>
             <MdOutlineAppShortcut className="mr-2 h-4 w-4" />
-            <span>Baixe o App</span>
+            <Link href="/perfil">Baixe o App</Link>
           </DropdownMenuItem>
 
           {/* <DropdownMenuItem>
