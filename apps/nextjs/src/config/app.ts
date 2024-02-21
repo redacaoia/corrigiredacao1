@@ -1,3 +1,4 @@
+import { FreeContentButtons } from "@/types/app";
 import { DashboardConfig } from "~/types/site";
 
 export const dashboardConfig: DashboardConfig = {
@@ -29,4 +30,11 @@ export const dashboardConfig: DashboardConfig = {
       icon: "settings",
     },
   ],
+}
+
+
+
+export const freeContentButtons:FreeContentButtons = {
+  title: "",
+  href: ""
 }
