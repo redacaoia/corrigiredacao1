@@ -1,3 +1,4 @@
+import { FreeContent } from "@/components/shared/freeContent";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,12 +18,15 @@ export default function Explorar() {
 
         <Tabs defaultValue="account" className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger className="" value="account">Aprenda</TabsTrigger>
+            <TabsTrigger className="" value="account">
+              Aprenda
+            </TabsTrigger>
             <TabsTrigger value="password">Desafios</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="account">
-            <Card>
+            <FreeContent />
+            {/*   <Card>
               <CardHeader>
                 <CardTitle>Account</CardTitle>
                 <CardDescription>
@@ -40,7 +44,7 @@ export default function Explorar() {
               <CardFooter>
                 <Button>Save changes</Button>
               </CardFooter>
-            </Card>
+            </Card> */}
           </TabsContent>
           <TabsContent value="password">
             <Card>
