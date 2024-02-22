@@ -7,8 +7,8 @@ export function FreeContent() {
   return (
     <div>
       {/* <CategoryButton /> */}
-
-    {/*   {freeContent.categories.map((category, index) => (
+{/* 
+      {freeContent.categories.map((category, index) => (
         <CategoryButton
           categoryTitle={category.title}
           key={index}
@@ -17,14 +17,7 @@ export function FreeContent() {
       ))} */}
 
       {freeContent.categories.map((category, index) => (
-        <>
-          <CategoryButton
-            categoryTitle={category.title}
-            key={index}
-            {...category}
-          />
-          <CarouselCategory key={index} {...category} />
-        </>
+        <CarouselCategory key={index} {...category} />
       ))}
     </div>
   );
