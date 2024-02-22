@@ -8,7 +8,7 @@ export function FreeContent() {
     <div>
       {/* <CategoryButton /> */}
 
-      <div className="grid  md:grid-cols-5 grid-cols-3  gap-2 md:px-20 py-5 ">
+      <div className="grid  grid-cols-3 gap-2  py-5 md:grid-cols-5 md:px-20 ">
         {freeContent.categories.map((category, index) => (
           <CategoryButton
             categoryTitle={category.title}
@@ -18,7 +18,7 @@ export function FreeContent() {
         ))}
       </div>
       {freeContent.categories.map((category, index) => (
-        <CarouselCategory key={index} {...category} />
+        <CarouselCategory key={index} {...category} title={category.title} />
       ))}
     </div>
   );
