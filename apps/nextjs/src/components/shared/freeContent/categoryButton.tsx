@@ -24,7 +24,7 @@ export function CategoryButton({ categoryTitle }: Props) {
         smooth={true}
         duration={500} // duração da animação em milissegundos
       >
-        <Button className="h-16 w-28 bg-blue-500 shadow-sm hover:bg-sky-600">
+        <Button className="h-16 w-28 bg-blue-500 shadow-sm hover:bg-sky-600 rounded-sm">
           {categoryTitle}
         </Button>
       </ScrollLink>
