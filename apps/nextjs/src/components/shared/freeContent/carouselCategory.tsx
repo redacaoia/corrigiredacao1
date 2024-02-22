@@ -9,9 +9,8 @@ import { CarouselContainer } from "../carouselContainer";
 import { CategoryItem } from "./categoryItem";
 
 export function CarouselCategory({ categoryItem }: Category) {
-  
   return (
-    <section id="" className="flex items-center justify-start flex-col">
+    <section id="" className="flex flex-col items-center justify-start">
       <h2></h2>
       <p></p>
       <CarouselContainer>
@@ -20,8 +19,8 @@ export function CarouselCategory({ categoryItem }: Category) {
             <CategoryItem key={index} {...item} />
           ))}
         </CarouselContent>
-        <CarouselPrevious  className="m-0"/>
-        <CarouselNext   className="m-0"/>
+        <CarouselPrevious className="m-0" />
+        <CarouselNext className="m-0" />
       </CarouselContainer>
     </section>
   );

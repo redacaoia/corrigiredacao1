@@ -55,7 +55,7 @@ export const freeContent: FreeContent = {
     },
     // Adicione outras categorias conforme necessário
     {
-      title: "Repertórios",
+      title: "Modelos",
       href: "/docs/repertorios",
       description: "Descrição para repertórios",
       categoryItem: [
@@ -72,7 +72,7 @@ export const freeContent: FreeContent = {
       ],
     },
     {
-      title: "Repertórios",
+      title: "Citações",
       href: "/docs/repertorios",
       description: "Descrição para repertórios",
       categoryItem: [
@@ -89,7 +89,7 @@ export const freeContent: FreeContent = {
       ],
     },
     {
-      title: "Repertórios",
+      title: "Dicas",
       href: "/docs/repertorios",
       description: "Descrição para repertórios",
       categoryItem: [

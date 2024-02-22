@@ -7,15 +7,16 @@ export function FreeContent() {
   return (
     <div>
       {/* <CategoryButton /> */}
-{/* 
-      {freeContent.categories.map((category, index) => (
-        <CategoryButton
-          categoryTitle={category.title}
-          key={index}
-          {...category}
-        />
-      ))} */}
 
+      <div className="grid  md:grid-cols-5 grid-cols-3  gap-2 md:px-20 py-5 ">
+        {freeContent.categories.map((category, index) => (
+          <CategoryButton
+            categoryTitle={category.title}
+            key={index}
+            {...category}
+          />
+        ))}
+      </div>
       {freeContent.categories.map((category, index) => (
         <CarouselCategory key={index} {...category} />
       ))}

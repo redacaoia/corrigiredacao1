@@ -19,13 +19,15 @@ export function CategoryButton({ categoryTitle }: Props) {
 
   return (
     <div>
-      <ScrollLink
+      {/*   <ScrollLink
         to={lowercaseTitle} // ID da seção para a qual você deseja rolar
         smooth={true}
         duration={500} // duração da animação em milissegundos
-      >
-        <Button className="h-16 w-16 bg-blue-500">{categoryTitle}</Button>
-      </ScrollLink>
+      > */}
+      <Button className="h-16 w-28 bg-blue-500 shadow-sm hover:bg-sky-600">
+        {categoryTitle}
+      </Button>
+      {/* </ScrollLink> */}
     </div>
   );
 }
