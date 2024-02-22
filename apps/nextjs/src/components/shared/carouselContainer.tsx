@@ -15,7 +15,7 @@ export function CarouselContainer({ children }: Props) {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full sm:max-w-[80%] md:max-w-full px-5"
+      className="w-full  md:max-w-full "
       onMouseLeave={plugin.current.reset}
     >
       {children}

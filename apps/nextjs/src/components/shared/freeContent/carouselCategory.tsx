@@ -11,7 +11,7 @@ import { CategoryItem } from "./categoryItem";
 export function CarouselCategory({ categoryItem }: Category) {
   
   return (
-    <section id="">
+    <section id="" className="sm:px-10 md:px-0">
       <h2></h2>
       <p></p>
       <CarouselContainer>
@@ -20,8 +20,8 @@ export function CarouselCategory({ categoryItem }: Category) {
             <CategoryItem key={index} {...item} />
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious variant="outline" className="mr-4"/>
+        <CarouselNext  variant="outline"  className="ml-4"/>
       </CarouselContainer>
     </section>
   );

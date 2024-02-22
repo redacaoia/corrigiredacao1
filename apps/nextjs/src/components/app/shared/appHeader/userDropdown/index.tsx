@@ -157,7 +157,7 @@ export function UserDropdown({ username }: Props) {
         <Avatar className="flex border-2  border-slate-300">
           {/*  <UserButton afterSignOutUrl="/" /> */}
 
-          <AvatarImage src={imageProfile} alt="" />
+          <AvatarImage className="" src={imageProfile} alt="" />
           <AvatarFallback>
             <FiUser size={24} />
           </AvatarFallback>
