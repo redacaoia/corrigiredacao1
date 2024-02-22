@@ -24,10 +24,12 @@ export function CarouselCategory({
   return (
     <section
       id={lowercaseTitle}
-      className="flex flex-col items-center justify-start"
+      className="mt-16 flex flex-col items-center justify-start gap-6 "
     >
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <div className="ml-8 mr-auto flex flex-col items-start  gap-2 md:ml-0">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <p className="text-base text-slate-600">{description}</p>
+      </div>
       <CarouselContainer>
         <CarouselContent className="-ml-1 ">
           {categoryItem.map((item, index) => (

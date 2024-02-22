@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { FaArrowRight } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
 interface Props {
@@ -19,15 +20,15 @@ export function CategoryButton({ categoryTitle }: Props) {
 
   return (
     <div>
-    {/*   <ScrollLink
+      {/*   <ScrollLink
         to={lowercaseTitle} // ID da seção para a qual você deseja rolar
         smooth={true}
         duration={500} // duração da animação em milissegundos
       > */}
-        <Button className="h-16 w-28 bg-blue-500 shadow-sm hover:bg-sky-600 rounded-sm text-center text-xl font-medium">
-          {categoryTitle}
-        </Button>
-     {/*  </ScrollLink> */}
+      <Button className="flex h-16 w-48 items-center gap-2 rounded-sm bg-blue-500 text-center text-lg font-medium shadow-sm hover:bg-sky-600 md:h-24">
+        {categoryTitle} <FaArrowRight className="hover:animate-bellRing" />
+      </Button>
+      {/*  </ScrollLink> */}
     </div>
   );
 }

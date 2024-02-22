@@ -5,11 +5,11 @@ import Link from "next/link";
 
 export function CategoryItem({description,href,title}:CategoryItem) {
   return (
-    <CarouselItem key={title} className="pl-1 md:basis-1/2 lg:basis-1/3">
+    <CarouselItem key={title} className="pl-1 basis-48 md:basis-1/2 lg:basis-1/3">
     <div className="p-1">
         <Link href={href}>
         
-        <Card>
+        <Card className="w-48">
         <CardHeader>
     <CardTitle>{title}</CardTitle>
     <CardDescription>{description}</CardDescription>
