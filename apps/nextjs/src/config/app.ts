@@ -34,7 +34,7 @@ export const dashboardConfig: DashboardConfig = {
 
 
 
-export const freeContent = {
+export const freeContent: FreeContent = {
   categories: [
     {
       title: "Repertórios",
@@ -54,5 +54,56 @@ export const freeContent = {
       ],
     },
     // Adicione outras categorias conforme necessário
+    {
+      title: "Repertórios",
+      href: "/docs/repertorios",
+      description: "Descrição para repertórios",
+      categoryItem: [
+        {
+          title: "Card 1",
+          href: "/docs/repertorios/card1",
+          description: "Descrição do Card 1",
+        },
+        {
+          title: "Card 2",
+          href: "/docs/repertorios/card2",
+          description: "Descrição do Card 2",
+        },
+      ],
+    },
+    {
+      title: "Repertórios",
+      href: "/docs/repertorios",
+      description: "Descrição para repertórios",
+      categoryItem: [
+        {
+          title: "Card 1",
+          href: "/docs/repertorios/card1",
+          description: "Descrição do Card 1",
+        },
+        {
+          title: "Card 2",
+          href: "/docs/repertorios/card2",
+          description: "Descrição do Card 2",
+        },
+      ],
+    },
+    {
+      title: "Repertórios",
+      href: "/docs/repertorios",
+      description: "Descrição para repertórios",
+      categoryItem: [
+        {
+          title: "Card 1",
+          href: "/docs/repertorios/card1",
+          description: "Descrição do Card 1",
+        },
+        {
+          title: "Card 2",
+          href: "/docs/repertorios/card2",
+          description: "Descrição do Card 2",
+        },
+      ],
+    },
   ],
 }
