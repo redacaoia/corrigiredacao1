@@ -1,20 +1,19 @@
-
 import { BsArrowRight } from "react-icons/bs";
+
 import { Button } from "~/components/ui/button";
 import { Topic } from "./topic";
-
 
 export function TrendingTopics() {
   return (
     <section>
       <div className="flex items-center justify-between">
-        <h2 className="text-black1 text-xl font-bold">
+        <h2 className="text-xl font-bold text-black1">
           Temas Em Alta
           <span role="img" aria-label="Fogo">
             🔥
           </span>
         </h2>
-        <Button variant="link" className="text-blue1 flex items-center gap-1">
+        <Button variant="link" className="flex items-center gap-1 text-blue1">
           Ver Todas
           <BsArrowRight />
         </Button>
