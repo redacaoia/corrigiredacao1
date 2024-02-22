@@ -11,17 +11,17 @@ import { CategoryItem } from "./categoryItem";
 export function CarouselCategory({ categoryItem }: Category) {
   
   return (
-    <section id="" className="sm:px-10 md:px-0">
+    <section id="" className="flex items-center justify-start flex-col">
       <h2></h2>
       <p></p>
       <CarouselContainer>
-        <CarouselContent className="-ml-1">
+        <CarouselContent className="-ml-1 ">
           {categoryItem.map((item, index) => (
             <CategoryItem key={index} {...item} />
           ))}
         </CarouselContent>
-        <CarouselPrevious variant="outline" className="mr-4"/>
-        <CarouselNext  variant="outline"  className="ml-4"/>
+        <CarouselPrevious  className="m-0"/>
+        <CarouselNext   className="m-0"/>
       </CarouselContainer>
     </section>
   );
