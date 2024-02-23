@@ -2,7 +2,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { CarouselItem  } from "@/components/ui/carousel";
 import { CategoryItem } from "@/types/freeContent";
 import Link from "next/link";
+
 //basis-48
+
 export function CategoryItem({description,href,title}:CategoryItem) {
   return (
     <CarouselItem key={title} className="pl-1 basis-48  md:basis-1/2 lg:basis-1/3">

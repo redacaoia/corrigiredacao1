@@ -155,7 +155,7 @@ export function UserDropdown({ username }: Props) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {/*  <IoIosArrowDown /> */}
-        <div className=" flex items-center group">
+        <div className=" group flex items-center">
           <ChevronDown
             className="relative top-[1px] ml-1 h-5 w-6 text-slate-300 transition duration-200 focus:rotate-180"
             aria-hidden="true"
@@ -177,10 +177,12 @@ export function UserDropdown({ username }: Props) {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <User className="mr-2 h-4 w-4" />
-            <span>Perfil</span>
+            <Link href="/perfil">
+              <User className="mr-2 h-4 w-4" />
+              <span>Perfil</span>
+            </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem disabled>
             <MdOutlineAppShortcut className="mr-2 h-4 w-4" />
             <Link href="/perfil">Baixe o App</Link>
           </DropdownMenuItem>
