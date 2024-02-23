@@ -6,7 +6,7 @@
 > **Note**
 > OAuth deployments are now working for preview deployments. Read [deployment guide](https://github.com/t3-oss/create-t3-turbo#auth-proxy) and [check out the source](./apps/auth-proxy) to learn more!
 
-## Installation
+## Instalação
 
 There are two ways of initializing an app using the `create-t3-turbo` starter. You can either use this repository as a template:
 
