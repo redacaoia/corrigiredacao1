@@ -12,17 +12,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Explorar() {
   return (
-    <div className=" flex flex-col gap-10 ">
+    <div className=" relative flex flex-col gap-10 ">
       <h1 className="text-3xl font-extrabold">Explorar</h1>
 
-      <Tabs defaultValue="account" className="relative w-full">
-        <TabsList className="fixed top-16 z-50 mt-2 grid w-full grid-cols-2">
-          <TabsTrigger className="" value="account">
-            Aprenda
-          </TabsTrigger>
-          <TabsTrigger value="password">Desafios</TabsTrigger>
-        </TabsList>
-
+      <Tabs defaultValue="account" className="w-full">
+        <div className="flex w-full items-center justify-center">
+          <TabsList className="fixed top-16 z-50 mx-auto mt-2 grid w-full grid-cols-2 ">
+            <TabsTrigger className="" value="account">
+              Aprenda
+            </TabsTrigger>
+            <TabsTrigger value="password">Desafios</TabsTrigger>
+          </TabsList>
+        </div>
         <TabsContent value="account">
           <FreeContent />
           {/*   <Card>
