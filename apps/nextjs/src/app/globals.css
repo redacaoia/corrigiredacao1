@@ -33,3 +33,16 @@
 typebot-bubble::part(button) {
   bottom: 90px;
 }
+
+
+@layer utilities {
+  
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ 
+  .no-scrollbar {
+      -ms-overflow-style: none;  
+      scrollbar-width: none;  
+}
+}

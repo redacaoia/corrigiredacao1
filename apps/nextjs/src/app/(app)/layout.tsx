@@ -1,6 +1,7 @@
 import { BottomMenu } from "@/components/app/shared/BottomMenu";
 
 import { AppHeader } from "~/components/app/shared/appHeader";
+
 //import { Typebot } from "~/components/app/shared/typebot";
 
 interface AuthLayoutProps {
@@ -13,12 +14,12 @@ export default async function AppLayout({ children }: AuthLayoutProps) {
   return (
     <>
       <AppHeader />
-      <main className=" bg-background ">
+      <main className="  bg-background">
         <div className="mx-auto  min-h-screen w-full max-w-7xl flex-col items-center justify-center  px-8 py-32">
           {children}
         </div>
       </main>
-     {/*  <Typebot /> */}
+      {/*  <Typebot /> */}
       <BottomMenu />
     </>
   );
