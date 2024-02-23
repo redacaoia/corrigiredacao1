@@ -7,7 +7,8 @@ import { useUser } from "@supabase/auth-helpers-react";
 import useScroll from "~/hooks/useScroll";
 import { MenuBarButton } from "../marketingHeader/fragments/menuBarButton";
 import { useSignInModal } from "../marketingHeader/fragments/signInModal";
-import { DesktopMenubar } from "./desktopMenubar";
+import { DesktopMenubar } from "../marketingHeader/fragments/desktopMenubar";
+
 
 export function Header(/* { session }: { session: Session | null } */) {
   // const user = useUser();

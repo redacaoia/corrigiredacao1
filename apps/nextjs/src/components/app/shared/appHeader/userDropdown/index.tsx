@@ -19,6 +19,7 @@ import {
 /*  */ import {
   BellRing,
   Check,
+  ChevronDown,
   Cloud,
   CreditCard,
   Github,
@@ -154,14 +155,20 @@ export function UserDropdown({ username }: Props) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {/*  <IoIosArrowDown /> */}
-        <Avatar className="flex border-2  border-slate-300">
-          {/*  <UserButton afterSignOutUrl="/" /> */}
+        <div className=" flex items-center group">
+          <ChevronDown
+            className="relative top-[1px] ml-1 h-5 w-6 text-slate-300 transition duration-200 focus:rotate-180"
+            aria-hidden="true"
+          />
+          <Avatar className="flex border-2  border-slate-300">
+            {/*  <UserButton afterSignOutUrl="/" /> */}
 
-          <AvatarImage className="" src={imageProfile} alt="" />
-          <AvatarFallback>
-            <FiUser size={24} />
-          </AvatarFallback>
-        </Avatar>
+            <AvatarImage className="" src={imageProfile} alt="" />
+            <AvatarFallback>
+              <FiUser size={24} />
+            </AvatarFallback>
+          </Avatar>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="ml-4 w-56">
         <DropdownMenuLabel className="text-center">
