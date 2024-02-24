@@ -25,10 +25,10 @@ export function UserVideo() {
           className="absolute -top-4 h-full w-40 rounded-sm"
         />
       </DialogTrigger>
-      <DialogContent className="h-80 w-4/5 rounded-sm p-2 md:max-w-2xl">
+      <DialogContent className="h-[90%] md:h[50%] w-4/5 rounded-sm p-2 flex items-center flex-col gap-2  md:max-w-2xl">
         <Suspense fallback={<p>Loading video...</p>}>
           <iframe
-            className="mx-auto rounded-sm"
+            className="mx-auto rounded-sm mt-2"
             height="100%"
             width="100%"
             src="https://www.youtube.com/embed/HN1UjzRSdBk?si=G4Ugfzp0fi5uXzJG"
@@ -47,8 +47,8 @@ export function UserVideo() {
           <div className="grid grid-cols-4 items-center gap-4"></div>
           <div className="grid grid-cols-4 items-center gap-4"></div>
         </div> */}
-        <DialogClose>
-          <Button variant="outline" className="mx-auto w-48 " type="submit">
+        <DialogClose className="m-0 p-0">
+          <Button variant="outline" className="mx-auto w-48">
             fechar
           </Button>
         </DialogClose>
