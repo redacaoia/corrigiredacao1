@@ -13,7 +13,7 @@ const config = {
   }, */
 
   images: {
-    domains: ["lh3.googleusercontent.com", "vercel.com"],
+    domains: ["lh3.googleusercontent.com", "vercel.com","youtube.com"],
   },
 
   /** Enables hot reloading for local packages without a build step */
