@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,10 +9,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog";
 
 export function UserVideo() {
-  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -24,14 +25,18 @@ export function UserVideo() {
           className="absolute -top-4 h-full w-40 rounded-sm"
         />
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-       
-       {/*  <video width="320" height="240" controls preload="none">
-      <source src="/videos/video.mp4" type="video/mp4" />
-      
-      Your browser does not support the video tag.
-    </video> */}
-        
+      <DialogContent className="h-[40%] md:h[80%] w-4/5 md:w-[40%] rounded-sm p-2 flex items-center flex-col gap-2  md:max-w-2xl">
+        <Suspense fallback={<p>Loading video...</p>}>
+          <iframe
+            className="mx-auto rounded-sm "
+            height="100%"
+            width="100%"
+            src="https://www.youtube.com/embed/HN1UjzRSdBk?si=G4Ugfzp0fi5uXzJG"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy"
+          ></iframe>
+        </Suspense>
         {/*  <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>
@@ -42,9 +47,11 @@ export function UserVideo() {
           <div className="grid grid-cols-4 items-center gap-4"></div>
           <div className="grid grid-cols-4 items-center gap-4"></div>
         </div> */}
-        <DialogFooter className="flex">
-          <Button type="submit">Save changes</Button>
-        </DialogFooter>
+        <DialogClose className="m-0 p-0">
+          <Button variant="outline" className="mx-auto w-48">
+            fechar
+          </Button>
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );

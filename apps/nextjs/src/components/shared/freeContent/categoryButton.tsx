@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
 
 interface Props {
   categoryTitle: string;
@@ -19,17 +19,11 @@ export function CategoryButton({ categoryTitle }: Props) {
   const lowercaseTitle = formattedTitle.toLowerCase();
 
   return (
-    <div>
-      {/*   <ScrollLink
-        to={lowercaseTitle} // ID da seção para a qual você deseja rolar
-        smooth={true}
-        duration={500} // duração da animação em milissegundos
-      > */}
+    <Link href={`#${lowercaseTitle}`}>
       <Button className="flex h-16 w-48 items-center gap-2 rounded-sm bg-blue-500 text-center text-lg font-medium shadow-sm hover:bg-sky-600 md:h-24">
         {categoryTitle} <FaArrowRight className="hover:animate-bellRing" />
       </Button>
-      {/*  </ScrollLink> */}
-    </div>
+    </Link>
   );
 }
 

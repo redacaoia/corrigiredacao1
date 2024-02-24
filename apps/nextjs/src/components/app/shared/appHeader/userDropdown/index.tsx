@@ -177,7 +177,7 @@ export function UserDropdown({ username }: Props) {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <Link href="/perfil">
+            <Link href="/perfil" className="flex ite">
               <User className="mr-2 h-4 w-4" />
               <span>Perfil</span>
             </Link>
