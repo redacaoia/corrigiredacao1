@@ -25,10 +25,10 @@ export function UserVideo() {
           className="absolute -top-4 h-full w-40 rounded-sm"
         />
       </DialogTrigger>
-      <DialogContent className="h-[90%] md:h[50%] w-4/5 rounded-sm p-2 flex items-center flex-col gap-2  md:max-w-2xl">
+      <DialogContent className="h-[40%] md:h[80%] w-4/5 md:w-[40%] rounded-sm p-2 flex items-center flex-col gap-2  md:max-w-2xl">
         <Suspense fallback={<p>Loading video...</p>}>
           <iframe
-            className="mx-auto rounded-sm mt-2"
+            className="mx-auto rounded-sm "
             height="100%"
             width="100%"
             src="https://www.youtube.com/embed/HN1UjzRSdBk?si=G4Ugfzp0fi5uXzJG"
