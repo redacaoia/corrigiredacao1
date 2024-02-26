@@ -1,4 +1,7 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { BottomMenu } from "@/components/app/shared/BottomMenu";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 import { AppHeader } from "~/components/app/shared/appHeader";
 
@@ -10,6 +13,18 @@ interface AuthLayoutProps {
 
 export default async function AppLayout({ children }: AuthLayoutProps) {
   //const session = await getServerSession(authOptions);
+  const supabase = createServerComponentClient({
+    cookies,
+  });
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session) {
+    // this is a protected route - only users who are signed in can view this route
+    redirect("/");
+  }
 
   return (
     <>
