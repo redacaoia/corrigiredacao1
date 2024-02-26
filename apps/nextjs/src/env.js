@@ -12,6 +12,7 @@ export const env = createEnv({
       .optional()
       .transform((v) => (v ? `https://${v}` : undefined)),
     PORT: z.coerce.number().default(3000),
+    SUPABASE_PROJECT_ID: z.string(),
   },
   /**
    * Specify your server-side environment variables schema here.
@@ -40,6 +41,8 @@ export const env = createEnv({
     DB_USERNAME: process.env.DB_USERNAME,
     PORT: process.env.PORT,
     VERCEL_URL: process.env.VERCEL_URL,
+
+    SUPABASE_PROJECT_ID: process.env.SUPABASE_PROJECT_ID,
 
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },

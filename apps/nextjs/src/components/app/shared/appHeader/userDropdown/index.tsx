@@ -2,6 +2,8 @@
 
 /* import { UserButton } from "@clerk/nextjs"; */
 import Link from "next/link";
+//type CardProps = React.ComponentProps<typeof Card>;
+import { useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,11 +17,12 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 /*  */ import {
   ChevronDown,
   CreditCard,
   LogOut,
-  Mail,
+ 
   PlusCircle,
   User,
   UserPlus,
@@ -32,10 +35,16 @@ import { SlPresent } from "react-icons/sl";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { CreateAvatarProfile } from "~/utils/createAvatarProfile";
 
-//type CardProps = React.ComponentProps<typeof Card>;
-
 export function UserDropdown() {
+  const router = useRouter();
+  const supabase = createClientComponentClient();
+
   const imageProfile = CreateAvatarProfile();
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.refresh();
+  };
 
   return (
     <DropdownMenu>
@@ -89,29 +98,33 @@ export function UserDropdown() {
               <UserPlus className="mr-2 h-4 w-4" />
               <span>Convide um amigo</span>
             </DropdownMenuSubTrigger>
+
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
-                  <FaWhatsapp className="mr-2 h-4 w-4" />
+                  <FaWhatsapp className="mr-2 h-4 w-4" color="#25D366" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <FaInstagram className="mr-2 h-4 w-4" />
+                  <FaInstagram className="mr-2 h-4 w-4 " color="#E1306C" />
                   <span>Instagram</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Mail className="mr-2 h-4 w-4" />
-                  <span>Email</span>
+                  <FaInstagram className="mr-2 h-4 w-4 " color="#006AFF" />
+                  <span>Instagram</span>
                 </DropdownMenuItem>
+
                 {/* <DropdownMenuItem>
                   <MessageSquare className="mr-2 h-4 w-4" />
                   <span>Message</span>
                 </DropdownMenuItem> */}
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  <span>Mais...</span>
-                </DropdownMenuItem>
+                <Link href="/indique-amigos">
+                  <DropdownMenuItem>
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    <span>Mais...</span>
+                  </DropdownMenuItem>
+                </Link>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
@@ -123,7 +136,7 @@ export function UserDropdown() {
         </DropdownMenuGroup>
 
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={handleSignOut}>
           <LogOut className="mr-2 h-4 w-4" />
           <span>Sair</span>
         </DropdownMenuItem>
