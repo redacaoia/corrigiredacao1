@@ -10,80 +10,31 @@ import {
   DropdownMenuLabel,
   DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 /*  */ import {
-  BellRing,
-  Check,
   ChevronDown,
-  Cloud,
   CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
   LogOut,
   Mail,
-  MessageSquare,
-  Plus,
   PlusCircle,
-  Settings,
   User,
   UserPlus,
-  Users,
 } from "lucide-react";
 import { FaCrown, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
-import { GiPresent } from "react-icons/gi";
-import { IoIosArrowDown } from "react-icons/io";
-import { MdNotificationsNone, MdOutlineAppShortcut } from "react-icons/md";
+import { MdOutlineAppShortcut } from "react-icons/md";
 import { SlPresent } from "react-icons/sl";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-import { Button } from "~/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "~/components/ui/popover";
-import { Switch } from "~/components/ui/switch";
-import { cn } from "~/lib/utils";
 import { CreateAvatarProfile } from "~/utils/createAvatarProfile";
 
-const notifications = [
-  {
-    title: "Your call has been confirmed.",
-    description: "1 hour ago",
-  },
-  {
-    title: "You have a new message!",
-    description: "1 hour ago",
-  },
-  {
-    title: "Your subscription is expiring soon!",
-    description: "2 hours ago",
-  },
-];
-
 //type CardProps = React.ComponentProps<typeof Card>;
-interface Props {
-  username: string;
-}
 
-
-
-export function UserDropdown({ username }: Props) {
+export function UserDropdown() {
   const imageProfile = CreateAvatarProfile();
 
   return (
@@ -111,14 +62,11 @@ export function UserDropdown({ username }: Props) {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-
-        <Link href="/perfil">
-          <DropdownMenuItem>
-           
+          <Link href="/perfil">
+            <DropdownMenuItem>
               <User className="mr-2 h-4 w-4" />
               <span>Perfil</span>
-           
-          </DropdownMenuItem>
+            </DropdownMenuItem>
           </Link>
           <DropdownMenuItem disabled>
             <MdOutlineAppShortcut className="mr-2 h-4 w-4" />
