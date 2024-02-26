@@ -5,6 +5,7 @@ import { HeaderFragments } from "./fragments";
 
 export async function MarketingHeader() {
   const supabase = createServerComponentClient({ cookies });
+  
   const {
     data: { session },
   } = await supabase.auth.getSession();

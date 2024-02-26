@@ -11,11 +11,18 @@ const config = {
   /*  experimental: {
     typedRoutes: true,
   }, */
-
+  experimental: {
+    serverActions: true,
+  },
   images: {
     domains: ["lh3.googleusercontent.com", "vercel.com"],
   },
 
+  logging:{
+    fetches:{
+      fullUrl: true
+    }
+  },
   /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
     "@acme/api",
