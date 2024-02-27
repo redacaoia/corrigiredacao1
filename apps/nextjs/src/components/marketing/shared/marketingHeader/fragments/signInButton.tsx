@@ -43,15 +43,10 @@ export const SignInButton: React.FC<Props> = ({
 
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider,
-      options: options,
+     /*  options: options, */
     });
   };
 
-  async function handleSignInWithGoogle() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-  }
   const { pending } = useFormStatus();
 
   return (
