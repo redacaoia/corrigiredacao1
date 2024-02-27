@@ -51,19 +51,20 @@ export const SignInButton: React.FC<Props> = ({
 
   return (
     <Button
-      disabled={signInClicked}
+      disabled={pending}
       className={`${
-        signInClicked
+        pending
           ? "cursor-not-allowed border-gray-200 bg-gray-100"
           : "border border-gray-200 bg-white text-black hover:bg-gray-50"
       }  flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
       type="submit"
       onClick={() => {
         void handleSignIn();
-        setSignInClicked(true);
+       // setSignInClicked(true);
       }}
+      
     >
-      {signInClicked ? (
+      {pending ? (
         <LoadingDots color="#808080" />
       ) : (
         <>

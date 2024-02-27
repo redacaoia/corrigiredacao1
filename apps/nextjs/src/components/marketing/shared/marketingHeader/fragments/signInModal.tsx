@@ -40,7 +40,7 @@ const SignInModal = ({
         </div>
 
         <div className="flex flex-col space-y-4 bg-gray-50 px-4 py-8 md:px-16">
-            <button
+          {/*   <button
             disabled={signInClicked}
             className={`${
               signInClicked
@@ -62,7 +62,7 @@ const SignInModal = ({
               </>
             )}
           </button>
-
+ */}
           <SignInButton  provider="google" icon={FcGoogle} />
           <SignInButton provider="spotify" icon={FaSpotify} color="#1DB954" />
           <SignInButton provider="facebook" icon={FaFacebook} color="#006AFF" />
