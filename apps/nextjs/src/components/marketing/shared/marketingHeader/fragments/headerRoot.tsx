@@ -1,3 +1,5 @@
+"use client";
+
 import type { Session } from "@supabase/auth-helpers-nextjs";
 import type { ReactNode } from "react";
 import Link from "next/link";

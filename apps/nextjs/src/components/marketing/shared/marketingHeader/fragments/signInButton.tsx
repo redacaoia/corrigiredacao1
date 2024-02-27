@@ -4,7 +4,9 @@ import type { Provider } from "@supabase/supabase-js";
 import type { ElementType } from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useSessionContext } from "@supabase/auth-helpers-react";
+import { useFormStatus } from "react-dom";
 import { IconBaseProps, IconType } from "react-icons/lib";
 
 import LoadingDots from "../../icons/loadingDots";
@@ -24,7 +26,7 @@ export const SignInButton: React.FC<Props> = ({
 }) => {
   const [signInClicked, setSignInClicked] = useState(false);
 
-  const { supabaseClient } = useSessionContext();
+  const supabase = createClientComponentClient();
 
   const handleSignIn = async () => {
     let options = {};
@@ -39,11 +41,18 @@ export const SignInButton: React.FC<Props> = ({
       };
     }
 
-    const { data, error } = await supabaseClient.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: provider,
       options: options,
     });
   };
+
+  async function handleSignInWithGoogle() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+  }
+  const { pending } = useFormStatus();
 
   return (
     <Button
@@ -52,10 +61,10 @@ export const SignInButton: React.FC<Props> = ({
         signInClicked
           ? "cursor-not-allowed border-gray-200 bg-gray-100"
           : "border border-gray-200 bg-white text-black hover:bg-gray-50"
-      } flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
-      type="button"
+      }  flex h-10 w-full items-center justify-center space-x-3 rounded-md border text-sm shadow-sm transition-all duration-75 focus:outline-none`}
+      type="submit"
       onClick={() => {
-        handleSignIn;
+        void handleSignIn();
         setSignInClicked(true);
       }}
     >

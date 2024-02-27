@@ -1,4 +1,6 @@
 import React from "react";
+import { MarketingHeader } from "@/components/marketing/shared/marketingHeader";
+
 import { Header } from "~/components/marketing/shared/header";
 
 /* import { getServerSession } from "next-auth";
@@ -26,7 +28,7 @@ export default async function MarketingLayout({
   //const session = await getServerSession(authOptions);
   return (
     <>
-       <Header /* session={session} */ />
+      <MarketingHeader />
       <main className="flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-br  from-indigo-50 via-white to-cyan-100 py-32">
         {children}
       </main>
