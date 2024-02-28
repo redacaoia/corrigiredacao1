@@ -66,7 +66,7 @@ export function DesktopMenubar() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/conteudos-gratuitos" title="Typography">
+              <ListItem href="/conteudos-gratuitos" title="">
                 ver todos..<FaArrowRightLong />
               </ListItem>
             </ul>
