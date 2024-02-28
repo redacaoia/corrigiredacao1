@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -11,7 +12,6 @@ import {
 } from "@/components/ui/dialog";
 
 export function UserVideo() {
-  
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -25,26 +25,16 @@ export function UserVideo() {
         />
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-       
-       {/*  <video width="320" height="240" controls preload="none">
-      <source src="/videos/video.mp4" type="video/mp4" />
-      
-      Your browser does not support the video tag.
-    </video> */}
-        
-        {/*  <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4"></div>
-          <div className="grid grid-cols-4 items-center gap-4"></div>
-        </div> */}
-        <DialogFooter className="flex">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/5tV6p55gC-Y?si=O3TiKhsoFtUPSKEE"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
+        <DialogClose className="flex">
           <Button type="submit">Save changes</Button>
-        </DialogFooter>
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );

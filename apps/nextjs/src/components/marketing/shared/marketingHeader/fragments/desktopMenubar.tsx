@@ -66,8 +66,8 @@ export function DesktopMenubar() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/conteudos-gratuitos" className="flex items-center gap-2" title="">
-                ver todos..<FaArrowRightLong />
+              <ListItem href="/conteudos-gratuitos" className="flex items-center gap-2" title="ver todos..">
+                <FaArrowRightLong size={35}/>
               </ListItem>
             </ul>
           </NavigationMenuContent>
