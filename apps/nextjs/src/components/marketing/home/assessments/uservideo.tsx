@@ -4,10 +4,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -24,16 +20,17 @@ export function UserVideo() {
           className="absolute -top-4 h-full w-40 rounded-sm"
         />
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="max-w-[300px] md:max-w-[300px] rounded-md">
         <iframe
-          width="560"
-          height="315"
+          className="rounded-md h-[425px]"    
+          width="100%"
           src="https://www.youtube.com/embed/5tV6p55gC-Y?si=O3TiKhsoFtUPSKEE"
           title="YouTube video player"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
         <DialogClose className="flex">
-          <Button type="submit">Save changes</Button>
+          <Button type="submit" variant="outline" className="mx-auto w-2/4">fechar</Button>
         </DialogClose>
       </DialogContent>
     </Dialog>
