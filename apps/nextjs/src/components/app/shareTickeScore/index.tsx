@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,9 +11,16 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+
 import { DownloadImage } from "./downloadImage";
 
-export function ShareTickeScore() {
+interface Prop {
+  score: string;
+  username: string;
+  imageUrl: string;
+}
+
+export function ShareTickeScore({ imageUrl, score, username }: Prop) {
   return (
     <Drawer>
       <DrawerTrigger>
@@ -23,7 +30,11 @@ export function ShareTickeScore() {
         <DrawerHeader>
           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
-          <DownloadImage/>
+          <DownloadImage
+            imageUrl={imageUrl}
+            username={username}
+            score={score}
+          />
         </DrawerHeader>
         <DrawerFooter>
           <DrawerClose>
