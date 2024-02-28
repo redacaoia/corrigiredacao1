@@ -13,6 +13,7 @@ import {
   navigationMenuTriggerStyle,
 } from "~/components/ui/navigation-menu";
 import { cn } from "~/lib/utils";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 //import { allPosts } from "@/.contentlayer/generated";
 
@@ -65,8 +66,8 @@ export function DesktopMenubar() {
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/conteudos-gratuitos" title="Typography">
+                ver todos..<FaArrowRightLong />
               </ListItem>
             </ul>
           </NavigationMenuContent>
