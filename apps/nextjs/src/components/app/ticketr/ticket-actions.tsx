@@ -1,12 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import cn from "classnames";
 
 import { SITE_URL, TWEET_TEXT } from "~/lib/constants";
-import LoadingDots from "./loading-dots";
-import styles from "./ticket-actions.module.css";
-import styleUtils from "./utils.module.css";
 
 interface Props {
   username: string;
@@ -20,7 +16,7 @@ export default function TicketActions({ username }: Props) {
   const text = encodeURIComponent(TWEET_TEXT);
   const tweetUrl = `https://twitter.com/intent/tweet?url=${permalink}&via=vercel&text=${text}`;
   const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${permalink}`;
-  const downloadUrl = `/api/ticket-images/${username}`;
+  const downloadUrl = `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}`;
 
   useEffect(() => {
     setImgReady(false);
@@ -41,12 +37,7 @@ export default function TicketActions({ username }: Props) {
   return (
     <>
       <a
-        className={cn(
-          styles.button,
-          styleUtils.appear,
-          styles.first,
-          "icon-button",
-        )}
+       
         href={tweetUrl}
         rel="noopener noreferrer"
         target="_blank"
@@ -54,14 +45,7 @@ export default function TicketActions({ username }: Props) {
         Tweet it!
       </a>
       <a
-        className={cn(
-          styles.button,
-          styleUtils.appear,
-          styles.second,
-          "icon-button",
-          // LinkedIn Share widget doesn’t work on mobile
-          styles["linkedin-button"],
-        )}
+       
         href={linkedInUrl}
         rel="noopener noreferrer"
         target="_blank"
@@ -69,15 +53,7 @@ export default function TicketActions({ username }: Props) {
         Share on LinkedIn
       </a>
       <a
-        className={cn(
-          styles.button,
-          styleUtils.appear,
-          styles.third,
-          "icon-button",
-          {
-            [styles.loading]: loading,
-          },
-        )}
+       
         href={loading ? undefined : downloadUrl}
         onClick={(e) => {
           if (imgReady) return;
@@ -89,7 +65,7 @@ export default function TicketActions({ username }: Props) {
         }}
         download="ticket.png"
       >
-        {loading ? <LoadingDots size={4} /> : <>Download</>}
+    hh
       </a>
     </>
   );

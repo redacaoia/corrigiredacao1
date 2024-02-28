@@ -9,15 +9,19 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { DownloadImage } from "./downloadImage";
 
 export function ShareTickeScore() {
   return (
     <Drawer>
-      <DrawerTrigger>Open</DrawerTrigger>
+      <DrawerTrigger>
+        <Button>Compartilhe sua nota!</Button>
+      </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          <DownloadImage/>
         </DrawerHeader>
         <DrawerFooter>
           <DrawerClose>
