@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { HiOutlineDownload } from "react-icons/hi";
 
