@@ -11,7 +11,6 @@ import {
 } from "~/components/ui/drawer";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { SocialMediaShareButtons } from "./socialMediaShareButtons";
-import { TicketDownloadButton } from "./ticketDownloadButton";
 
 interface Props {
   children: React.ReactNode;

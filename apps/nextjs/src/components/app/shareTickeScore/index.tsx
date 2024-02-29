@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/drawer";
 
 import { DownloadImage } from "./downloadImage";
+import { TicketDownloadButton } from "../temas/correction/shareScore/ticketDownloadButton";
+import { SocialMediaShareButtons } from "../temas/correction/shareScore/socialMediaShareButtons";
 
 interface Prop {
   score: string;
@@ -30,11 +32,13 @@ export function ShareTickeScore({ imageUrl, score, username }: Prop) {
         <DrawerHeader>
           <DrawerTitle>Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          <SocialMediaShareButtons />
           <DownloadImage
             imageUrl={imageUrl}
             username={username}
             score={score}
           />
+         
         </DrawerHeader>
         <DrawerFooter>
           <DrawerClose>
