@@ -13,14 +13,15 @@ interface Prop {
 export function DownloadImage({ imageUrl, score, username }: Prop) {
   const handleClick = async () => {
     // const {blob2} = await fetch(`https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`)
-    const response = await fetch("/api/file/score-ticket-image/");
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
+    //const response = await fetch("/api/file/score-ticket-image/");
+    //const blob = await response.blob();
+    //const url = window.URL.createObjectURL(blob);
+    const url = `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`;
     const link = document.createElement("a");
     link.href = url;
     link.download = "image.png";
     link.click();
-    window.URL.revokeObjectURL(url);
+    //window.URL.revokeObjectURL(url);
   };
 
  
