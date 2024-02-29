@@ -9,6 +9,7 @@ import UserInfoForm from "@/components/app/cancelSubscription/multiStepFform/fra
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 
 import { useMultiplestepForm } from "~/hooks/useMultiplestepForm";
 import { Reason } from "./fragments/reason";
@@ -141,6 +142,13 @@ export function MultiStepForm() {
     if (Object.values(errors).some((error) => error)) {
       return;
     }
+    toast("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      action: {
+        label: "Undo",
+        onClick: () => console.log("Undo"),
+      },
+    });
     nextStep();
   };
 
@@ -148,7 +156,9 @@ export function MultiStepForm() {
     <>
       <Card
         className={`flex justify-between ${
-          currentStepIndex === 1 ? "w-full h-[600px] md:h-[500px]" : "w-full h-[500px]"
+          currentStepIndex === 1
+            ? "h-[600px] w-full md:h-[500px]"
+            : "h-[500px] w-full"
         } relative m-1  rounded-lg border bg-slate-50 p-4 `}
       >
         {!showSuccessMsg ? (

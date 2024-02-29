@@ -4,6 +4,7 @@ import { BottomMenu } from "@/components/app/shared/BottomMenu";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 
 import { AppHeader } from "~/components/app/shared/appHeader";
+import { Toaster } from "@/components/ui/toaster";
 
 //import { Typebot } from "~/components/app/shared/typebot";
 
@@ -18,7 +19,7 @@ export default async function AppLayout({ children }: AuthLayoutProps) {
   });
 
   const {
-    data: { session },
+    data: { session},
   } = await supabase.auth.getSession();
 
   if (!session) {
@@ -34,6 +35,7 @@ export default async function AppLayout({ children }: AuthLayoutProps) {
           {children}
         </div>
       </main>
+      <Toaster />
       {/*  <Typebot /> */}
       <BottomMenu />
     </>
