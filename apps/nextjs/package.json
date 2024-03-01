@@ -69,6 +69,7 @@
     "next-themes": "^0.2.1",
     "pnpm": "^8.14.3",
     "react": "18.2.0",
+    "react-canvas-confetti": "^2.0.5",
     "react-day-picker": "^8.10.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.49.2",
