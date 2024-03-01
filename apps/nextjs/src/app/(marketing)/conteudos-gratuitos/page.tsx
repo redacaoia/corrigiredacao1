@@ -1,6 +1,6 @@
 import { FreeContent } from "@/components/shared/freeContent";
 
-export default function Plans() {
+export default function FreeContentPage() {
   return (
     <div className="mb-40 mt-20 flex flex-col items-center gap-4">
       <h1> Conteúdos Gratuitos</h1>
