@@ -55,8 +55,7 @@ export function Confetti() {
 
   return (
     <ReactCanvasConfetti
-      refConfetti={getInstance}
-      style={{
+       style={{
         position: "fixed",
         pointerEvents: "none",
         width: "100%",
