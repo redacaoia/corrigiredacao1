@@ -15,7 +15,7 @@ export default {
         "2xl": "1400px",
       },
     },
-    
+
     extend: {
       colors: {
         blue1: "#0157C8",
@@ -83,29 +83,17 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-"like-effect":{
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-
-  "0%": {
-    transform: 'scale-0'
-  },
-  "50%": {
-    transform: 'scale-0'
-  },
-  "100%": {
-    transform: 'scale-0'
-  },
-},
+        "like-effect": {
+          "0%": {
+            transform: 'scale-0'
+          },
+          "50%": {
+            transform: 'scale-120'
+          },
+          "100%": {
+            transform: 'scale-100'
+          },
+        },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
@@ -150,15 +138,15 @@ export default {
             transform: "translateY(-10px)",
           },
           "80%": {
-            opacity:' 0.6',
+            opacity: ' 0.6',
           },
           "100%": {
             opacity: '1',
             transform: "translateY(0px)",
           },
         },
-         // Tooltip
-         "slide-up-fade": {
+        // Tooltip
+        "slide-up-fade": {
           "0%": { opacity: 0, transform: "translateY(6px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
@@ -174,5 +162,5 @@ export default {
       },
     },
   },
-  plugins: [animate,require('tailwind-scrollbar-hide')],
+  plugins: [animate, require('tailwind-scrollbar-hide')],
 } satisfies Config;
