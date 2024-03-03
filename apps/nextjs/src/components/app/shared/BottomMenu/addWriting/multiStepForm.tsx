@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { ThematicAxis } from "./steps/thematicAxis";
+import { redirect, useRouter } from "next/navigation";
 
 export const FormDataSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -39,6 +40,7 @@ const steps = [
 ];
 
 export function MultiStepForm() {
+  const router = useRouter()
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const delta = currentStep - previousStep;
@@ -62,6 +64,7 @@ export function MultiStepForm() {
       `${city} ${country} ${email} ${firstName} ${lastName} ${state} ${street} ${zip}`,
     );
     reset();
+    router.push('/dashboard')
   };
 
   type FieldName = keyof Inputs;
@@ -365,10 +368,10 @@ export function MultiStepForm() {
            {currentStep === 3 && (
             <>
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Complete
+              22
               </h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
-                Thank you for your submission.
+               55.
               </p>
             </>
           )}
