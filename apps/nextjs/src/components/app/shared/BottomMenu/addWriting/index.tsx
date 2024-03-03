@@ -26,10 +26,10 @@ export function AddWriting() {
           className="absolute -top-16"
         />
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-auto h-auto rounded-lg border-none p-0 md:max-w-[95%] ">
-        <div className="mx-auto w-full cursor-pointer rounded-lg bg-blue-700 py-2 text-slate-200">
-          <AlertDialogCancel className="ml-auto border-none bg-transparent hover:bg-transparent p-0 text-lg">
-            <IoIosClose/>
+      <AlertDialogContent className="max-w-auto h-auto rounded-lg border-none p-0 md:max-w-[95%]">
+        <div className="mx-auto w-full cursor-pointer rounded-lg bg-blue-700 py-4 pl-4">
+          <AlertDialogCancel className="text-md  font ml-auto border-none bg-transparent p-0 text-slate-200 hover:bg-transparent hover:text-slate-200">
+            <IoIosClose size={24} />
             Corrigir redação
           </AlertDialogCancel>
         </div>

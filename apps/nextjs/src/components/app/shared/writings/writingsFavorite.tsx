@@ -1,4 +1,3 @@
-import { FaRegHeart } from "react-icons/fa";
 
 interface Pros {
   title: string;
