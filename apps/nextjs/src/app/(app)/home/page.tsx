@@ -1,5 +1,5 @@
+import { TrendingTopics } from "@/components/app/home/trendingTopics";
 import { WritingSection } from "~/components/app/shared/previousWritings";
-import { TrendingTopics } from "~/components/app/shared/trendingTopics";
 
 export default async function Home() {
  // await new Promise((resolve) => setTimeout(resolve, 5000));

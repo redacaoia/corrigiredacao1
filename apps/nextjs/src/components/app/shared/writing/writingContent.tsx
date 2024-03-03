@@ -1,8 +1,8 @@
-interface WritingContentPros {
+interface Props {
     title: string;
   }
   
-  export function WritingContent({ title }: WritingContentPros) {
+  export function WritingContent({ title }: Props) {
     return (
       <div className="flex  flex-col gap-0">
         <h4 className="font-medium text-zinc-500 ">Tema</h4>
