@@ -65,6 +65,7 @@ export function MultiStepForm() {
     );
     reset();
     router.push('/correcao/1')
+   
   };
 
   type FieldName = keyof Inputs;
