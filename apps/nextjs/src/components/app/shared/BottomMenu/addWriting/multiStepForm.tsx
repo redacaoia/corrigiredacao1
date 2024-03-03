@@ -99,7 +99,7 @@ export function MultiStepForm() {
         <nav aria-label="Progress">
           <ol
             role="list"
-            className="space-y-4 md:flex md:space-x-8 md:space-y-0"
+            className="space-y-4 flex md:space-x-8 md:space-y-0"
           >
             {steps.map((step, index) => (
               <li key={step.name} className="flex-1">
