@@ -6,7 +6,7 @@ import { CategoryButton } from "./categoryButton";
 export function FreeContent() {
   return (
     <div>
-      {/* <CategoryButton /> */}
+     
 
       <div className="grid  grid-cols-2 gap-2  py-5 md:grid-cols-5 md:px-20 ">
         {freeContent.categories.map((category, index) => (

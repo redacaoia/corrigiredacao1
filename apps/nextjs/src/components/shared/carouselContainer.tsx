@@ -2,6 +2,7 @@
 
 
 import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
 import { Carousel } from "~/components/ui/carousel";
 
