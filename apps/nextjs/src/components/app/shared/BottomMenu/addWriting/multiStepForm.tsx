@@ -39,6 +39,23 @@ const steps = [
   { id: "Step 4", name: "" },
 ];
 
+/* 
+
+function ActiveStepFormComponent() {
+  const { step } = useFormState();
+  switch (step) {
+    case 1:
+      return <UserNameForm />;
+    case 2:
+      return <EmailForm />;
+    case 3:
+      return <PasswordForm />;
+    default:
+      return null;
+  }
+}
+
+ */
 export function MultiStepForm() {
   const router = useRouter()
   const [previousStep, setPreviousStep] = useState(0);
