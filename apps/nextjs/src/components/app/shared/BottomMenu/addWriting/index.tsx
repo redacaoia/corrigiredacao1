@@ -27,9 +27,9 @@ export function AddWriting() {
         />
       </AlertDialogTrigger>
       <AlertDialogContent className="max-w-auto h-auto rounded-lg border-none p-0 md:max-w-[95%] ">
-        <div className="mx-auto w-full rounded-lg py-10 bg-blue-700 ">
+        <div className="mx-auto w-full rounded-lg py-10 bg-blue-700 cursor-pointer ">
           <AlertDialogCancel asChild>
-            <span className="ml-auto">
+            <span className="ml-auto bg-transparent border-none p-0">
               <IoIosClose size="40" className="text-slate-200" />
               Corrigir redação
             </span>
