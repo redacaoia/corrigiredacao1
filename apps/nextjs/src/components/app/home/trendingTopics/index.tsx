@@ -1,7 +1,7 @@
 import { BsArrowRight } from "react-icons/bs";
 
-import { Button } from "~/components/ui/button";
-import { Writing } from "../../shared/writing";
+import { Button } from "@/components/ui/button";
+import { Writing } from "@/components/app/shared/writing";
 
 export function TrendingTopics() {
   return (
