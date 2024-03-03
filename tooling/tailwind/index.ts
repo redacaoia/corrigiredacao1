@@ -83,7 +83,29 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+"like-effect":{
+  0% {
+    transform: scale(0);
+  }
 
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+  "0%": {
+    transform: 'scale-0'
+  },
+  "50%": {
+    transform: 'scale-0'
+  },
+  "100%": {
+    transform: 'scale-0'
+  },
+},
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },

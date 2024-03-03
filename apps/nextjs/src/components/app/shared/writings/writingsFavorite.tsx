@@ -7,8 +7,8 @@ interface Pros {
 export function WritingFavorite() {
   return (
     <label className="block relative cursor-pointer text-2xl select-none duration-100 hover:scale-110 transition-transform">
-      <input checked="checked" type="checkbox" className="absolute opacity-0 cursor-pointer h-0 w-0"/>
-      <div className="absolute top-0 left-0 h-8 w-8 transition duration-100">
+      <input checked type="checkbox" className="absolute opacity-0 cursor-pointer h-0 w-0"/>
+      <div className="absolute top-0 left-0 h-8 w-8 transition duration-100 ">
         <svg viewBox="0 0 256 256">
           <rect fill="none" height="256" width="256"></rect>
           <path
