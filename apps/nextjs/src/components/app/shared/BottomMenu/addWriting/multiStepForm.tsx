@@ -64,7 +64,7 @@ export function MultiStepForm() {
       `${city} ${country} ${email} ${firstName} ${lastName} ${state} ${street} ${zip}`,
     );
     reset();
-    router.push('/dashboard')
+    router.push('/correcao/1')
   };
 
   type FieldName = keyof Inputs;
@@ -218,6 +218,7 @@ export function MultiStepForm() {
                 </div>
               </div>
             </motion.div>
+            
           )}
 
           {currentStep === 1 && (
