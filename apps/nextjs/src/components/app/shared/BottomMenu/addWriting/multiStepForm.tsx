@@ -23,18 +23,19 @@ export const FormDataSchema = z.object({
 type Inputs = z.infer<typeof FormDataSchema>;
 
 const steps = [
-  { id: "Step 1", name: "" },
+ 
   {
-    id: "Step 2",
+    id: "Step 1",
     name: "Personal Information",
     fields: ["firstName", "lastName", "email"],
   },
   {
-    id: "Step 3",
+    id: "Step 2",
     name: "Address",
     fields: ["country", "state", "city", "street", "zip"],
   },
-  { id: "Step 4", name: "Complete" },
+  { id: "Step 3", name: "Complete" },
+  { id: "Step 4", name: "" },
 ];
 
 export function MultiStepForm() {
@@ -130,12 +131,8 @@ export function MultiStepForm() {
 
         {/* Form */}
         <form className="" onSubmit={handleSubmit(processForm)}>
+         
           {currentStep === 0 && (
-            <>
-              <ThematicAxis />
-            </>
-          )}
-          {currentStep === 1 && (
             <motion.div
               initial={{ x: delta >= 0 ? "50%" : "-50%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -220,7 +217,7 @@ export function MultiStepForm() {
             </motion.div>
           )}
 
-          {currentStep === 2 && (
+          {currentStep === 1 && (
             <motion.div
               initial={{ x: delta >= 0 ? "50%" : "-50%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -355,7 +352,17 @@ export function MultiStepForm() {
             </motion.div>
           )}
 
-          {currentStep === 3 && (
+          {currentStep === 2 && (
+            <>
+              <h2 className="text-base font-semibold leading-7 text-gray-900">
+                Complete
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-gray-600">
+                Thank you for your submission.
+              </p>
+            </>
+          )}
+           {currentStep === 3 && (
             <>
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Complete

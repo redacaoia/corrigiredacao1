@@ -6,9 +6,9 @@ import ReactCanvasConfetti from "react-canvas-confetti";
 interface Props {
   children: React.ReactNode;
 }
-export function Confetti() {
+export function Confetti({ children }: Props) {
   const refAnimationInstance = useRef(null);
-
+  let bb;
   const getInstance = useCallback((instance) => {
     refAnimationInstance.current = instance;
   }, []);
@@ -54,15 +54,22 @@ export function Confetti() {
   }, [makeShot]);
 
   return (
-    <ReactCanvasConfetti
-       style={{
-        position: "fixed",
-        pointerEvents: "none",
-        width: "100%",
-        height: "100%",
-        top: 0,
-        left: 0,
-      }}
-    />
+    <>
+      <ReactCanvasConfetti
+       refConfetti={getInstance}
+        onInit={bb}
+        width={100}
+        height={100}
+        style={{
+          position: "fixed",
+          pointerEvents: "none",
+          width: "100%",
+          height: "100%",
+          top: 0,
+          left: 0,
+        }}
+      />
+      {children}
+    </>
   );
 }
