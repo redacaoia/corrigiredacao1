@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,14 +26,14 @@ export function AddWriting() {
           className="absolute -top-16"
         />
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-auto md:max-w-[95%] h-auto">
-        <div className="mx-auto">
-        <AlertDialogCancel className="left-0 ml-auto p-1">
-          <IoIosClose size="40" />
-          Cancelar
-        </AlertDialogCancel>
+      <AlertDialogContent className="max-w-auto h-auto p-0 md:max-w-[95%]">
+        <div className="mx-auto w-full bg-blue-700">
+          <AlertDialogCancel className="left-0 ml-auto p-1">
+            <IoIosClose size="40" />
+            Cancelar
+          </AlertDialogCancel>
         </div>
-       {/*  <AlertDialogHeader>
+        {/*  <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
             This action cannot be undone. This will permanently delete your
@@ -48,4 +49,3 @@ export function AddWriting() {
     </AlertDialog>
   );
 }
-
