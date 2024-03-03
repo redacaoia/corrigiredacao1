@@ -111,7 +111,7 @@ export function MultiStepForm() {
 
   return (
     <div className="">
-      <section className=" flex flex-col justify-between gap-10">
+      <section className="flex flex-col justify-between gap-10">
         {/* steps */}
         <nav aria-label="Progress">
           <ol
