@@ -26,10 +26,12 @@ export function AddWriting() {
         />
       </AlertDialogTrigger>
       <AlertDialogContent className="max-w-auto md:max-w-[95%] h-auto">
+        <div className="mx-auto">
         <AlertDialogCancel className="left-0 ml-auto p-1">
           <IoIosClose size="40" />
           Cancelar
         </AlertDialogCancel>
+        </div>
        {/*  <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
