@@ -26,10 +26,10 @@ export function AddWriting() {
           className="absolute -top-16"
         />
       </AlertDialogTrigger>
-      <AlertDialogContent className="max-w-auto h-auto rounded-lg p-0 md:max-w-[95%]">
-        <div className="mx-auto w-full rounded-lg bg-blue-700">
+      <AlertDialogContent className="max-w-auto h-auto rounded-lg p-0 md:max-w-[95%] border-none relative">
+        <div className="mx-auto w-full rounded-lg bg-blue-700 fixed top-0 ">
           <AlertDialogCancel asChild>
-            <Button variant="outline" className="ml-auto ">
+            <Button variant="outline" className="ml-auto">
               <IoIosClose size="40" />
               Cancelar
             </Button>

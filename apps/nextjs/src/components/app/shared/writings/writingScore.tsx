@@ -1,6 +1,6 @@
 import { BsFillStarFill } from "react-icons/bs";
 
-import { StudentScore } from "../../studentScore";
+import { StudentScore } from "../studentScore";
 
 export function WritingScore() {
   return (
