@@ -44,7 +44,7 @@ export function ThematicAxis() {
         ))}
 
       {filtredWritingThemes &&
-        filtredWritingThemes.map((type, index) => (
+        filtredWritingThemes.map((type) => (
           <ul key={type.id}>
             <li>{type.nome}</li>
           </ul>
