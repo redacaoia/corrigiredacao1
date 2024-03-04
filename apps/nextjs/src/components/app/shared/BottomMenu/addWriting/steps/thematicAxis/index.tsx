@@ -15,9 +15,8 @@ import {
 } from "@radix-ui/react-icons";
 
 export function ThematicAxis() {
-  
   const [filtredWritingThemes, setFiltredWritingThemes] = useState();
-  
+
   useEffect(() => {
     setFiltredWritingThemes(getWritingThemes());
   }, []);
