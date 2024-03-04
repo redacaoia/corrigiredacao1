@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import Reactconfetti, { ReactConfetti } from "react-confetti";
+import { useEffect, useState } from "react";
+import { ReactConfetti } from "react-confetti";
 
 export function Confetti() {
   const [windowDimension, setDimension] = useState({
