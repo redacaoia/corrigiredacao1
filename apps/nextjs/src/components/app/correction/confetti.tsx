@@ -3,10 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Reactconfetti, { ReactConfetti } from "react-confetti";
 
-interface Props {
-  children: React.ReactNode;
-}
-export function Confetti({ children }: Props) {
+export function Confetti() {
   const [windowDimension, setDimension] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -24,12 +21,9 @@ export function Confetti({ children }: Props) {
   }, [windowDimension]);
 
   return (
-    <>
-      <ReactConfetti
-        width={windowDimension.width}
-        height={windowDimension.height}
-      />
-      {children}
-    </>
+    <ReactConfetti
+      width={windowDimension.width}
+      height={windowDimension.height}
+    />
   );
 }
