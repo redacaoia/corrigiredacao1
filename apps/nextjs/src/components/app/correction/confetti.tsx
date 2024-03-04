@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ReactConfetti } from "react-confetti";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Reactconfetti, { ReactConfetti } from "react-confetti";
 
-export function Confetti() {
+interface Props {
+  children: React.ReactNode;
+}
+export function Confetti({ children }: Props) {
   const [windowDimension, setDimension] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -21,9 +24,12 @@ export function Confetti() {
   }, [windowDimension]);
 
   return (
-    <ReactConfetti
-      width={windowDimension.width}
-      height={windowDimension.height}
-    />
+    <>
+      <ReactConfetti
+        width={windowDimension.width}
+        height={windowDimension.height}
+      />
+      {children}
+    </>
   );
 }
