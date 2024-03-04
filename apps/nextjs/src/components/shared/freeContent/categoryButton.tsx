@@ -17,7 +17,7 @@ export function CategoryButton({ categoryTitle }: Props) {
   const lowercaseTitle = formattedTitle.toLowerCase();
 
   return (
-    <Link href={lowercaseTitle}>
+    <Link href={`#${lowercaseTitle}`}>
       <Button className="flex h-16 w-48 items-center gap-2 rounded-sm bg-blue-500 text-center text-lg font-medium shadow-sm hover:bg-sky-600 md:h-24">
         {categoryTitle} <FaArrowRight className="hover:animate-bellRing" />
       </Button>
