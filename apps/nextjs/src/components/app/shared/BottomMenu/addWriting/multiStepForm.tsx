@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { redirect, useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -8,7 +9,6 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 import { ThematicAxis } from "./steps/thematicAxis";
-import { redirect, useRouter } from "next/navigation";
 
 export const FormDataSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -24,7 +24,6 @@ export const FormDataSchema = z.object({
 type Inputs = z.infer<typeof FormDataSchema>;
 
 const steps = [
- 
   {
     id: "Step 1",
     name: "Personal Information",
@@ -57,7 +56,7 @@ function ActiveStepFormComponent() {
 
  */
 export function MultiStepForm() {
-  const router = useRouter()
+  const router = useRouter();
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const delta = currentStep - previousStep;
@@ -81,8 +80,7 @@ export function MultiStepForm() {
       `${city} ${country} ${email} ${firstName} ${lastName} ${state} ${street} ${zip}`,
     );
     reset();
-    router.push('/correcao/1')
-   
+    router.push("/correcao/1");
   };
 
   type FieldName = keyof Inputs;
@@ -114,14 +112,11 @@ export function MultiStepForm() {
       <section className="flex flex-col justify-between gap-10">
         {/* steps */}
         <nav aria-label="Progress">
-          <ol
-            role="list"
-            className="space-y-4 flex md:space-x-8 md:space-y-0"
-          >
+          <ol role="list" className="flex space-y-4 md:space-x-8 md:space-y-0">
             {steps.map((step, index) => (
               <li key={step.name} className="flex-1">
                 {currentStep > index ? (
-                  <div className="group flex  rounded-full oflex-col border-l-4 border-sky-600 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
+                  <div className="oflex-col group  flex rounded-full border-l-4 border-sky-600 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
                     <span className="text-sm font-medium text-sky-600 transition-colors ">
                       {step.id}
                     </span>
@@ -152,7 +147,6 @@ export function MultiStepForm() {
 
         {/* Form */}
         <form className="" onSubmit={handleSubmit(processForm)}>
-         
           {currentStep === 0 && (
             <motion.div
               initial={{ x: delta >= 0 ? "50%" : "-50%", opacity: 0 }}
@@ -236,7 +230,6 @@ export function MultiStepForm() {
                 </div>
               </div>
             </motion.div>
-            
           )}
 
           {currentStep === 1 && (
@@ -384,14 +377,13 @@ export function MultiStepForm() {
               </p>
             </>
           )}
-           {currentStep === 3 && (
+          {currentStep === 3 && (
             <>
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-              22
+                22
               </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-               55.
-              </p>
+              <ThematicAxis />
+              <p className="mt-1 text-sm leading-6 text-gray-600">55.</p>
             </>
           )}
         </form>

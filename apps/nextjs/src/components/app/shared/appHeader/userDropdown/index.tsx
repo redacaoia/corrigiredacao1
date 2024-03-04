@@ -22,12 +22,11 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
   ChevronDown,
   CreditCard,
   LogOut,
- 
   PlusCircle,
   User,
   UserPlus,
 } from "lucide-react";
-import { FaCrown, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaCrown, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineAppShortcut } from "react-icons/md";
 import { SlPresent } from "react-icons/sl";
@@ -110,8 +109,8 @@ export function UserDropdown() {
                   <span>Instagram</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <FaInstagram className="mr-2 h-4 w-4 " color="#006AFF" />
-                  <span>Instagram</span>
+                  <FaFacebook className="mr-2 h-4 w-4 " color="#006AFF" />
+                  <span>Facebook</span>
                 </DropdownMenuItem>
 
                 {/* <DropdownMenuItem>
