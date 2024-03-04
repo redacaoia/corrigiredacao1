@@ -30,18 +30,22 @@ export function ThematicAxis() {
 
   return (
     <div>
-      {buttonsWritingThemes &&
-        buttonsWritingThemes.map((type, index) => (
-          <>
-            <button
-              key={index}
-              value={type.value}
-              onClick={handleWritingThemes}
-            >
-              {type.name}
-            </button>
-          </>
-        ))}
+      <ToggleGroup type="single">
+        {buttonsWritingThemes &&
+          buttonsWritingThemes.map((type, index) => (
+            <>
+              <ToggleGroupItem value="bold" aria-label="Toggle bold">
+                <button
+                  key={index}
+                  value={type.value}
+                  onClick={handleWritingThemes}
+                >
+                  {type.name}
+                </button>
+              </ToggleGroupItem>
+            </>
+          ))}
+      </ToggleGroup>
 
       {filtredWritingThemes &&
         filtredWritingThemes.map((type) => (
