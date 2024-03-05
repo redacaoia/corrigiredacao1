@@ -8,11 +8,7 @@ import {
   filterWritingThemes,
   getWritingThemes,
 } from "@/utils/filterWritingThemes";
-import {
-  FontBoldIcon,
-  FontItalicIcon,
-  UnderlineIcon,
-} from "@radix-ui/react-icons";
+
 
 export function ThematicAxis() {
   const [filtredWritingThemes, setFiltredWritingThemes] = useState();
