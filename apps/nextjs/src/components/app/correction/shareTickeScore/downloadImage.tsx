@@ -12,8 +12,8 @@ interface Prop {
 
 export function DownloadImage({ imageUrl, score, username }: Prop) {
   const handleClick =  () => {
-    //window.URL.revokeObjectURL(url);
-    const url =  `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`;
+    //window.URL.revokeObjectURL(url);      ${username}&imageUrl=${imageUrl}&score=${score}
+    const url =  `https://ticket-generate-score.vercel.app/api/dynamic-image?username=WalysonMoura`;
     const aTag = document.createElement('a')
     aTag.href = url
     aTag.setAttribute("download",username)
