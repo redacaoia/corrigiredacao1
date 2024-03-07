@@ -24,7 +24,7 @@ export function DownloadImage({ imageUrl, score, username }: Prop) {
     aTag.remove() */
     try {
       const response = await fetch(
-        `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}`
+        `https://ticket-generate-score.vercel.app/api/dynamic-image?username=vercel`
       );
   
       if (!response.ok) {
