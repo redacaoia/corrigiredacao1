@@ -68,17 +68,17 @@ export function DownloadImage({ imageUrl, score, username }: Prop) {
     <Button
       type="button"
       className="max-w-80 disabled:cursor-not-allowed disabled:opacity-60"
-     onClick={handleClick}
-      disabled={pending}
+     onClick={()=>{handleClick}}
+      //disabled={pending}
     >
-     
-       {pending ? (
+     Baixar Imagem <HiOutlineDownload className="ml-2" size={20} />
+    {/*    {pending ? (
         <>
           Baixar Imagem <HiOutlineDownload className="ml-2" size={20} />
         </>
       ) : (
         <>Baixando <LoadingDots color="#808080" /></>
-      )}
+      )} */}
     </Button>
   );
 }
