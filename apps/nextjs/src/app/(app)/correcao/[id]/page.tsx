@@ -1,5 +1,5 @@
 //import { Confetti } from "@/components/app/correction/confetti";
-import { ShareTickeScore } from "@/components/app/shareTickeScore";
+import { ShareTickeScore } from "@/components/app/correction/shareTickeScore";
 
 interface Props {
   params: {

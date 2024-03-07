@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/drawer";
 
 import { DownloadImage } from "./downloadImage";
-import { TicketDownloadButton } from "../temas/correction/shareScore/ticketDownloadButton";
-import { SocialMediaShareButtons } from "../temas/correction/shareScore/socialMediaShareButtons";
+import { TicketDownloadButton } from "../../temas/correction/shareScore/ticketDownloadButton";
+import { SocialMediaShareButtons } from "../../temas/correction/shareScore/socialMediaShareButtons";
 
 interface Prop {
   score: string;

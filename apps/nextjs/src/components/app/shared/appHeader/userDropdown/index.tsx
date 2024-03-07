@@ -26,10 +26,12 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
   User,
   UserPlus,
 } from "lucide-react";
-import { FaCrown, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaCrown, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineAppShortcut } from "react-icons/md";
 import { SlPresent } from "react-icons/sl";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { AiFillInstagram } from "react-icons/ai";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { CreateAvatarProfile } from "~/utils/createAvatarProfile";
@@ -101,11 +103,11 @@ export function UserDropdown() {
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuItem>
-                  <FaWhatsapp className="mr-2 h-4 w-4" color="#25D366" />
+                  <IoLogoWhatsapp className="mr-2 h-4 w-4" color="#25D366" />
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <FaInstagram className="mr-2 h-4 w-4 " color="#E1306C" />
+                  <AiFillInstagram className="mr-2 h-4 w-4 " color="#E1306C" />
                   <span>Instagram</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>

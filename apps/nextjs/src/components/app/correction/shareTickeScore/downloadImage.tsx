@@ -11,17 +11,15 @@ interface Prop {
 }
 
 export function DownloadImage({ imageUrl, score, username }: Prop) {
-  const handleClick = async () => {
-    // const {blob2} = await fetch(`https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`)
-    //const response = await fetch("/api/file/score-ticket-image/");
-    //const blob = await response.blob();
-    //const url = window.URL.createObjectURL(blob);
-    const url = `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`;
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "image.png";
-    link.click();
+  const handleClick =  () => {
     //window.URL.revokeObjectURL(url);
+    const url =  `https://ticket-generate-score.vercel.app/api/dynamic-image?username=${username}&imageUrl=${imageUrl}&score=${score}`;
+    const aTag = document.createElement('a')
+    aTag.href = url
+    aTag.setAttribute("download",username)
+    document.body.appendChild(aTag)
+    aTag.click()
+    aTag.remove()
   };
 
  
@@ -31,7 +29,7 @@ export function DownloadImage({ imageUrl, score, username }: Prop) {
     <Button
       type="button"
       className="max-w-80 disabled:cursor-not-allowed disabled:opacity-60"
-     
+     onClick={() =>{handleClick()}}
       disabled={pending}
     >
       Baixar Imagem <HiOutlineDownload className="ml-2" size={20} />
