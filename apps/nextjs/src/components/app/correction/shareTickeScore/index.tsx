@@ -29,8 +29,9 @@ export function ShareTickeScore({ imageUrl, score, username }: Prop) {
         <Button>Compartilhe sua nota!</Button>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+        <DrawerHeader className=''>
+         <div>
+         <DrawerTitle >Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>
           <SocialMediaShareButtons />
           <DownloadImage
@@ -38,6 +39,7 @@ export function ShareTickeScore({ imageUrl, score, username }: Prop) {
             username={username}
             score={score}
           />
+         </div>
          
         </DrawerHeader>
         <DrawerFooter>
