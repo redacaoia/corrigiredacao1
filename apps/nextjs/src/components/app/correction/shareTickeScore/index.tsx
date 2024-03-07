@@ -29,7 +29,7 @@ export function ShareTickeScore({ imageUrl, score, username }: Prop) {
         <Button>Compartilhe sua nota!</Button>
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className=''>
+        <DrawerHeader className='max-w-'>
          <div>
          <DrawerTitle >Are you absolutely sure?</DrawerTitle>
           <DrawerDescription>This action cannot be undone.</DrawerDescription>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Writing } from "@/components/app/shared/writing";
 import { Button } from "@/components/ui/button";
 import { BsArrowRight } from "react-icons/bs";
@@ -7,10 +8,12 @@ export function WritingSection() {
     <section>
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-black1">Suas últimas redações</h2>
-        <Button variant="link" className="flex items-center gap-1 text-blue1">
-          Ver Todas
-          <BsArrowRight />
-        </Button>
+        <Link href="/desempenho#minhasredacoes">
+          <Button variant="link" className="flex  items-center gap-1 text-blue1">
+            Ver Todas
+            <BsArrowRight />
+          </Button>
+        </Link>
       </div>
 
       <div className="flex w-full flex-col gap-8">
