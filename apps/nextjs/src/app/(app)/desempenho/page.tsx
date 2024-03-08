@@ -1,3 +1,4 @@
+import { CorrectionsSection } from "@/components/app/desempenho/corrections";
 
 export default function Performance() {
     return (
@@ -7,7 +8,7 @@ export default function Performance() {
          
         </section>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-48">
-         
+         <CorrectionsSection/>
         </div>
       </div>
     );
