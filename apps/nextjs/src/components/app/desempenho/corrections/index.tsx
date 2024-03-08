@@ -15,23 +15,13 @@ export function CorrectionsSection() {
             <Writing.Date date="20/20/2000" time="18:00" />
             <Writing.Content title="Aquecimento Global Aquecimento Global  Aquecimento Global" />
           </div>
-        </Writing.Root>
-
-        <Writing.Root>
-          <Writing.Score />
-          <div className="flex flex-col items-start justify-between gap-2 sm:gap-4">
-            <Writing.Date date="20/20/2000" time="18:00" />
-            <Writing.Content title="Aquecimento Global Aquecimento Global" />
+          <div>
+            <Writing.Delete/>
+            <Writing.Edit/>
           </div>
         </Writing.Root>
 
-        <Writing.Root>
-          <Writing.Score />
-          <div className="flex flex-col items-start justify-between  gap-2  sm:gap-4">
-            <Writing.Date date="20/20/2000" time="18:00" />
-            <Writing.Content title="Aquecimento Global Aquecimento Global" />
-          </div>
-        </Writing.Root>
+       
       </div>
     </section>
   );
