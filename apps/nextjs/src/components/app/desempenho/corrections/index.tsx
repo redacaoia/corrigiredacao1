@@ -1,11 +1,9 @@
-import Link from "next/link";
+
 import { Writing } from "@/components/app/shared/writing";
-import { Button } from "@/components/ui/button";
-import { BsArrowRight } from "react-icons/bs";
 
 export function CorrectionsSection() {
   return (
-    <section>
+    <section id='minhasredacoes'>
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold text-black1">Minhas redações</h2>
       </div>
