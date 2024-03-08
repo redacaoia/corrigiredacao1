@@ -1,4 +1,4 @@
-import { MultiStepForm } from "@/components/app/cancelSubscription/multiStepFform";
+import { MultiStepForm } from "@/components/app/cancelSubscription/multiStepForm";
 
 export default function CancelSubscription() {
   
