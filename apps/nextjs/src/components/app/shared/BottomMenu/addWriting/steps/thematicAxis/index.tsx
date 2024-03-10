@@ -25,18 +25,22 @@ export function ThematicAxis() {
 
   return (
     <div>
-      {buttonsWritingThemes &&
+      
+    <ToggleGroup type="single">
+     
+    {buttonsWritingThemes &&
         buttonsWritingThemes.map((type, index) => (
           <>
-            <button
-              key={index}
-              value={type.value}
+            <ToggleGroupItem  aria-label="Toggle bold" key={index}
+              value={type.name}
+              className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
               onClick={handleWritingThemes}
-            >
-              {type.name}
-            </button>
+         >
+         {type.name}
+      </ToggleGroupItem>
           </>
         ))}
+    </ToggleGroup>
 
       {filtredWritingThemes &&
         filtredWritingThemes.map((type) => (
