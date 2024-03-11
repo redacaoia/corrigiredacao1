@@ -159,6 +159,7 @@ export function MultiStepForm() {
               <p className="mt-1 text-sm leading-6 text-gray-600">
                 Provide your personal details.
               </p>
+              <ThematicAxis />
               <div className=" grid grid-cols-3 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
                   <label
@@ -382,7 +383,7 @@ export function MultiStepForm() {
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 22
               </h2>
-              <ThematicAxis />
+             
               <p className="mt-1 text-sm leading-6 text-gray-600">55.</p>
             </>
           )}
