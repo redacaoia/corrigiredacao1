@@ -1,18 +1,25 @@
+import { useState } from "react";
+import Image from "next/image";
+import { redirect, useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import useScroll from "@/hooks/useScroll";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import {
+  Controller,
+  SubmitHandler,
+  useFieldArray,
+  useForm,
+} from "react-hook-form";
+import { FaCheck } from "react-icons/fa";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { toast } from "sonner";
+import { z } from "zod";
 
-const steps = [
-  {
-    id: "Step 1",
-    name: "Personal Information",
-    fields: ["firstName", "lastName", "email"],
-  },
-  {
-    id: "Step 2",
-    name: "Address",
-    fields: ["country", "state", "city", "street", "zip"],
-  },
-  { id: "Step 3", name: "Complete" },
-  { id: "Step 4", name: "" },
-];
+import { ReasonCheckboxes } from "./steps/reasonCheckboxes";
 
 const itemsCheckbox = [
   {
@@ -35,37 +42,8 @@ const itemsCheckbox = [
     id: "outro-motivo",
     label: "Outro motivo",
   },
-] as const
-"use client";
-
-import { useState } from "react";
-import { redirect, useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import {
-  SubmitHandler,
-  useForm,
-  useFieldArray,
-  Controller,
-} from "react-hook-form";
-import { toast } from "sonner";
-import { z } from "zod";
-import { FaCheck } from "react-icons/fa";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-
-import { ColaboradorRadioGroup } from "./colaboradorRadioGroup";
-import { AreaCheckboxes } from "./areaCheckboxes";
-import { InvestimentoRadioGroup } from "./investimentoRadioGroup";
-import { PrazoCheckboxes } from "./prazoRadioGroup";
-import useScroll from "@/hooks/useScroll";
-import { ImportantInformations } from "./importantInformations";
-import { EscopoRadioGroup } from "./escopoRadioGroup";
-import { IoCloseCircleOutline } from "react-icons/io5";
-import Image from "next/image";
+] as const;
+("use client");
 
 export const FormDataSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -104,8 +82,6 @@ const steps = [
   { id: "5", name: "Complete" },
 ];
 
-
- */
 export function MultiStepForm() {
   const router = useRouter();
   const [previousStep, setPreviousStep] = useState(0);
@@ -153,33 +129,15 @@ export function MultiStepForm() {
   };
 
   // isso pode vir do seu banco de dados ou API
-  const defaultValues: Partial<Inputs> = {
-    description: "I own a computer.",
-    urls: [
-      { value: "https://shadcn.com" },
-      { value: "http://twitter.com/shadcn" },
-    ],
-  };
-
   const form = useForm<Inputs>({
     resolver: zodResolver(FormDataSchema),
-    defaultValues,
     mode: "onChange",
   });
 
-  const { fields, append } = useFieldArray({
-    name: "urls",
-    control: form.control,
-  });
-  const scrolled = useScroll(50);
   return (
     <div className="">
       <section className="flex flex-col justify-between gap-10 pt-40 text-slate-900">
-       
-
-        <h3 className="mx-auto flex flex-col items-center gap-2">
-          Antes de falar sobre o projeto leia as <ImportantInformations />
-        </h3>
+        <h3 className="mx-auto flex flex-col items-center gap-2"></h3>
 
         {/* Form */}
         <form className="" onSubmit={handleSubmit(processForm)}>
@@ -189,44 +147,17 @@ export function MultiStepForm() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Personal Information
-              </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                Provide your personal details.
-              </p>
-
-              <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="name">Olá, eu sou</Label>
-                <Input type="name" id="name" placeholder="Email" />
-
-                <Label htmlFor="email">Meu e-mail é</Label>
-                <Input type="email" id="email" placeholder="Email" />
-
-                <div className="grid md:grid-cols-2">
-                  <Label htmlFor="email">Minha empresa é a</Label>
-                  <Input type="email" id="email" placeholder="Email" />
-
-                  <Label htmlFor="email">WhatsApp</Label>
-                  <Input type="email" id="email" placeholder="Email" />
-                </div>
-
-                <Label htmlFor="email">Site atual (se houver)</Label>
-                <Input type="email" id="email" placeholder="Email" />
-              </div>
-
               <div className="flex flex-col">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">
-                  O número de colaboradores da minha empresa é
+                  Por que você está pensando em cancelar?
                 </h2>
 
-                <ColaboradorRadioGroup
+                <ReasonCheckboxes
                   register={register}
                   control={form.control}
                   errors={errors}
                 />
               </div>
-              
             </motion.div>
           )}
 
@@ -237,79 +168,47 @@ export function MultiStepForm() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="px-5"
             >
-             <div>
-             <div><Image src="/emojis/sad.svg" alt=""/>
-             <h2 className="text-base font-semibold leading-7 text-gray-900">
-                  O que acontecerá ao cancelar?
-                </h2></div>
-              <ul>
-                <li><IoCloseCircleOutline />Você perderá acesso a todos os beneficíos</li>
-                <li><IoCloseCircleOutline />Você não terá mais acesso as correção detalhda</li>
-                <li><IoCloseCircleOutline />Você todo o progresso feito até aqui</li>
-                <li><IoCloseCircleOutline />Você perderá </li>
-              </ul>
-             </div>
-              
+              <div>
+                <div>
+                  <Image src="/emojis/sad.svg" alt="" />
+                  <h2 className="text-base font-semibold leading-7 text-gray-900">
+                    O que acontecerá ao cancelar?
+                  </h2>
+                </div>
+                <ul>
+                  <li>
+                    <IoCloseCircleOutline />
+                    Você perderá acesso a todos os beneficíos
+                  </li>
+                  <li>
+                    <IoCloseCircleOutline />
+                    Você não terá mais acesso as correção detalhda
+                  </li>
+                  <li>
+                    <IoCloseCircleOutline />
+                    Você todo o progresso feito até aqui
+                  </li>
+                  <li>
+                    <IoCloseCircleOutline />
+                    Você perderá{" "}
+                  </li>
+                </ul>
+              </div>
             </motion.div>
           )}
 
           {currentStep === 2 && (
-            <>
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Complete
-              </h2>
-
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="message">
-                  Esses são os detalhes do meu negócio
-                </Label>
-                <Textarea
-                  placeholder="Me conte um pouco sobre sua empresa/negocio e quais os problemas ela resolve para seus clientes"
-                  id="message"
-                />
-              </div>
-
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="message">
-                  Descreva detalhadamente o projeto
-                </Label>
-                <Textarea
-                  placeholder="Qual a quantidade de telas, funcionalidades, estilo do design e principalmente quais os objetivos de seu projeto."
-                  id="message"
-                />
-              </div>
-
-              <div className="grid w-full gap-1.5">
-                <Label htmlFor="message">
-                  Esses são os detalhes do meu negócio
-                </Label>
-                <Textarea
-                  placeholder="Me conte um pouco sobre sua empresa/negocio e quais os problemas ela resolve para seus clientes"
-                  id="message"
-                />
-              </div>
-            </>
-          )}
-          {currentStep === 3 && (
-            <>
+            <motion.div>
               <h2 className="text-base font-semibold leading-7 text-gray-900"></h2>
 
-              <p className="mt-1 text-sm leading-6 text-gray-600"></p>
-              <div>
-                {fields.map((field, index) => (
-                  <Input {...field} key={index} />
-                ))}
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="sm"
-                  className="mt-2"
-                  onClick={() => append({ value: "" })}
-                >
-                  Add URL
+              <div className="grid w-full gap-1.5">
+                <Button variant="secondary">
+                  não quero cancelar minha assinatura
                 </Button>
+
+                <Button variant="destructive">cancelar minha assinatura</Button>
               </div>
-            </>
+            </motion.div>
           )}
         </form>
 

@@ -6,7 +6,7 @@ interface AreaOption {
   value: string; // Use a string for checkbox values
 }
 
-const areas: AreaOption[] = [
+const reasonCheckbox: AreaOption[] = [
   {
     value: "nao-preciso-mais",
     label: "Não preciso mais",
@@ -29,40 +29,40 @@ const areas: AreaOption[] = [
   },
 ];
 
-type AreasSelection = {
+type ReasonSelection = {
   register: any;
   control: any;
   errors: any;
 };
 
-export function AreaCheckboxes({ register, control, errors }: AreasSelection) {
+export function ReasonCheckboxes({ register, control, errors }: ReasonSelection) {
   return (
     <ToggleGroup type="multiple" className="flex flex-wrap">
-      {areas.map((area) => (
-        <div key={area.value} className="relative ">
+      {reasonCheckbox.map((item) => (
+        <div key={item.value} className="relative ">
           <Checkbox
-            id={area.value}
+            id={item.value}
             className="sr-only"
-            {...register(`${area.value}`)}
+            {...register(`${item.value}`)}
           />
 
           <label
-            htmlFor={area.value}
+            htmlFor={item.value}
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             <ToggleGroupItem
-              value={area.value}
+              value={item.value}
               aria-label="Toggle bold"
               className="rounded-full"
               variant="outline"
             >
-              {area.label}
+              {item.label}
             </ToggleGroupItem>
           </label>
         </div>
       ))}
-      {errors.areas && (
-        <span className="text-red-500">{errors.areas.message}</span>
+      {errors.reason && (
+        <span className="text-red-500">{errors.reason.message}</span>
       )}
     </ToggleGroup>
   );
