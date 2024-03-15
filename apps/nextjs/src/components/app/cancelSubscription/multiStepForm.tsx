@@ -238,7 +238,10 @@ export function MultiStepForm() {
               className="px-5"
             >
              <div>
-             <div><Image src=""/></div>
+             <div><Image src="/emojis/sad.svg" alt=""/>
+             <h2 className="text-base font-semibold leading-7 text-gray-900">
+                  O que acontecerá ao cancelar?
+                </h2></div>
               <ul>
                 <li><IoCloseCircleOutline />Você perderá acesso a todos os beneficíos</li>
                 <li><IoCloseCircleOutline />Você não terá mais acesso as correção detalhda</li>
