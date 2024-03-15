@@ -1,6 +1,7 @@
 "use client";
 
 /* import { UserButton } from "@clerk/nextjs"; */
+import Image from "next/image";
 import Link from "next/link";
 //type CardProps = React.ComponentProps<typeof Card>;
 import { useRouter } from "next/navigation";
@@ -26,12 +27,12 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
   User,
   UserPlus,
 } from "lucide-react";
+import { AiFillInstagram } from "react-icons/ai";
 import { FaCrown, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { MdOutlineAppShortcut } from "react-icons/md";
 import { SlPresent } from "react-icons/sl";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { AiFillInstagram } from "react-icons/ai";
 
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { CreateAvatarProfile } from "~/utils/createAvatarProfile";
@@ -107,6 +108,7 @@ export function UserDropdown() {
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
+                  <Image src="/icons/instagram.svg" />
                   <AiFillInstagram className="mr-2 h-4 w-4 " color="#E1306C" />
                   <span>Instagram</span>
                 </DropdownMenuItem>
