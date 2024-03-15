@@ -1,49 +1,18 @@
+'use client'
+
 import { useState } from "react";
 import Image from "next/image";
 import { redirect, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import useScroll from "@/hooks/useScroll";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import {
-  Controller,
-  SubmitHandler,
-  useFieldArray,
-  useForm,
-} from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { FaCheck } from "react-icons/fa";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { toast } from "sonner";
 import { z } from "zod";
 
 import { ReasonCheckboxes } from "./steps/reasonCheckboxes";
-
-const itemsCheckbox = [
-  {
-    id: "nao-preciso-mais",
-    label: "Não preciso mais",
-  },
-  {
-    id: "acho-caro",
-    label: "Acho caro",
-  },
-  {
-    id: "contratei-um-outro-servico",
-    label: "Contratei um outro serviço",
-  },
-  {
-    id: "problemas-tecnicos",
-    label: "Problemas técnicos",
-  },
-  {
-    id: "outro-motivo",
-    label: "Outro motivo",
-  },
-] as const;
-("use client");
 
 export const FormDataSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
