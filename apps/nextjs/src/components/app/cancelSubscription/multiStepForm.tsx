@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -44,10 +44,8 @@ const steps = [
   {
     id: "2",
     name: "",
-    fields: [], //["country", "state", "city", "street", "zip"],
   },
-  { id: "3", name: "" },
-  { id: "4", name: "Complete" },
+
   { id: "5", name: "Complete" },
 ];
 
