@@ -108,8 +108,12 @@ export function UserDropdown() {
                   <span>Whatsapp</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Image src="/icons/instagram.svg" />
-                  <AiFillInstagram className="mr-2 h-4 w-4 " color="#E1306C" />
+                  <Image
+                    src="/icons/instagram.svg"
+                    className="mr-2 h-4 w-4 "
+                    alt=""
+                  />
+                 
                   <span>Instagram</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
