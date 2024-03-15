@@ -1,28 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { redirect, useRouter } from "next/navigation";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { toast } from "sonner";
-import { z } from "zod";
-
-import { ThematicAxis } from "./steps/thematicAxis";
-import { Checkbox } from "@/components/ui/checkbox";
-
-export const FormDataSchema = z.object({/* 
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  email: z.string().min(1, "Email is required").email("Invalid email address"),
-  country: z.string().min(1, "Country is required"),
-  street: z.string().min(1, "Street is required"),
-  city: z.string().min(1, "City is required"),
-  state: z.string().min(1, "State is required"),
-  zip: z.string().min(1, "Zip is required"),
- */});
-
-type Inputs = z.infer<typeof FormDataSchema>;
 
 const steps = [
   {
@@ -61,21 +36,74 @@ const itemsCheckbox = [
     label: "Outro motivo",
   },
 ] as const
-/* 
+"use client";
 
-function ActiveStepFormComponent() {
-  const { step } = useFormState();
-  switch (step) {
-    case 1:
-      return <UserNameForm />;
-    case 2:
-      return <EmailForm />;
-    case 3:
-      return <PasswordForm />;
-    default:
-      return null;
-  }
-}
+import { useState } from "react";
+import { redirect, useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import {
+  SubmitHandler,
+  useForm,
+  useFieldArray,
+  Controller,
+} from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
+import { FaCheck } from "react-icons/fa";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "./ui/label";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
+
+import { ColaboradorRadioGroup } from "./colaboradorRadioGroup";
+import { AreaCheckboxes } from "./areaCheckboxes";
+import { InvestimentoRadioGroup } from "./investimentoRadioGroup";
+import { PrazoCheckboxes } from "./prazoRadioGroup";
+import useScroll from "@/hooks/useScroll";
+import { ImportantInformations } from "./importantInformations";
+import { EscopoRadioGroup } from "./escopoRadioGroup";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import Image from "next/image";
+
+export const FormDataSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().min(1, "Email is required").email("Invalid email address"),
+  country: z.string().min(1, "Country is required"),
+  street: z.string().min(1, "Street is required"),
+  city: z.string().min(1, "City is required"),
+  state: z.string().min(1, "State is required"),
+  zip: z.string().min(1, "Zip is required"),
+  description: z.string().max(160).min(4),
+  urls: z
+    .array(
+      z.object({
+        value: z.string().url({ message: "Please enter a valid URL." }),
+      }),
+    )
+    .optional(),
+});
+
+type Inputs = z.infer<typeof FormDataSchema>;
+
+const steps = [
+  {
+    id: "1",
+    name: "",
+    fields: [], //["firstName", "lastName", "email"],
+  },
+  {
+    id: "2",
+    name: "",
+    fields: [], //["country", "state", "city", "street", "zip"],
+  },
+  { id: "3", name: "" },
+  { id: "4", name: "Complete" },
+  { id: "5", name: "Complete" },
+];
+
 
  */
 export function MultiStepForm() {
@@ -96,12 +124,6 @@ export function MultiStepForm() {
   });
 
   const processForm: SubmitHandler<Inputs> = async (data) => {
-    const { city, country, email, firstName, lastName, state, street, zip } =
-      data;
-    console.log();
-    toast(
-      `${city} ${country} ${email} ${firstName} ${lastName} ${state} ${street} ${zip}`,
-    );
     reset();
     //router.push("/correcao/1");
   };
@@ -130,43 +152,34 @@ export function MultiStepForm() {
     }
   };
 
+  // isso pode vir do seu banco de dados ou API
+  const defaultValues: Partial<Inputs> = {
+    description: "I own a computer.",
+    urls: [
+      { value: "https://shadcn.com" },
+      { value: "http://twitter.com/shadcn" },
+    ],
+  };
+
+  const form = useForm<Inputs>({
+    resolver: zodResolver(FormDataSchema),
+    defaultValues,
+    mode: "onChange",
+  });
+
+  const { fields, append } = useFieldArray({
+    name: "urls",
+    control: form.control,
+  });
+  const scrolled = useScroll(50);
   return (
     <div className="">
-      <section className="flex flex-col justify-between gap-10">
-        {/* steps */}
-        <nav aria-label="Progress">
-          <ol role="list" className="flex space-y-4 md:space-x-8 md:space-y-0">
-            {steps.map((step, index) => (
-              <li key={step.name} className="flex-1">
-                {currentStep > index ? (
-                  <div className="oflex-col group  flex rounded-full border-l-4 border-sky-600 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
-                    <span className="text-sm font-medium text-sky-600 transition-colors ">
-                      {step.id}
-                    </span>
-                    <span className="text-sm font-medium">{step.name}</span>
-                  </div>
-                ) : currentStep === index ? (
-                  <div
-                    className="flex w-full flex-col border-l-4 border-sky-600 py-2 pl-4 md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4"
-                    aria-current="step"
-                  >
-                    <span className="text-sm font-medium text-sky-600">
-                      {step.id}
-                    </span>
-                    <span className="text-sm font-medium">{step.name}</span>
-                  </div>
-                ) : (
-                  <div className="group flex w-full flex-col border-l-4 border-gray-200 py-2 pl-4 transition-colors md:border-l-0 md:border-t-4 md:pb-0 md:pl-0 md:pt-4">
-                    <span className="text-sm font-medium text-gray-500 transition-colors">
-                      {step.id}
-                    </span>
-                    <span className="text-sm font-medium">{step.name}</span>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ol>
-        </nav>
+      <section className="flex flex-col justify-between gap-10 pt-40 text-slate-900">
+       
+
+        <h3 className="mx-auto flex flex-col items-center gap-2">
+          Antes de falar sobre o projeto leia as <ImportantInformations />
+        </h3>
 
         {/* Form */}
         <form className="" onSubmit={handleSubmit(processForm)}>
@@ -182,90 +195,38 @@ export function MultiStepForm() {
               <p className="mt-1 text-sm leading-6 text-gray-600">
                 Provide your personal details.
               </p>
-              <div className=" grid grid-cols-3 gap-x-6 gap-y-8 sm:grid-cols-6">
-              {itemsCheckbox.map((item) => (
-                        <div className="flex items-center space-x-2">
-                        <Checkbox id={item.id} />
-                        <label
-                          htmlFor={item.id}
-                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                        >
-                         {item.label}
-                        </label>
-                      </div>
-                  
-              
-              
-              ))}
-                <div className="sm:col-span-3">
-                  <label
-                    htmlFor="firstName"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    First name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="firstName"
-                      {...register("firstName")}
-                      autoComplete="given-name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.firstName?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.firstName.message}
-                      </p>
-                    )}
-                  </div>
+
+              <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="name">Olá, eu sou</Label>
+                <Input type="name" id="name" placeholder="Email" />
+
+                <Label htmlFor="email">Meu e-mail é</Label>
+                <Input type="email" id="email" placeholder="Email" />
+
+                <div className="grid md:grid-cols-2">
+                  <Label htmlFor="email">Minha empresa é a</Label>
+                  <Input type="email" id="email" placeholder="Email" />
+
+                  <Label htmlFor="email">WhatsApp</Label>
+                  <Input type="email" id="email" placeholder="Email" />
                 </div>
 
-                <div className="sm:col-span-3">
-                  <label
-                    htmlFor="lastName"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Last name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="lastName"
-                      {...register("lastName")}
-                      autoComplete="family-name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.lastName?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.lastName.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="sm:col-span-4">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Email address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="email"
-                      type="email"
-                      {...register("email")}
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.email?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
+                <Label htmlFor="email">Site atual (se houver)</Label>
+                <Input type="email" id="email" placeholder="Email" />
               </div>
+
+              <div className="flex flex-col">
+                <h2 className="text-base font-semibold leading-7 text-gray-900">
+                  O número de colaboradores da minha empresa é
+                </h2>
+
+                <ColaboradorRadioGroup
+                  register={register}
+                  control={form.control}
+                  errors={errors}
+                />
+              </div>
+              
             </motion.div>
           )}
 
@@ -274,133 +235,18 @@ export function MultiStepForm() {
               initial={{ x: delta >= 0 ? "50%" : "-50%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="px-5"
             >
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Address
-              </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                Address where you can receive mail.
-              </p>
-
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="sm:col-span-3">
-                  <label
-                    htmlFor="country"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Country
-                  </label>
-                  <div className="mt-2">
-                    <select
-                      id="country"
-                      {...register("country")}
-                      autoComplete="country-name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                    >
-                      <option>United States</option>
-                      <option>Canada</option>
-                      <option>Mexico</option>
-                    </select>
-                    {errors.country?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.country.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="col-span-full">
-                  <label
-                    htmlFor="street"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Street address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="street"
-                      {...register("street")}
-                      autoComplete="street-address"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.street?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.street.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2 sm:col-start-1">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    City
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="city"
-                      {...register("city")}
-                      autoComplete="address-level2"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.city?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.city.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2">
-                  <label
-                    htmlFor="state"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    State / Province
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="state"
-                      {...register("state")}
-                      autoComplete="address-level1"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.state?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.state.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2">
-                  <label
-                    htmlFor="zip"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    ZIP / Postal code
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      id="zip"
-                      {...register("zip")}
-                      autoComplete="postal-code"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                    />
-                    {errors.zip?.message && (
-                      <p className="mt-2 text-sm text-red-400">
-                        {errors.zip.message}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+             <div>
+             <div><Image src=""/></div>
+              <ul>
+                <li><IoCloseCircleOutline />Você perderá acesso a todos os beneficíos</li>
+                <li><IoCloseCircleOutline />Você não terá mais acesso as correção detalhda</li>
+                <li><IoCloseCircleOutline />Você todo o progresso feito até aqui</li>
+                <li><IoCloseCircleOutline />Você perderá </li>
+              </ul>
+             </div>
+              
             </motion.div>
           )}
 
@@ -409,18 +255,57 @@ export function MultiStepForm() {
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Complete
               </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                Thank you for your submission.
-              </p>
+
+              <div className="grid w-full gap-1.5">
+                <Label htmlFor="message">
+                  Esses são os detalhes do meu negócio
+                </Label>
+                <Textarea
+                  placeholder="Me conte um pouco sobre sua empresa/negocio e quais os problemas ela resolve para seus clientes"
+                  id="message"
+                />
+              </div>
+
+              <div className="grid w-full gap-1.5">
+                <Label htmlFor="message">
+                  Descreva detalhadamente o projeto
+                </Label>
+                <Textarea
+                  placeholder="Qual a quantidade de telas, funcionalidades, estilo do design e principalmente quais os objetivos de seu projeto."
+                  id="message"
+                />
+              </div>
+
+              <div className="grid w-full gap-1.5">
+                <Label htmlFor="message">
+                  Esses são os detalhes do meu negócio
+                </Label>
+                <Textarea
+                  placeholder="Me conte um pouco sobre sua empresa/negocio e quais os problemas ela resolve para seus clientes"
+                  id="message"
+                />
+              </div>
             </>
           )}
           {currentStep === 3 && (
             <>
-              <h2 className="text-base font-semibold leading-7 text-gray-900">
-                22
-              </h2>
-              <ThematicAxis />
-              <p className="mt-1 text-sm leading-6 text-gray-600">55.</p>
+              <h2 className="text-base font-semibold leading-7 text-gray-900"></h2>
+
+              <p className="mt-1 text-sm leading-6 text-gray-600"></p>
+              <div>
+                {fields.map((field, index) => (
+                  <Input {...field} key={index} />
+                ))}
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="mt-2"
+                  onClick={() => append({ value: "" })}
+                >
+                  Add URL
+                </Button>
+              </div>
             </>
           )}
         </form>

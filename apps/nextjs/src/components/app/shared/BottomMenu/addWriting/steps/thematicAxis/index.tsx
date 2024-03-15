@@ -33,7 +33,7 @@ export function ThematicAxis() {
                 aria-label="Toggle bold"
                 key={index}
                 value={type.name}
-                className="flex flex-col items-cente justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                 onClick={handleWritingThemes}
               >
                 {type.name}
